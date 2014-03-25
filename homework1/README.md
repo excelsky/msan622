@@ -17,7 +17,7 @@ To run this code, please enter the following commands in R:
 
 ```
 library(devtools)
-source_url("https://raw.github.com/sjengle/msan622/template/homework0/anscombe.r")
+source_url("https://raw.github.com/excelsky/msan622/template/homework1/622_Visualization_HAG1.R")
 ```
 [INSTRUCTIONS: Include instructions on how to run your code. See [`homework0`](../homework0) for an example.]
 
