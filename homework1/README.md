@@ -9,9 +9,11 @@ Homework 1: Basic Charts
 
 The following packages must be installed prior to running this code:
 
-- `ggplot2`
 - `devtools`
+- `ggplot2`
 - `plyr`
+- `reshape2`
+- `scales`
 
 To run this code, please enter the following commands in R:
 
