@@ -4,6 +4,7 @@ library(ggplot2)
 library(plyr)
 library(reshape2)
 library(scales)
+
 data(movies) 
 data(EuStockMarkets)
 
@@ -32,7 +33,7 @@ breakpoints[1] <- min(movies$budget)
 breakpointslabels <- c("1000", "50M", "100M", "150M", "200M")
 # http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/
 scatterplot <- ggplot(movies, aes(x=budget, y=rating, group=factor(genre), color=factor(genre))) +
-  geom_point(alpha = 1) +
+  geom_point(alpha=3/4, shape=1, size=4) +
   ggtitle("Movies Budget and Rating") +
   xlab("Budget (US $)") + ylab("Rating (1 to 10)") +
   scale_x_continuous(breaks=breakpoints, labels=breakpointslabels) +
