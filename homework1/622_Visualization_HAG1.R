@@ -45,26 +45,24 @@ dev.off()
 
 #### Plot 2: Bar Chart ####
 movies1 <- ddply(movies, "genre", summarise, count=length(genre))
-# movies2 <- movies1[order(-movies1$count),]
-# rm(movies1)
 barchart <- ggplot(movies1, aes(x=genre, y=count)) +
   geom_bar(stat="identity", fill=I("tomato2")) +
-  ggtitle("Movies Genre Version 1") +
+  ggtitle("Movies Genre") +
   xlab("Genre") + ylab("Count")
 print(barchart)
-ggsave("hw1-bar-version1.png", width = 9, height = 4.25, dpi = 300, units = "in")
+ggsave("hw1-bar.png", width = 9, height = 4.25, dpi = 300, units = "in")
 dev.off()
 
-
-#### Plot 2. Version 2 ####
-movies3 <- within(movies, genre <- factor(genre, levels=names(sort(table(genre), decreasing=TRUE))))
-barchart <- ggplot(movies3, aes(x=genre, y=count)) +
-  geom_bar(stat="identity", fill=I("tomato2")) +
-  ggtitle("Movies Genre Version 2") +
-  xlab("Genre") + ylab("Count")
-print(barchart)
-ggsave("hw1-bar-version2.png", width = 9, height = 4.25, dpi = 300, units = "in")
-dev.off()
+# movies2 <- movies1[order(-movies1$count),]
+# rm(movies1)
+# movies3 <- within(movies, genre <- factor(genre, levels=names(sort(table(genre), decreasing=TRUE))))
+# barchart <- ggplot(movies3, aes(x=genre, y=count)) +
+#   geom_bar(stat="identity", fill=I("tomato2")) +
+#   ggtitle("Movies Genre Version 2") +
+#   xlab("Genre") + ylab("Count")
+# print(barchart)
+# ggsave("hw1-bar-version2.png", width = 9, height = 4.25, dpi = 300, units = "in")
+# dev.off()
 
 
 #### Plot 3: Small Multiples ####
@@ -77,7 +75,9 @@ smallmultiples <- ggplot(movies, aes(x=budget, y=rating, group=factor(genre), co
   facet_wrap(~genre, ncol=3) +
   labs(colour="Genre")
 print(smallmultiples)
-ggsave("hw1-multiples.png", width = 9, height = 4.25, dpi = 300, units = "in", scale=2)
+# ggsave("hw1-multiples.png", width = 9, height = 4.25, dpi = 300, units = "in")
+ggsave("hw1-multiples.png", width = 9, height = 4.25, dpi = 300, units = "in", scale=1.25)
+# ggsave("hw1-multiples.png", width = 9, height = 4.25, dpi = 300, units = "in", scale=2)
 dev.off()
 
 
