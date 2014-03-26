@@ -21,10 +21,9 @@ To run this code, please enter the following commands in R:
 library(devtools)
 source_url("https://raw.github.com/excelsky/msan622/template/homework1/622_Visualization_HAG1.R")
 ```
-[INSTRUCTIONS: Include instructions on how to run your code. See [`homework0`](../homework0) for an example.]
 
 This will generate 4 images and some text output. See below for details.
 
 ## Discussion ##
 
-[DISCUSSION: Include a discussion here if required by the assignment.]
+
