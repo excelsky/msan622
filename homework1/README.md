@@ -19,7 +19,7 @@ To run this code, please enter the following commands in R:
 
 ```
 library(devtools)
-source_url("https://raw.github.com/excelsky/msan622/template/homework1/622_Visualization_HAG1.R")
+source_url("https://raw.githubusercontent.com/excelsky/msan622/master/homework1/622_Visualization_HAG1.R")
 ```
 
 This will generate 4 images and some text output. See below for details.
