@@ -1,7 +1,7 @@
 Homework 2: Interactivity
 ==============================
 
-| **Name**  | Kicho YU  |
+| **Name**  | Kicho Yu  |
 |----------:|:-------------|
 | **Email** | kyu12@dons.usfca.edu |
 
