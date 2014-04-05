@@ -1,4 +1,4 @@
-#setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\2due0403j")
+# setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\2due0403j")
 library(ggplot2)
 library(shiny)
 library(scales)
@@ -39,7 +39,7 @@ loadData <- function() {
   movies$genre <- genre
   
   # Filter out unnecessary columns.
-  columns <- c("budget", "genre", "mpaa", "rating")
+  columns <- c("title", "budget", "genre", "mpaa", "length", "rating", "year")
   movies <- movies[columns]
   
   return(movies)
@@ -213,7 +213,7 @@ shinyServer(function(input, output) {
 {
 #   table <- getTable(localFrame, input$mpaa, input$genre)
   ordnung <- order(localFrame[,tolower(paste(input$sortColumn))], decreasing = input$sortDecreasing)
-  localFrame <- localFrame[ordnung, c("budget", "genre", "mpaa", "rating")]
+  localFrame <- localFrame[ordnung, c("title", "budget", "genre", "mpaa", "length", "rating", "year")]
   return(localFrame)
 }
   )
