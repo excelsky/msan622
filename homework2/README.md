@@ -11,6 +11,7 @@ The following packages must be installed prior to running this code:
 
 - `ggplot2`
 - `shiny`
+- `scale`
 
 To run this code, please enter the following commands in R:
 
