@@ -84,8 +84,8 @@ getPlot <- function(localFrame, mpaaRating, movieGenres, colorScheme="None", dot
   localPlot <- ggplot(localFrame, aes(x = budget, y = rating, group=factor(mpaa), color=factor(mpaa))) +
     geom_point(alpha=dotAlpha, shape=22, size=dotSize) +
     ggtitle("Movies by Genre") +
-    xlab("Budget") +
-    ylab("IMDB Rating") +
+    xlab("Budget (US $)") +
+    ylab("IMDB Rating (1 to 10)") +
 #     theme_grey() +
     scale_x_continuous(expand = c(0, 0), label = million_formatter, limits=c(0, 200000000)) +
     scale_y_continuous(breaks=0:10, expand=c(0,0), limits=c(0,10.5)) +
