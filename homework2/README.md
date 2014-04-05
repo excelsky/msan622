@@ -26,4 +26,4 @@ This will start the `shiny` app. See below for details on how to interact with t
 
 ![IMAGE](screenshot.jpg)  
 
-Here is the message.
+It is an interactivity of shiny and ggplot2 in R to see IMDB Movie Ratings. 
