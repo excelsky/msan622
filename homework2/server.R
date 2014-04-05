@@ -82,7 +82,7 @@ getPlot <- function(localFrame, mpaaRating, movieGenres, colorScheme="None", dot
   
   # Create base plot.
   localPlot <- ggplot(localFrame, aes(x = budget, y = rating, group=factor(mpaa), color=factor(mpaa))) +
-    geom_point(alpha=dotAlpha, shape=1, size=dotSize) +
+    geom_point(alpha=dotAlpha, shape=22, size=dotSize) +
     ggtitle("Movies by Genre") +
     xlab("Budget") +
     ylab("IMDB Rating") +
