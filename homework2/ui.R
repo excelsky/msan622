@@ -78,7 +78,7 @@ shinyUI(
         # This will be the control title.
         "Sort in Table", 
         # This will be the control choices.
-        choices = c("Budget", "Genre", "MPAA", "Rating")
+        choices = c("Title", "Budget", "Genre", "Mpaa", "Length", "Rating", "Year")
       ),
       
             
