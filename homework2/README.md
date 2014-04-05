@@ -24,4 +24,6 @@ This will start the `shiny` app. See below for details on how to interact with t
 
 ## Discussion ##
 
-[DISCUSSION: Include a discussion here if required by the assignment.]
+![IMAGE](screenshot.jpg)  
+
+Here is the message.
