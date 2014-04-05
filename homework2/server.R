@@ -1,6 +1,7 @@
-# setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\2due0403j")
+#setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\2due0403j")
 library(ggplot2)
 library(shiny)
+library(scales)
 # Objects defined outside of shinyServer() are visible to
 # all sessions. Objects defined instead of shinyServer()
 # are created per session. Place large shared data outside
@@ -44,9 +45,9 @@ loadData <- function() {
   return(movies)
 }
 
-# Label formatter for numbers in thousands.
-thousand_formatter <- function(x) {
-  return(sprintf("%dk", round(x / 1000)))
+# Label formatter for numbers in millions.
+million_formatter <- function(x) {
+  return(sprintf("%dk", round(x / 1000000)))
 }
 
 # Create plotting function.
@@ -68,23 +69,42 @@ getPlot <- function(localFrame, mpaaRating, movieGenres, colorScheme="None", dot
   }
   else {}
   
+#   # Shape of the points
+#   if (pointShape == "Solid Square"){shape <- 15}
+#   else if (pointShape == "Solid Circle"){shape <- 16}
+#   else if (pointShape == "Solid Triangle"){shape <- 17}
+#   else if (pointShape == "Solid Diamond"){shape <- 18}
+#   else if (pointShape == "Empty Square"){shape <- 0}
+#   else if (pointShape == "Empty Circle"){shape <- 1}
+#   else if (pointShape == "Empty Triangle"){shape <- 2}
+#   else if (pointShape == "Empty Diamond"){shape <- 5}
+#   else {shape <- 15}
+  
   # Create base plot.
   localPlot <- ggplot(localFrame, aes(x = budget, y = rating, group=factor(mpaa), color=factor(mpaa))) +
     geom_point(alpha=dotAlpha, shape=1, size=dotSize) +
-#     scale_x_continuous(expand = c(0, 500), label = million_formatter, limits=c(1000000, 200000000)) +
-#     scale_y_continuous(expand = c(0, 500), label = thousand_formatter) +
-    theme(panel.grid.major.x = element_blank()) +
-    theme(panel.grid.minor.y = element_blank()) +
-    theme(axis.ticks.x = element_blank()) +
-    theme(axis.text.x = element_text(size = 12)) +
-    theme(axis.title.x = element_blank()) +
     ggtitle("Movies by Genre") +
     xlab("Budget") +
     ylab("IMDB Rating") +
+#     theme_grey() +
+    scale_x_continuous(expand = c(0, 0), label = million_formatter, limits=c(0, 200000000)) +
+    scale_y_continuous(breaks=0:10, expand=c(0,0), limits=c(0,10.5)) +
+#     scale_color_brewer(palette=colorScheme, limits=levels(localFrame$mpaa), name="MPAA Rating") +
+#     theme(panel.background = element_blank(), panel.grid = element_blank()) +
+    theme(panel.grid.major.x = element_blank()) +
+    theme(panel.grid.minor.y = element_blank()) +
+    theme(axis.ticks.x = element_blank()) +
+    theme(axis.text.x = element_text(size = rel(1.25))) +
+    theme(axis.text.y = element_text(size = rel(1.25))) +
     labs(color="MPAA") + 
-    theme(legend.position = "bottom") +
-#     theme(legend.title = "MPAA") +
-    theme(legend.text = element_text(face = "italic"))
+    theme(legend.justification = c(1, 1)) + 
+    theme(legend.position = c(0.95, 0.13)) +
+    theme(legend.direction = "horizontal") +
+    theme(legend.key = element_rect(fill = "white")) +
+    theme(legend.title = element_text(size = rel(1.25), face = "italic")) +
+    theme(legend.text = element_text(face = "italic")) + 
+    theme(text = element_text(size = 18))
+  
   
 #   if (mpaaRating == "Qualitative 1") {
 #     localPlot <- localPlot +
@@ -116,7 +136,11 @@ getPlot <- function(localFrame, mpaaRating, movieGenres, colorScheme="None", dot
 }
 
 # Create a table function.
-getTable <- function(localFrame, mpaaRating, movieGenres) (return())
+# getTable <- function(localFrame) {
+#   ordnung <- order(localFrame[,tolower(paste(input$sortColumn))], decreasing = input$sortDecreasing)
+#   localFrame <- localFrame[ordnung, c("title", "year", "length", "budget", "rating", "mpaa", "genre")]
+#   return(localFrame)
+# }
 
 ##### GLOBAL OBJECTS #####
 
@@ -187,8 +211,10 @@ shinyServer(function(input, output) {
   # Should update every time sort order updates.
   output$table <- renderTable(
 {
-  table <- getTable(localFrame, input$mpaa, input$genre)  
-  return(table)
+#   table <- getTable(localFrame, input$mpaa, input$genre)
+  ordnung <- order(localFrame[,tolower(paste(input$sortColumn))], decreasing = input$sortDecreasing)
+  localFrame <- localFrame[ordnung, c("budget", "genre", "mpaa", "rating")]
+  return(localFrame)
 }
   )
   
