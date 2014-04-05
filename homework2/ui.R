@@ -1,4 +1,3 @@
-# setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\2due0403j")
 library(shiny)
 
 # Create a simple shiny page.
@@ -66,6 +65,31 @@ shinyUI(
         max = 1, 
         value = 0.5, 
         step = 0.1),
+      
+      
+      # Add a little bit of space between widgets.
+      br(),
+      # Add a little bit of space between widgets.
+      br(),
+      
+      selectInput(
+        # This will be the variable we access later.
+        "sortColumn", 
+        # This will be the control title.
+        "Sort in Table", 
+        # This will be the control choices.
+        choices = c("Budget", "Genre", "MPAA", "Rating")
+      ),
+      
+            
+      # Add a little bit of space between widgets.
+      br(),
+      
+      checkboxInput(
+        "sortDecreasing", 
+        "Sort Decreasing in Table", 
+        FALSE
+      ),
       
       # Add a download link
       HTML("<p align=\"center\">[ <a href=\"https://github.com/excelsky/msan622/tree/master/homework2\">download source</a> ]</p>")
