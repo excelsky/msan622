@@ -1,7 +1,7 @@
 Homework [#]: [HOMEWORK NAME]
 ==============================
 
-| **Name**  | Kicho YU  |
+| **Name**  | Kicho Yu  |
 |----------:|:-------------|
 | **Email** | kyu12@dons.usfca.edu |
 
