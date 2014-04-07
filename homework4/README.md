@@ -1,9 +1,9 @@
-Homework [#]: [HOMEWORK NAME]
+Homework 4: [HOMEWORK NAME]
 ==============================
 
-| **Name**  | [YOUR NAME]  |
+| **Name**  | Kicho Yu  |
 |----------:|:-------------|
-| **Email** | [USERNAME]@dons.usfca.edu |
+| **Email** | kyu12@dons.usfca.edu |
 
 ## Instructions ##
 
