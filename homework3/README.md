@@ -25,11 +25,11 @@ This will start the `shiny` app. See below for details on how to interact with t
 
 ## Discussion ##
 
-### Technique 1: Bubble Plot ###
+### Technique 1: Heatmap or Bubble Plot ###
 
 Here 
 
-### Technique 2: Scatterplot Matrix ###
+### Technique 2: Scatterplot Matrix or Small Multiples ###
 Here 
 
 ### Technique 3: Parallel Coordinates Plot ###
