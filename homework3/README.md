@@ -34,3 +34,8 @@ Here
 
 ### Technique 3: Parallel Coordinates Plot ###
 Here 
+
+
+## Interactivity ##
+
+Here
