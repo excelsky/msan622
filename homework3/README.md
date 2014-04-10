@@ -24,3 +24,13 @@ shiny::runGitHub('msan622', 'excelsky', subdir='homework3')
 This will start the `shiny` app. See below for details on how to interact with the visualization.
 
 ## Discussion ##
+
+### Technique 1: Bubble Plot ###
+
+Here 
+
+### Technique 2: Scatterplot Matrix ###
+Here 
+
+### Technique 3: Parallel Coordinates Plot ###
+Here 
