@@ -28,10 +28,10 @@ This will start the `shiny` app. See below for details on how to interact with t
 ## Discussion ##
 
 ### Technique 1: Heatmap or Bubble Plot ###
-## Bubble Plot ##
+#### Bubble Plot ####
 I chose a bubble plot to use, because I think my data are better in this plot than heatmap. A bubble plot can show each 50 state in the United States as a discrete and distinct bubble, whereas a heatmap shows the 50 states continuously. Also, I think a bubble plot gives more freedom in location than a heatmap. Therefore, I think a readability is increased by selecting a bubble plot over a heatmap.  
 
-# Customization #
+#### Customization ####
 1. The legend is placed in the bottom right. By being inside of the plot, it does not take an extra space, so it does not shrink the plot per se.  
 2. The data are re-ordered in order to prevent the large bubbles from overlapping small bubbles.  
 3. An annotation has been placed on the plot to display what the circles mean.  
@@ -39,17 +39,17 @@ I chose a bubble plot to use, because I think my data are better in this plot th
 ![IMAGE](Bubble Plot.jpeg)  
 
 ### Technique 2: Scatterplot Matrix or Small Multiples ###
-## Scatterplot Matrix ##
+#### Scatterplot Matrix ####
 Here 
 
-# Customization #
+#### Customization ####
 1. Th
 ![IMAGE](Scatterplot Matrix.jpeg)  
 
 ### Technique 3: Parallel Coordinates Plot ###
 Here 
 
-# Customization #
+#### Customization ####
 1. Th
 ![IMAGE](Parallel Coordinates.jpeg)  
 
