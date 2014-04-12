@@ -20,7 +20,8 @@ shinyUI(
                             "Murder",
                             "HS.Grad",
                             "Frost",
-                            "Area"), selected = "Population"
+                            "Area",
+                            "Pop.Density"), selected = "Population"
               ),  # selectInput
               
               # Add a little bit of space between widgets
@@ -127,7 +128,8 @@ shinyUI(
                                    "Murder",
                                    "HS.Grad",
                                    "Frost",
-                                   "Area")
+                                   "Area",
+                                   "Pop.Density")
                                  , selected = c("Population", "Income")
               ),  # checkboxGroupInput
               
@@ -193,7 +195,8 @@ shinyUI(
                                  "Murder",
                                  "HS.Grad",
                                  "Frost",
-                                 "Area")
+                                 "Area",
+                                 "Pop.Density")
                                , selected = c("Population", "Income")
             )  # checkboxGroupInput
           ),  # wellPanel
