@@ -1,112 +1,248 @@
 library(shiny)
-
-# Create a simple shiny page.
+#### shinyUI ####
 shinyUI(
-  # We will create a page with a sidebar for input.
-  pageWithSidebar(  
-    # Add title panel.
-    headerPanel("IMDB Movie Ratings"),
-    
-    # Setup sidebar widgets.
-    sidebarPanel(
-      # Add radio buttons for selecting the color scheme.
-      # Can only select one radio button at a time.
-      radioButtons(
-        "mpaaRating", 
-        "MPAA Rating:",
-        c("All", "NC-17", "PG", "PG-13", "R")
-      ),
-      
-      # Add a little bit of space between widgets.
-      br(),
-      
-      # Add true/false checkbox for sorting.
-      checkboxGroupInput(
-        "movieGenres",
-        "Movie Genres:",
-#         c("Action", "Animation", "Comedy", "Drama", "Documentary", "Romance", "Short"),
-        list("Action" = 1, "Animation" = 2, "Comedy" = 3, "Drama"=4, "Documentary"=5, "Romance"=6, "Short"=7),
-        selected = c()
-      ),
-      
-      # Add a little bit of space between widgets.
-      br(),
-      
-      # Add a drop-down box for sort columns.
-      selectInput(
-        # This will be the variable we access later.
-        "colorScheme", 
-        # This will be the control title.
-        "Color Scheme:", 
-        # This will be the control choices.
-        choices = c("Default", "Accent", "Set1", "Set2", "Set3", "Dark2", "Pastel1", "Pastel2")
-      ),
-      
-      # Add a little bit of space between widgets.
-      br(),
-      
-      # Sidebar with a slider input for size of dots.
-      sliderInput(
-        "dotSize", 
-        "Dot Size", 
-        min = 1, 
-        max = 10, 
-        value = 3, 
-        step = 1),
-      
-      # Add a little bit of space between widgets.
-      br(),
-      
-      # Sidebar with a slider input for transparency (alpha) of dots.
-      sliderInput(
-        "dotAlpha", 
-        "Dot Alpha", 
-        min = 0.1, 
-        max = 1, 
-        value = 0.5, 
-        step = 0.1),
-      
-      
-      # Add a little bit of space between widgets.
-      br(),
-      # Add a little bit of space between widgets.
-      br(),
-      
-      selectInput(
-        # This will be the variable we access later.
-        "sortColumn", 
-        # This will be the control title.
-        "Sort in Table", 
-        # This will be the control choices.
-        choices = c("Title", "Budget", "Genre", "Mpaa", "Length", "Rating", "Year")
-      ),
-      
+  # Create a page with a top level navigation bar
+  navbarPage("Choose a Plot",
+#### Bubble Plot ####
+    navbarMenu("Heapmat -or- Bubble Plot",
+      tabPanel("I chose a Bubble Plot",
+        # Layout a sidebar and main area
+        sidebarLayout(
+          # Create a sidebar panel
+          sidebarPanel(
+            # Create a well panel
+            wellPanel(
+              selectInput("x", "X axis",
+                          c("Population",
+                           "Income",
+                            "Illiteracy",
+                            "Life.Exp",
+                            "Murder",
+                            "HS.Grad",
+                            "Frost",
+                            "Area"), selected = "Population"
+              ),  # selectInput
+              
+              # Add a little bit of space between widgets
+              br(),
+              
+              selectInput("y", "Y axis",
+                          c("Population",
+                            "Income",
+                            "Illiteracy",
+                            "Life.Exp",
+                            "Murder",
+                            "HS.Grad",
+                            "Frost",
+                            "Area"), selected = "Income"
+              )  # selectInput
+            ),  # wellPanel
             
-      # Add a little bit of space between widgets.
-      br(),
-      
-      checkboxInput(
-        "sortDecreasing", 
-        "Sort Decreasing in Table", 
-        FALSE
-      ),
-      
-      # Add a download link
-      HTML("<p align=\"center\">[ <a href=\"https://github.com/excelsky/msan622/tree/master/homework2\">download source</a> ]</p>")
-    ),
-    
-    # Setup main panel.
-    mainPanel(
-      # Create a tab panel.
-      tabsetPanel(
-        # Add a tab for displaying the histogram.
-        tabPanel("Scatter Plot", plotOutput("scatterPlot",
-                                            width = "800px", 
-                                            height = "450px")),
+            # Create a well panel
+            wellPanel(
+              # Create a select list input control
+              selectInput("sizeBy", "Bubble Size",
+                          c("Population", "Income", "Area", "Pop.Density"),
+                          selected = "Population"
+              ),  # selectInput
+              # Checkbox Input Control
+              checkboxInput("abbrev","State Abbreviation", value=TRUE
+              )  # checkboxInput
+            ),  # wellPanel
+            
+            # Create a well panel
+            wellPanel(
+              # Create radio buttons
+              radioButtons("colorBy", "Color by:",
+                           c("Region", "Division"),
+                           selected = "Region"
+              )  # radioButtons
+              
+#               # Checkbox Group Input Control
+#               checkboxGroupInput("filterRegions", "Filter regions", 
+#                                  c("Northeast", "South", "West", "North Central"),
+# #                                  selected = c("Northeast", "South", "West", "North Central")
+#                                  selected = c()
+#               )  # checkboxGroupInput
+            )  # wellPanel
+          ), # sidebarPanel
+          
+          # Setup main panel.
+          mainPanel(
+            # Create a tabset pane
+            tabsetPanel(
+              # Create a tab panel
+              tabPanel("Bubble Plot",
+                       plotOutput("BP", width = "100%", height = "100%")
+              )  # tabPanel  
+            )  # tabsetPanel
+          )  # mainPanel
+          
+        )  # sidebarLayout
+      ),  # tabPanel of "Bubble Plot"
+#     ),  # navbarMenu of "Bubble Plot -or- Heapmat"
+
+#### Heatmap ####             
+      tabPanel("Heatmap (Please do not click)",
+        # Layout a sidebar and main area
+        sidebarLayout(
+          # Create a sidebar panel
+          sidebarPanel(
+            # Create a well panel
+            wellPanel(
+            )  # wellPanel
+          ),  # sidebarPanel
+         
+          # Setup main panel.
+          mainPanel(
+            # Create a tabset pane
+            tabsetPanel(
+              # Create a tab panel
+              tabPanel("Heatmap",
+                      plotOutput("heatMap", width = "100%", height = "100%")
+              )  # tabPanel  
+            )  # tabsetPanel
+          )  # mainPanel
+         
+        )  # sidebarLayout
+      )  # tabPanel of "Heatmap"
+    ),  # navbarMenu of "Bubble Plot -or- Heapmat"
+
+#### Scatterplot Matrix ####                
+    # Create a page with a top level navigation bar.
+    navbarMenu("Scatterplot Matrix -or- Small Multiples",
+      tabPanel("I chose a Scatterplot Matrix",
+        # Layout a sidebar and main area
+        sidebarLayout(
+          # Create a sidebar panel
+          sidebarPanel(
+            # Create a well panel
+            wellPanel(
+              # Checkbox Group Input Control
+              checkboxGroupInput("variables", "Choose variables:", 
+                                 c("Population",
+                                   "Income",
+                                   "Illiteracy",
+                                   "Life.Exp",
+                                   "Murder",
+                                   "HS.Grad",
+                                   "Frost",
+                                   "Area")
+                                 , selected = c("Population", "Income")
+              ),  # checkboxGroupInput
+              
+              # Add a little bit of space between widgets
+              br(),
+              
+              # Create radio buttons.
+              radioButtons("colorBy1", "Color by:",
+                           c("Region", "Division"),
+                           selected = "Region"
+              )  # radioButtons
+                       
+            )  # wellPanel
+          ),  # sidebarPanel
+          
+          # Setup main panel.
+          mainPanel(plotOutput("SPM", width = "100%", height = "100%")
+          )  # mainPanel
+        )  # sidebarLayout
+      ),  # tabPanel
+#     ),  # navbarMenu of "Scatterplot Matrix -or- Small Multiples"
+
+#### small multiples ####               
+      tabPanel("Small Multiples (Please do not click)",
+        # Layout a sidebar and main area
+        sidebarLayout(
+          # Create a sidebar panel
+          sidebarPanel(width=2.5,
+            # Create a well panel
+            wellPanel(
+            )  # wellPanel
+          ),  # sidebarPanel
+          
+          # Setup main panel
+          mainPanel(
+            # Create a tabset pane
+            tabsetPanel(
+              # Create a tab panel
+              tabPanel("Small Multiples",
+                       plotOutput("Small Multiples", width = "100%", height = "100%")
+              )  # tabPanel  
+            )  # tabsetPanel
+          )  # mainPanel
+          
+        )  # sidebarLayout
+      )  # tabPanel
+    ),  # navbarMenu of "Scatterplot Matrix -or- Small Multiples"
+
+#### Parallel Coordinates Plot ####            
+    # Create a tab panel
+    tabPanel("Parallel Coordinates Plot",
+      # Layout a sidebar and main area
+      sidebarLayout(
+        # Create a sidebar panel
+        sidebarPanel(
+          wellPanel(
+            # Checkbox Group Input Control
+            checkboxGroupInput("variables2", "Choose variables:", 
+                               c("Population",
+                                 "Income",
+                                 "Illiteracy",
+                                 "Life.Exp",
+                                 "Murder",
+                                 "HS.Grad",
+                                 "Frost",
+                                 "Area")
+                               , selected = c("Population", "Income")
+            )  # checkboxGroupInput
+          ),  # wellPanel
+          
+          # Create a well panel
+          wellPanel(
+            # Create a select list input control
+            selectInput("scaling", "Scaling:",
+                        c("std", "robust", "uniminmax", "globalminmax", "center", "centerObs"),
+                        selected="uniminmax"
+            )  # selectInput
+          ),  # wellPane
+          
+          # Create a well panel
+          wellPanel(
+            # Create a select list input control
+            selectInput("colorScheme","Color Scheme:",
+            c("Default", "Accent", "Set1", "Set2", "Set3", "Dark2", "Pastel1", "Pastel2"),
+            selected='Set1'
+            ),  # selectInput
+                     
+          # Add a little bit of space between widgets
+          br(),
+           
+          # Create radio buttons.
+          radioButtons("colorBy2", "Color by:",
+                        c("Region", "Division"),
+                        selected = "Region"
+          ),  # radioButtons
+           
+          # Add a little bit of space between widgets
+          br(),
+          
+            # Slider Input Widget
+            sliderInput("opacity", "Opacity:", 0.1, 1.0, 0.8, step=0.1
+            )  # sliderInput
+          )  # wellPanel                     
+          
+        ),  # sidebarPanel
         
-        # Add a tab for displaying the table (will be sorted).
-        tabPanel("Table", tableOutput("table"))
-      )
-    )  
-  )
-)
+        # Create a main panel
+        mainPanel(
+          # Create an plot output element
+          plotOutput("PCP", width = "100%", height = "100%"
+          )  # plotOutput
+        )  # mainPanel
+        
+      )  # sidebarLayout
+    )  # tabPanel of "Parallel Coordinates Plot"
+             
+  )  # navbarPage
+)  # shinyUI
