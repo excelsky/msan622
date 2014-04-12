@@ -65,7 +65,7 @@ You can choose variables for the x-axis and the y-axis. You can change the size 
 ![IMAGE](interactivity bubble plot.jpg)  
 
 ## Scatterplot Matrix ##
-You can choose the variables to compare. If less than two variables are selected, you can see a warning message. You can scale differently and the results are different.
+You can choose and __filter__ the variables to compare. If less than two variables are selected, you can see a warning message. You can scale differently and the results are different. 
 
 ![IMAGE](interactivity scatterplot matrix.jpg)  
 
