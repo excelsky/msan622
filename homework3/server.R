@@ -1,48 +1,34 @@
-#setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\2due0403j")
+#setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\3due0410j")
+library(GGally)
 library(ggplot2)
-library(shiny)
+library(RColorBrewer)
 library(scales)
+library(shiny)
 # Objects defined outside of shinyServer() are visible to
 # all sessions. Objects defined instead of shinyServer()
 # are created per session. Place large shared data outside
 # and modify (filter/sort) local copies inside shinyServer().
 
-# See plot.r for more comments.
-
-# Note: Formatting is such that code can easily be shown
-# on the projector.
 
 # Loads global data to be shared by all sessions.
 loadData <- function() {
-  data("movies", package = "ggplot2")
+  df <- data.frame(state.x77,
+                   State = state.name,
+                   Abbrev = state.abb,
+                   Region = state.region,
+                   Division = state.division
+  )
   
-  # Filter out any rows that do not have a valid budget value greater than 0.
-  movies <- subset(movies, budget > 0)
+  # Convert to factors.
+  df$State <- as.factor(df$State)
+  df$Abbrev <- as.factor(df$Abbrev)
+  df$Region <- as.factor(df$Region)
+  df$Division <- as.factor(df$Division)
   
-  # Filter out any rows that do not have a valid MPAA rating in the mpaa column.
-  movies <- subset(movies, mpaa != "")
+  # Add a population density
+  df$Pop.Density <- df$Population / df$Area
   
-  # Add a genre column to the movies dataset as follows:
-  genre <- rep(NA, nrow(movies))
-  count <- rowSums(movies[, 18:24])
-  genre[which(count > 1)] = "Mixed"
-  genre[which(count < 1)] = "None"
-  genre[which(count == 1 & movies$Action == 1)] = "Action"
-  genre[which(count == 1 & movies$Animation == 1)] = "Animation"
-  genre[which(count == 1 & movies$Comedy == 1)] = "Comedy"
-  genre[which(count == 1 & movies$Drama == 1)] = "Drama"
-  genre[which(count == 1 & movies$Documentary == 1)] = "Documentary"
-  genre[which(count == 1 & movies$Romance == 1)] = "Romance"
-  genre[which(count == 1 & movies$Short == 1)] = "Short"
-  
-  # Add genre to the dataset
-  movies$genre <- genre
-  
-  # Filter out unnecessary columns.
-  columns <- c("title", "budget", "genre", "mpaa", "length", "rating", "year")
-  movies <- movies[columns]
-  
-  return(movies)
+  return(df)
 }
 
 # Label formatter for numbers in millions.
@@ -50,97 +36,222 @@ million_formatter <- function(x) {
   return(sprintf("%dk", round(x / 1000000)))
 }
 
-# Create plotting function.
-getPlot <- function(localFrame, mpaaRating, movieGenres, colorScheme="None", dotSize, dotAlpha) {
-#   # Figure out sort order.
-#   localFrame$Genres <- factor(
-#     localFrame$Genres,
-#     levels = localFrame$Genres[sortOrder])
+
+#### Create bubble plot ####
+getBubblePlot <- function(df, x, y, sizeBy, colorBy, abbrev) {
+#   getBubblePlot(df2, "Population", "Income", "Population", "Region", T)
   
-  # Subset based on rating
-  if (mpaaRating == "All") {}
-  else {localFrame <- subset(localFrame, mpaa == mpaaRating)}
+  # Get indices for aesthetics in ggplot to be used
+#   xIndex <- which(colnames(df) == x)
+#   yIndex <- which(colnames(df) == y)
+  sizeIndex <- which(colnames(df) == sizeBy)
+#   colorIndex <- which(colnames(df) == colorBy) 
   
-  # Subset based on genre
-  genre_list <- c("Action", "Animation", "Comedy", "Drama", "Documentary", "Romance", "Short")
-  genre_bool <- as.numeric(movieGenres)
-  if (sum(genre_bool) > 0){
-    localFrame <- subset(localFrame, genre %in% genre_list[genre_bool])
-  }
-  else {}
+  # Sort in order to have smaller colors displayed on top of the bigger colors
+  df <- df[order(df[,sizeIndex], decreasing = TRUE),]
   
-#   # Shape of the points
-#   if (pointShape == "Solid Square"){shape <- 15}
-#   else if (pointShape == "Solid Circle"){shape <- 16}
-#   else if (pointShape == "Solid Triangle"){shape <- 17}
-#   else if (pointShape == "Solid Diamond"){shape <- 18}
-#   else if (pointShape == "Empty Square"){shape <- 0}
-#   else if (pointShape == "Empty Circle"){shape <- 1}
-#   else if (pointShape == "Empty Triangle"){shape <- 2}
-#   else if (pointShape == "Empty Diamond"){shape <- 5}
-#   else {shape <- 15}
+  # Create actual bubble plot
+#   p <- ggplot(df, aes_string(x = df[,xIndex], y = df[,yIndex])) +
+#     geom_point(aes_string(size = df[,sizeIndex], color = df[,colorIndex]), alpha = 0.8)
+  p <- ggplot(df, aes_string(x = x, y = y)) +
+    geom_point(aes_string(size = sizeBy, color = colorBy), alpha = 0.8)
+
   
-  # Create base plot.
-  localPlot <- ggplot(localFrame, aes(x = budget, y = rating, group=factor(mpaa), color=factor(mpaa))) +
-    geom_point(alpha=dotAlpha, shape=22, size=dotSize) +
-    ggtitle("Movies by Genre") +
-    xlab("Budget (US $)") +
-    ylab("IMDB Rating (1 to 10)") +
-#     theme_grey() +
-    scale_x_continuous(expand = c(0, 0), label = million_formatter, limits=c(0, 200000000)) +
-    scale_y_continuous(breaks=0:10, expand=c(0,0), limits=c(0,10.5)) +
-#     scale_color_brewer(palette=colorScheme, limits=levels(localFrame$mpaa), name="MPAA Rating") +
-#     theme(panel.background = element_blank(), panel.grid = element_blank()) +
-    theme(panel.grid.major.x = element_blank()) +
-    theme(panel.grid.minor.y = element_blank()) +
-    theme(axis.ticks.x = element_blank()) +
-    theme(axis.text.x = element_text(size = rel(1.25))) +
-    theme(axis.text.y = element_text(size = rel(1.25))) +
-    labs(color="MPAA") + 
-    theme(legend.justification = c(1, 1)) + 
-    theme(legend.position = c(0.95, 0.13)) +
-    theme(legend.direction = "horizontal") +
-    theme(legend.key = element_rect(fill = "white")) +
-    theme(legend.title = element_text(size = rel(1.25), face = "italic")) +
-    theme(legend.text = element_text(face = "italic")) + 
-    theme(text = element_text(size = 18))
-  
-  
-#   if (mpaaRating == "Qualitative 1") {
-#     localPlot <- localPlot +
-#       scale_fill_brewer(type = "qual", palette = 1)
-#   }
-#   else if (mpaaRating == "Qualitative 2") {
-#     localPlot <- localPlot +
-#       scale_fill_brewer(type = "qual", palette = 2)
-#   }
-#   else if (mpaaRating == "Color-Blind Friendly") {
-#     localPlot <- localPlot +
-#       scale_fill_manual(values = palette1)
-#   }
-#   else {
-#     localPlot <- localPlot +
-#       scale_fill_grey(start = 0.4, end = 0.4)
-#   }
-  
-  # Select color palette.
-  if (colorScheme == "Default") {
-    localPlot <- localPlot
-  }
-  else {
-    localPlot <- localPlot +
-      scale_color_brewer(palette = colorScheme)
+  # Option of having a state abbreviation
+  if(abbrev){
+    p <- p + geom_text(aes(label = Abbrev), col="#000000", hjust=0.5, vjust=0)  
   }
   
-  return(localPlot)
+  # Default size scale is by radius, force to scale by area instead
+  p <- p + scale_size_area(max_size = 20, guide = "none")
+  
+  # Modify the legend settings
+  p <- p + theme(legend.title = element_blank())
+  p <- p + theme(legend.direction = "horizontal")
+  p <- p + theme(legend.position = c(1, 0))
+  p <- p + theme(legend.justification = c(1, 0))
+  p <- p + theme(legend.background = element_blank())
+  p <- p + theme(legend.key = element_blank())
+  p <- p + theme(legend.text = element_text(size = 12))
+#   p <- p + theme(legend.margin = unit(0, "pt"))
+  
+  # Force the dots to plot larger in legend
+  p <- p + guides(colour = guide_legend(override.aes = list(size = 8)))
+  
+  # Indicate size is bubble size
+#   p <- p + annotate(
+# #     "text", x = 6, y = 4.8,
+#     "text", x = 600, y = 960,
+#     hjust = 0.5, color = "grey40",
+#     label = "Circle area is proportional to the 'Bubble Size'")
+    
+  
+  return(p)
 }
 
-# Create a table function.
-# getTable <- function(localFrame) {
-#   ordnung <- order(localFrame[,tolower(paste(input$sortColumn))], decreasing = input$sortDecreasing)
-#   localFrame <- localFrame[ordnung, c("title", "year", "length", "budget", "rating", "mpaa", "genre")]
-#   return(localFrame)
-# }
+#### Create scatter plot matrix ####
+getScatterPlotMatrix <- function(df, variables, colorBy1){
+# getScatterPlotMatrix(df2, c("Population", "Income"), "Region")  
+# getScatterPlotMatrix(df2, c("Population", "Income", "Murder"), "Division")  
+  
+  # Get indices in columns and variables
+  idx <- 1:ncol(df)
+  variableIndex <- idx[colnames(df) %in% variables]
+  
+  if (length(variableIndex) < 1) {
+    df <- data.frame(ex = 0, wy = 0,
+                     labels = "Please, choose at least one variable.\n
+                     Or, if you know how to generate\n
+                     a scatterplot matrix with only one variable,\n
+                     please let me know.\n
+                     I am willing to learn from you.")
+    p <- ggplot(df) +
+      geom_text(aes(x=ex, y=wy, label = labels), size=15) +
+      theme(axis.title.x = element_blank(),
+            axis.title.y = element_blank())
+  }
+  else{
+    p <- ggpairs(df, 
+               
+               # Columns to include in the matrix
+               columns = variableIndex,
+               
+               # What to include above diagonal
+               # list(continuous = "points") to mirror
+               # "blank" to turn off
+               upper = "blank",
+               
+               # What to include below diagonal
+               lower = list(continuous = "points"),
+               
+               # What to include in the diagonal
+               diag = list(continuous = "density"),
+               
+               # How to label inner plots
+               # internal, none, show
+               axisLabels = "none",
+               
+               # Other aes() parameters
+               colour = colorBy1,
+               title = "Scatterplot Matrix",
+               legends=T
+    ) # ggpairs
+#     +  guides(colour = guide_legend("colorBy1"))
+    
+    # Create a (representative) legend (rather than individual ones)
+    # I got the following code from StackOverFlow
+    # http://stackoverflow.com/questions/22945702/how-to-add-an-external-legend-to-ggpairs
+    for (i in 1:length(variableIndex)) {
+      # Address only the diagonal elements
+      # Get plot out of matrix
+      inner <- getPlot(p, i, i);
+      # Add any ggplot2 settings you want
+      inner <- inner + theme(panel.grid = element_blank()) +
+        theme(axis.text.x = element_blank())
+      # Put it back into the matrix
+      p <- putPlot(p, inner, i, i)
+      
+      for (j in 1:length(variableIndex)){
+        if((i==1 & j==1)){
+          inner <- getPlot(p, i, j)
+          inner <- inner + theme(legend.position=c(length(variableIndex)-0.25,0.50)) 
+          p <- putPlot(p, inner, i, j)
+        }
+        else{
+          inner <- getPlot(p, i, j)
+          inner <- inner + theme(legend.position="none")
+          p <- putPlot(p, inner, i, j)
+        }
+      }
+    }
+    
+    
+  }
+  return(p)
+}
+
+#### Create parallel coordinates plot ####
+getPCP <- function(df, variables2, colorBy2, colorScheme, opacity, scaling) {
+# getPCP(df2, c("Population", "Income"), "Region", "Default", 0.8, "robust")
+# getPCP(df2, c("Population", "Income", "Murder"), "Division", "Set1", 0.8, "std")
+  
+  variableIndex <- (1:ncol(df))[colnames(df) %in% variables2]
+  colorIndex <- (1:ncol(df))[colnames(df) == colorBy2]
+  
+  if (length(variableIndex) <= 1){
+    df <- data.frame(ex = 0, wy = 0,
+                     labels = "Please, choose at least two variables.\n
+                     Or, if you know how to generate\n
+                     a parallel coordinates plot with only two variables,\n
+                     please let me know.\n
+                     I am willing to learn from you.")
+    p <- ggplot(df) +
+      geom_text(aes(x=ex, y=wy, label = labels), size=12) +
+      theme(axis.title.x = element_blank(),
+            axis.title.y = element_blank())
+  }
+  else{
+  p <- ggparcoord(data = df,                   
+                  # Which columns to use in the plot
+                  columns = variableIndex,                   
+                  # Which column to use for coloring data
+                  groupColumn = colorIndex,                   
+                  # Allows order of vertical bars to be modified
+                  order = "anyClass",                  
+                  # Do not show points
+                  showPoints = FALSE,                  
+                  # Turn on alpha blending for dense plots
+                  alphaLines = opacity,                  
+                  # Turn off box shading range
+                  shadeBox = NULL,                  
+                  # Will normalize each column's values to [0, 1]
+                  scale = scaling
+  )  
+  # Start with a basic theme
+  p <- p + theme_minimal()  
+  
+  # Decrease amount of margin around x, y values
+  p <- p + scale_y_continuous(expand = c(0.02, 0.02))
+  p <- p + scale_x_discrete(expand = c(0.02, 0.02))  
+  
+  # Remove axis ticks and labels
+  p <- p + theme(axis.ticks = element_blank())
+  p <- p + theme(axis.title = element_blank())
+  p <- p + theme(axis.text.y = element_blank())  
+  
+  # Clear axis lines
+  p <- p + theme(panel.grid.minor = element_blank())
+  p <- p + theme(panel.grid.major.y = element_blank())  
+  
+  # Darken vertical lines
+  p <- p + theme(panel.grid.major.x = element_line(color = "#bbbbbb"))  
+  
+  # Move label to bottom
+  p <- p + theme(legend.position = "bottom") + scale_color_brewer(palette = colorScheme)  
+  
+#   # Figure out y-axis range after GGally scales the data
+#   min_y <- min(p$data$value)
+#   max_y <- max(p$data$value)
+#   pad_y <- (max_y - min_y) * 0.1  
+#   
+#   # Calculate label positions for each veritcal bar
+#   lab_x <- rep(colnames(df)[variableIndex], times = 2) # 2 times, 1 for min 1 for max
+#   lab_y <- rep(c(min_y - pad_y, max_y + pad_y), each = 4)  
+#   
+#   # Get min and max values from original dataset
+#   lab_z <- c(sapply(df[,variableIndex], min), sapply(df[,variableIndex], max))  
+#   
+#   # Convert to character for use as labels
+#   lab_z <- as.character(lab_z)  
+#   
+#   # Add labels to plot
+#   p <- p + annotate("text", x = lab_x, y = lab_y, label = lab_z, size = 3)
+  
+
+   p <- p + scale_colour_discrete(limits = levels(df[,colorIndex]))
+  } # else
+  return(p)
+}
 
 ##### GLOBAL OBJECTS #####
 
@@ -150,6 +261,19 @@ globalData <- loadData()
 # Color-blind friendly palette from http://jfly.iam.u-tokyo.ac.jp/color/
 palette1 <- c("#999999", "#E69F00", "#56B4E9", "#009E73",
               "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+
+# Create labeler function that removes dots and
+# capitalizes the first letter
+niceLabels <- function(text) {
+  text <- gsub("\\.", " ", text)
+  text <- paste(
+    toupper(substr(text, 1, 1)), 
+    substring(text, 2),
+    sep = "",
+    collapse = "")
+  return(text)
+}
 
 ##### SHINY SERVER #####
 
@@ -161,39 +285,7 @@ shinyServer(function(input, output) {
   
   # Copy the data frame (don't want to change the data
   # frame for other viewers)
-  localFrame <- globalData
-  
-  # Output row order based on sorting criteria
-  # Should update every time the sort column or descending
-  # checkbox is changed. (Explain reactive functions.)
-#   sortOrder <- reactive(
-# {
-#   if (input$sortColumn == "Genre") {
-#     return(
-#       order(
-#         localFrame$Genres,
-#         decreasing = input$sortDecreasing
-#       )
-#     )
-#   }
-#   else {
-#     return(
-#       order(
-#         localFrame$Counts,
-#         decreasing = input$sortDecreasing
-#       )
-#     )
-#   }
-# }
-#   )
-  
-  # Choose what having no species selected should mean.
-#   getHighlight <- reactive({
-#     result <- levels(iris$Species)
-#     
-#     return(result[which(result %in% input$highlight)])
-#     #         }
-#   })
+  df <- globalData
   
   filter_color <- reactive({
     switch(input$colorScheme,
@@ -206,34 +298,44 @@ shinyServer(function(input, output) {
            "Pastel1" = "Pastel1",
            "Pastel2" = "Pastel2")
   })
+
+#### Render bubble plot ####
+  output$BP <- renderPlot({
+    
+    # Use our function to generate the plot
+    bubblePlot <- getBubblePlot(
+      df, x=input$x, y=input$y, sizeBy=input$sizeBy, colorBy=input$colorBy, abbrev=input$abbrev
+    )  # getBubblePlot
+    
+    # Output the plot
+    print(bubblePlot)},
+                           
+    height = 800, width = 1200) # renderPlot of "Bubble Plot"
+
+#### Render Scatterplot Matrix ####
+  output$SPM <- renderPlot({
+
+    # Use our function to generate the plot
+    scatterPlotMatrix <- getScatterPlotMatrix(
+      df, variables=input$variables, colorBy1=input$colorBy1
+    )  # getScatterPlotMatrix
+    
+    # Output the plot
+    print(scatterPlotMatrix)},
   
-  # Output sorted table.
-  # Should update every time sort order updates.
-  output$table <- renderTable(
-{
-#   table <- getTable(localFrame, input$mpaa, input$genre)
-  ordnung <- order(localFrame[,tolower(paste(input$sortColumn))], decreasing = input$sortDecreasing)
-  localFrame <- localFrame[ordnung, c("title", "budget", "genre", "mpaa", "length", "rating", "year")]
-  return(localFrame)
-}
-  )
+    height = 800, width = 1200) # renderPlot of "Scatter Plot Matrix "
   
-  # Output sorted scatter plot.
-  # Should update every time sort or color criteria changes.
-  output$scatterPlot <- renderPlot(
-{
-  # Use our function to generate the plot.
-  scatterPlot <- getPlot(
-    localFrame,
-    input$mpaaRating,
-    input$movieGenres,
-    filter_color(),
-    input$dotSize,
-    input$dotAlpha
-  )
+#### Render Parallel Coordinates Plot ####
+  output$PCP <- renderPlot({
+
+  # Use our function to generate the plot
+  parallelcoordinatesPlot <- getPCP(
+    df, variables2=input$variables2, colorBy2=input$colorBy2,
+    colorScheme=input$colorScheme, opacity=input$opacity, scaling=input$scaling
+  )  # getPCP
   
   # Output the plot
-  print(scatterPlot)
-}
-  )
+  print(parallelcoordinatesPlot)},
+
+  height = 750, width = 1000)  # renderPlot of "Parallel Coordinates Plot"
 })
