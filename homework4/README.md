@@ -29,7 +29,6 @@ This will start the `shiny` app. See below for details on how to interact with t
 
 ## Discussion ##
 
-I chose a dataset of 
+I chose a dataset of blah blah  
 I chose both **Option 1: Using GGPlot2** and **Option 2: Using WordCloud** to generate **three text visualizations**.
-
- lie factor, data-ink ratio, and data density
+My lie factor, data-ink ratio, and data density are blah blah.
