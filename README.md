@@ -7,4 +7,4 @@ MSAN 622 Data Visualization
 
 ## About Me ##
 
-My sister has a corgi named Tifa.
+I am a polyglot. I love data analytics and foreign languages.
