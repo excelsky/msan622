@@ -15,7 +15,7 @@ The following packages must be installed prior to running this code:
 - `scales`
 - `shiny`
 - `tm`
-- `worldcloud`
+- `wordcloud`
 
 
 To run this code, please enter the following commands in R:
