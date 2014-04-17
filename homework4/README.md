@@ -1,4 +1,4 @@
-Homework 4: [HOMEWORK NAME]
+Homework 4: Text
 ==============================
 
 | **Name**  | Kicho Yu  |
