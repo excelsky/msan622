@@ -1,10 +1,7 @@
-setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\4due0418v")
-library(GGally)
+#setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\4due0418v")
 library(ggplot2)
-library(RColorBrewer)
 library(reshape2)
 library(scales)
-library(shiny)
 library(tm)
 library(wordcloud)
 
