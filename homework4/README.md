@@ -12,6 +12,7 @@ The following packages must be installed prior to running this code:
 - `GGally`
 - `ggplot2`
 - `RColorBrewer`
+- `reshape2`
 - `scales`
 - `shiny`
 - `tm`
