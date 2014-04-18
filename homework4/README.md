@@ -9,12 +9,10 @@ Homework 4: Text
 
 The following packages must be installed prior to running this code:
 
-- `GGally`
+- `devtools`
 - `ggplot2`
-- `RColorBrewer`
 - `reshape2`
 - `scales`
-- `shiny`
 - `tm`
 - `wordcloud`
 
@@ -22,8 +20,8 @@ The following packages must be installed prior to running this code:
 To run this code, please enter the following commands in R:
 
 ```
-library(shiny)
-shiny::runGitHub('msan622', 'excelsky', subdir='homework4')
+library(devtools)
+source_url("https://raw.githubusercontent.com/excelsky/msan622/master/homework4/622_Visualization_HAG4.R")
 ```
 
 This will start the `shiny` app. See below for details on how to interact with the visualization.
