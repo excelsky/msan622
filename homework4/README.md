@@ -24,7 +24,7 @@ library(devtools)
 source_url("https://raw.githubusercontent.com/excelsky/msan622/master/homework4/622_Visualization_HAG4.R")
 ```
 
-This will generate 4 images and some text output. See below for details.
+This will generate 4 images and some text outputs. See below for details.
 
 
 ## Discussion ##
