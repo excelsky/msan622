@@ -27,7 +27,7 @@ source_url("https://raw.githubusercontent.com/excelsky/msan622/master/homework4/
 This will generate 4 images and some text output. See below for details.
 
 
-## Discussion ##  
+## Discussion ##
 
 I chose a dataset of blah blah  
 I chose both **Option 1: Using GGPlot2** and **Option 2: Using WordCloud** to generate **three text visualizations**.
