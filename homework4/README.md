@@ -33,7 +33,7 @@ I chose a dataset of *The Gettysburg Address* by Abraham Lincoln. By then, there
 
 I chose both **Option 1: Using GGPlot2** and **Option 2: Using WordCloud** to generate **three text visualizations**. Actually, I generated more than three text visualizations. I have **three text visualizations**.
 
-First, I imported *The Gettysburg Address* from a website called *[The Gettysburg Address]*(http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm). I copied and pasted all the five versions and saved them into five *txt* files with *UTF-* encoding.
+First, I imported *The Gettysburg Address* from a website called [The Gettysburg Address](http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm). I copied and pasted all the five versions and saved them into five *txt* files with *UTF-8* encoding.
 
 My lie factor, data-ink ratio, and data density are blah blah.
 
