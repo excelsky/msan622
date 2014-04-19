@@ -47,7 +47,7 @@ getty_corpus <- tm_map(
 # getty_corpus[["Getty_Bliss.txt"]][3]
 
 
-## Remove stopwords
+## Remove stop words
 getty_corpus <- tm_map(
   getty_corpus,
   removeWords,
@@ -56,7 +56,7 @@ getty_corpus <- tm_map(
 # getty_corpus[["Getty_Bliss.txt"]][3]
 
 
-## Strip white space
+## Strip white spaces
 getty_corpus <- tm_map(
   getty_corpus,
   stripWhitespace
