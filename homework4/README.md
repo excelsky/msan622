@@ -48,7 +48,7 @@ A word cloud has an interesting lie factor. Even though a size of a word implies
 
 A word cloud shows all unique words. No words show up more than once. Therefore, a data-ink ratio is high. I think that so is my word cloud.  
 
-A data density shows amount of data entries versus graphic area. I think my word cloud has more (white spaced) background than other typical word cloud. I happened to do it, because I wanted to have a title on top of the word cloud. Therefore, I think the data density in my word cloud is not very high.  
+A data density shows amount of data entries versus graphic area. I intentionally tried to reduce a white space outside of a word cloud in order to increase a data density. I gave a small `width` value and a big `pointsize` value to make it happen. Therefore, I think the data density in my word cloud is high.  
 
 ![IMAGE](Wordcloud_with_Porter_stemming.jpg)  
 
@@ -103,7 +103,7 @@ Thanks to this frequency plot, it is easy to see that the following words appear
 Also it is easy to see that the following words appear more often in *Nicolay Copy*:  
 "battl"     "hallow"    "mai"       "proprieti" "upon"  
 
-It is not easy to say a lie factor in a frequency plot, because there is no geometric figure. I think it is only important to read poins from both axes, but no comparison based on sizes. Therefore, I think it is not very meaningful to determine a lie factor in a frequency plot.  
+It is not easy to say a lie factor in a frequency plot, because there is no geometric figure. I think it is only important to read points from both axes, but no comparison based on sizes. Therefore, I think it is not very meaningful to determine a lie factor in a frequency plot.  
 
 All the words are unique in a frequency plot. So is mine. Therefore, I think a data-ink ratio in my frequency plot is high.  
 
