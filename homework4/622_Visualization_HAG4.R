@@ -8,13 +8,14 @@ library(wordcloud)
 #### All five versions of The Gettysburg Address by Abraham Lincoln ####
 # http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm
 # bliss, nicolay, hay, everett, bancroft
-working_directory <- getwd()
-data_directory <- paste(working_directory,"\\Gettysburg", sep="")
-dir.create(data_directory)
-setwd(data_directory)
+
+#working_directory <- getwd()
+#data_directory <- paste(working_directory,"\\Gettysburg", sep="")
+#dir.create(data_directory)
+#setwd(data_directory)
 
 getty_source <- DirSource(
-  directory = "Gettysburg",
+  directory = file.path("Gettysburg"),
   encoding = "UTF-8",
   pattern = "*.txt",
   recursive = F,  # No subdirectory
