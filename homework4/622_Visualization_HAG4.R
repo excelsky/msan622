@@ -239,7 +239,7 @@ p <- ggplot(getty_df_porter3, aes(x=word, y=freq)) +
         axis.title.y = element_text(face="bold", size=16),
         axis.text.y  = element_text(face="bold", vjust=0.5, size=12, color="red"),
         strip.text.x = element_text(size=16)) +
-  scale_y_continuous(breaks=seq(3, 6)) +
+  scale_y_continuous(breaks=c(0,seq(3, 6))) +
   labs(title="Selective frequent words among different copies",
        x="Word", y="Frequency")
 p
