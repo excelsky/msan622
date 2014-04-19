@@ -39,6 +39,7 @@ Then I used a `tm` package to munge data; to lower cases, remove punctuations, p
 
 
 - **Plot 1: Word Cloud.**  
+
 A word cloud shows an aggregate frequency among five different copies. In other words, it does not distinguish what copy a word is from.  
 
 A size of a word implies its frequency. For example, *dedicate* is much bigger than *conceive* which are almost right below of *dedicate*. It means that *dedicate* is used much more in *The Gettysburg Address*. Indeed, *dedicate* is the most frequent word in this speech. After stemming via *Porter*, I changed *dedic* into *dedicate* in order to increase the readability. My top five frequent words are indeed **dedicate, can, nation, live,** and **dead**.  
@@ -53,23 +54,30 @@ A data density shows amount of data entries versus graphic area. I think my word
 
 
 - **Plot 2: Comparison Cloud.**  
+
 I was wondering the difference among the five copies. Thanks to Sophie, I found that a comparison cloud is a great tool to compare a word frequency among different sources. I simply used a `comparison.cloud()` function by feeding my data matrix and color specification. For some reason, I only see words from three different copies: *Brancroft, Hay,* and *Nicolay*.  
 
 Like a word cloud, a size of a word implies its frequency in a comparison cloud. Therefore, we can easily tell that *hallow* is used much more often than *rest* in the Nicolay's copy of *The Gettysburg Address*.  
 
-Yet, [word size is mapped to the difference between the rates that it occurs in each document.](http://blog.fellstat.com/?cat=11).  As seen from the comparison cloud, *battlefield, battle-field,* or at least *battl* which is a result from Porter stemming are used universally often in all three copies. 
+Yet, [word size is mapped to the difference between the rates that it occurs in each document.](http://blog.fellstat.com/?cat=11).  As seen from the comparison cloud, *battlefield, battle-field,* or at least *battl* which is a result from Porter stemming are used universally often in all three copies. For example, *god* which is actually *God* is only seen from *Bancroft*'s copy, at least from this comparison cloud.  
 
-My lie factor, data-ink ratio, and data density are blah blah.  
+Like a word cloud, a lie factor in a comparison cloud is reasonable, but we, human beings, cannot tell exactly.  I think my comparison cloud has a reasonable lie factor.  
+
+A comparison cloud shows all unique words per document. No words show up more than once per document. Therefore, a data-ink ratio is high. I think that so is my comparison cloud.  
+
+My comparison cloud has more (white spaced) background than other typical word cloud, because for some reasons, I do not see any words from two out of five copies. Therefore, I think the data density in my word cloud is not very high.  
 
 ![IMAGE](comparison_cloud_with_Porter_stemming.jpg)  
 
 
 - **Plot 3: Small Multiples.**  
+
 Similar to what I did to `hw1-scatter.png`, I used 'alpha=1/2' so that I could see the overlays of points. I changed the tick marks like I did in the first plot. Overall, I think four are 3 clusters in these 9 genres. `Documentary` and `Short` have low budget and have all ranges of ratings. `Animation` have a wide range of budget but has only a certain range of ratings. `Romance` has relatively high ratings and its budget is generally low. Other genres have a full range of budget and ratings.  
+My lie factor, data-ink ratio, and data density are blah blah.  
 ![IMAGE](smallmult.jpg)  
 
 
 - **Plot 4: Frequency Plot.**  
 I created my own tick marks so that I could see the lower and upper limit of the timeline. Actually, these data are not very good, because the four different European stock market indices are in one `price` without considering the currency. I created a long data format to create this plot by using `reshape2::melt()`. I created a box around a legend. Overall, Swiss SMI (Swiss Market Index) rises the most in the given period, whereas French CAC (Cotation Assistée en Continu) does the least.  
-
+My lie factor, data-ink ratio, and data density are blah blah.  
 ![IMAGE](freqcomp.jpg)
