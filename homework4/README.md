@@ -72,7 +72,10 @@ My comparison cloud has more (white spaced) background than other typical word c
 
 - **Plot 3: Small Multiples.**  
 
-Similar to what I did to `hw1-scatter.png`, I used 'alpha=1/2' so that I could see the overlays of points. I changed the tick marks like I did in the first plot. Overall, I think four are 3 clusters in these 9 genres. `Documentary` and `Short` have low budget and have all ranges of ratings. `Animation` have a wide range of budget but has only a certain range of ratings. `Romance` has relatively high ratings and its budget is generally low. Other genres have a full range of budget and ratings.  
+I looked at most frequent words among five copies. I found that *Nicolay*'s copy is perculiar. It has slightly lower frequency of using *dedicate* and *live*, even though they are two of the most frequently used words in a document. I thought a small multiples is a great plot to visually show this difference among five copies.  
+
+In my small multiples, I highlighted the bars in *Nicolay*'s copy, because my goal was to distinguish it from others. I colored those bars in red, whereas did other bars in other copies grey. So I gave a color contrast. I increased the size of title, x-axis label, and y-axis label in order to increase a readability.  I highlighted the y-axis text in red for a higher readability.  
+
 My lie factor, data-ink ratio, and data density are blah blah.  
 ![IMAGE](smallmult.jpg)  
 
