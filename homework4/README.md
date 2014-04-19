@@ -39,7 +39,7 @@ Then I used a `tm` package to munge data; to lower cases, remove punctuations, p
 
 - **Plot 1: Word Cloud.**  
 A word cloud shows an aggregate frequency among five different copies. In other words, it does not distinguish what copy a word is from.  
-The size of a word implies its frequency. For example, *dedicate* is much bigger than *conceive* which are almost right below of *dedicate*. It means that *dedicate* is used much more in *The Gettysburg Address*. Indeed, *dedicate* is the most frequent word in this speech. After stemming via *Porter*, I changed *dedic* into *dedicate* in order to increase the readability. My top five frequent words are indeed *dedicate, can, nation, live,* and *dead*.  
+The size of a word implies its frequency. For example, *dedicate* is much bigger than *conceive* which are almost right below of *dedicate*. It means that *dedicate* is used much more in *The Gettysburg Address*. Indeed, *dedicate* is the most frequent word in this speech. After stemming via *Porter*, I changed *dedic* into *dedicate* in order to increase the readability. My top five frequent words are indeed **dedicate, can, nation, live,** and **dead**.  
 A word cloud has an interesting lie factor.
 My lie factor, data-ink ratio, and data density are blah blah.  
 ![IMAGE](Wordcloud_with_Porter_stemming.jpg)  
