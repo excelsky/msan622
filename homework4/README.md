@@ -76,7 +76,11 @@ I looked at most frequent words among five copies. I found that *Nicolay*'s copy
 
 In my small multiples, I highlighted the bars in *Nicolay*'s copy, because my goal was to distinguish it from others. I colored those bars in red, whereas did other bars in other copies grey. So I gave a color contrast. I increased the size of title, x-axis label, and y-axis label in order to increase a readability.  I highlighted the y-axis text in red for a higher readability.  
 
-My lie factor, data-ink ratio, and data density are blah blah.  
+I think a lie factor in my small multiples is reasonable. Either the height or the area of bars represents a frequency of *dedicate* and *live*. Both the height and the area are proportional to the y-axis. Therefore, I think a lie factor in my small multiples is reasonable.  
+
+A data-ink ratio in my small multiples may or may not high. I think there is a way to aggregately show all but *Nicolay*'s copy in one way, but I do not know. 
+
+, and data density are blah blah.  
 ![IMAGE](smallmult.jpg)  
 
 
