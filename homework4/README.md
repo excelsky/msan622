@@ -38,6 +38,7 @@ First, I imported *The Gettysburg Address* from a website called [The Gettysburg
 Then I used a `tm` package to munge data; to lower cases, remove punctuations, preserve intra word dashes, remove stop words, and strip white spaces. Then I created three versions based on stemming: no stemming, Porter stemming, and English stemming. I found that the latter two lead the same result and those results are more useful than the one from no stemming. For example, no stemming treats *dedicate* and *dedicated* differently, whereas those two stemming treat them the same. After reading all different versions of *The Gettysburg Address*, I found that it is better to treat those two words the same, because there is no significant different in their usages and I am more interested in a frequency of words. So I decided to use *Porter stemming* in my analysis and visualization.  
 
 
+
 - **Plot 1: Word Cloud.**  
 
 A word cloud shows an aggregate frequency among five different copies. In other words, it does not distinguish what copy a word is from.  
