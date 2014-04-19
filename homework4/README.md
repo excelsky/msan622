@@ -74,13 +74,13 @@ My comparison cloud has more (white spaced) background than other typical word c
 
 - **Plot 3: Small Multiples.**  
 
-I looked at most frequent words among five copies. I found that *Nicolay*'s copy is perculiar. It has slightly lower frequency of using *dedicate* and *live*, even though they are two of the most frequently used words in a document. I thought a small multiples is a great plot to visually show this difference among five copies.  
+I looked at most frequent words among five copies. I found that **Nicolay**'s copy is perculiar. It has slightly lower frequency of using **dedicate** and **live**, even though they are two of the most frequently used words in a document. I thought a small multiples is a great plot to visually show this difference among five copies.  
 
-In my small multiples, I highlighted the bars in *Nicolay*'s copy, because my goal was to distinguish it from others. I colored those bars in red, whereas did other bars in other copies grey. So I gave a color contrast. I increased the size of title, x-axis label, and y-axis label in order to increase a readability.  I highlighted the y-axis text in red for a higher readability.  
+In my small multiples, I highlighted the bars in **Nicolay**'s copy, because my goal was to distinguish it from others. I colored those bars in red, whereas did other bars in other copies grey. So I gave a color contrast. I increased the size of title, x-axis label, and y-axis label in order to increase a readability.  I highlighted the y-axis text in red for a higher readability.  
 
-I think a lie factor in my small multiples is reasonable. Either the height or the area of bars represents a frequency of *dedicate* and *live*. Both the height and the area are proportional to the y-axis. Therefore, I think a lie factor in my small multiples is reasonable.  
+I think a lie factor in my small multiples is reasonable. Either the height or the area of bars represents a frequency of **dedicate** and **live**. Both the height and the area are proportional to the y-axis. Therefore, I think a lie factor in my small multiples is reasonable.  
 
-A data-ink ratio in my small multiples may or may not high. I think there is a way to aggregately show all but *Nicolay*'s copy in one way, but I do not know. So if I could aggregately show all other copies, then data-ink ratio in my small multiples would be higher. Other than that, I think, so far, a data-ink ratio in my small multiples is fairly high.  
+A data-ink ratio in my small multiples may or may not high. I think there is a way to aggregately show all but **Nicolay**'s copy in one way, but I do not know. So if I could aggregately show all other copies, then data-ink ratio in my small multiples would be higher. Other than that, I think, so far, a data-ink ratio in my small multiples is fairly high.  
 
 I do not think there is a big waste of space in my small multiples. If I could get rid of a space below a y=0 line, 
 a data density would increase. Other than that, I think a data density in my plot is fairly high.  
@@ -91,7 +91,7 @@ a data density would increase. Other than that, I think a data density in my plo
 
 - **Plot 4: Frequency Plot.**  
 
-As I wrote at the introduction, *Bliss*' copy is considered the most standard, because [it is the last known copy written by Lincoln and the only one signed and dated by him](http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm). As I shown in the previous plot, *Nicolay*'s copy is the most different from others. Therefore, I concluded that it would be a good comparison between those two copies.  
+As I wrote at the introduction, **Bliss**' copy is considered the most standard, because [it is the last known copy written by Lincoln and the only one signed and dated by him](http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm). As I shown in the previous plot, **Nicolay**'s copy is the most different from others. Therefore, I concluded that it would be a good comparison between those two copies.  
 
 I chose `textplot()` would be a good function to render my idea. Before plotting, I chose words with different frequencies only in those two copies. In other words, I deleted all other words which have the same frequencies in those two copies. I set the x-axis and the y-axis as *Bliss Copy* and *Nicolay Copy* respectively. I used `abline()` to draw a red `y=x` line. Therefore, the words below or on the right side of the red line show up more in *Bliss Copy* than *Nicolay Copy*. The words above or on the left side of the red line show up more in *Nicolay Copy* than *Bliss Copy*.  
 
