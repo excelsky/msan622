@@ -29,11 +29,13 @@ This will generate 4 images and some text outputs. See below for details.
 
 ## Discussion ##
 
-I chose a dataset of blah blah  
-I chose both **Option 1: Using GGPlot2** and **Option 2: Using WordCloud** to generate **three text visualizations**.
-My lie factor, data-ink ratio, and data density are blah blah.
+I chose a dataset of *The Gettysburg Address* by Abraham Lincoln. By then, there was no method to record his speech. So there were five different copies of his speech. All of these copies named after the people who first received them: Bliss, Nicolay, Hay, Everett, and Bancroft. Those copies are slightly different. I found that Nicolay's copy is the most different as I will explain further later.  
 
-First, I imported `movies` and `EuStockMarkets` and munged in accordance with the homework instruction.
+I chose both **Option 1: Using GGPlot2** and **Option 2: Using WordCloud** to generate **three text visualizations**. Actually, I generated more than three text visualizations. I have **three text visualizations**.
+
+First, I imported *The Gettysburg Address* from a website called *[The Gettysburg Address]*(http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm). I copied and pasted all the five versions and saved them into five *txt* files with *UTF-* encoding.
+
+My lie factor, data-ink ratio, and data density are blah blah.
 
 - **Plot 1: Word Cloud.**  
 I followed one of the color rules; never use more colors than can be stored in short-term
