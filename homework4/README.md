@@ -53,6 +53,7 @@ A data density shows amount of data entries versus graphic area. I think my word
 ![IMAGE](Wordcloud_with_Porter_stemming.jpg)  
 
 
+
 - **Plot 2: Comparison Cloud.**  
 
 I was wondering the difference among the five copies. Thanks to Sophie, I found that a comparison cloud is a great tool to compare a word frequency among different sources. I simply used a `comparison.cloud()` function by feeding my data matrix and color specification. For some reason, I only see words from three different copies: *Brancroft, Hay,* and *Nicolay*.  
@@ -68,6 +69,7 @@ A comparison cloud shows all unique words per document. No words show up more th
 My comparison cloud has more (white spaced) background than other typical word cloud, because for some reasons, I do not see any words from two out of five copies. Therefore, I think the data density in my word cloud is not very high.  
 
 ![IMAGE](comparison_cloud_with_Porter_stemming.jpg)  
+
 
 
 - **Plot 3: Small Multiples.**  
@@ -86,6 +88,7 @@ a data density would increase. Other than that, I think a data density in my plo
 ![IMAGE](smallmult.jpg)  
 
 
+
 - **Plot 4: Frequency Plot.**  
 
 As I wrote at the introduction, *Bliss*' copy is considered the most standard, because [it is the last known copy written by Lincoln and the only one signed and dated by him](http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm). As I shown in the previous plot, *Nicolay*'s copy is the most different from others. Therefore, I concluded that it would be a good comparison between those two copies.  
@@ -97,8 +100,12 @@ Thanks to this frequency plot, it is easy to see that the following words appear
 "far"          "fit"          "fought"       "gave"         "god"         
 "live"         "nobli"        "proper"       "rather"       "thu"         
 "unfinish"     "work"  
-Also it is easy to see that the following words appear more often in *Nicolay Copy*:
+Also it is easy to see that the following words appear more often in *Nicolay Copy*:  
 "battl"     "hallow"    "mai"       "proprieti" "upon"  
 
-My lie factor, data-ink ratio, and data density are blah blah.  
+It is not easy to say a lie factor in a frequency plot, because there is no geometric figure. I think it is only important to read poins from both axes, but no comparison based on sizes. Therefore, I think it is not very meaningful to determine a lie factor in a frequency plot.  
+
+All the words are unique in a frequency plot. So is mine. Therefore, I think a data-ink ratio in my frequency plot is high.  
+
+Even though I have much white empty space inside of a plot, I would say a data density in my frequency plot is high. It is because that white space is not a waste of space.
 ![IMAGE](freqcomp.jpg)
