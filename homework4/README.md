@@ -39,13 +39,16 @@ Then I used a `tm` package to munge data; to lower cases, remove punctuations, p
 
 - **Plot 1: Word Cloud.**  
 A word cloud shows an aggregate frequency among five different copies. In other words, it does not distinguish what copy a word is from.  
-The size of a word implies its frequency. For example, *dedicate* is much bigger than *conceive* which are almost right below of *dedicate*. It means that *dedicate* is used much more in *The Gettysburg Address*. Indeed, *dedicate* is the most frequent word in this speech. After stemming via *Porter*, I changed *dedic* into *dedicate* in order to increase the readability. My top five frequent words are indeed **dedicate, can, nation, live,** and **dead**.  
-A word cloud has an interesting lie factor.
-My lie factor, data-ink ratio, and data density are blah blah.  
+A size of a word implies its frequency. For example, *dedicate* is much bigger than *conceive* which are almost right below of *dedicate*. It means that *dedicate* is used much more in *The Gettysburg Address*. Indeed, *dedicate* is the most frequent word in this speech. After stemming via *Porter*, I changed *dedic* into *dedicate* in order to increase the readability. My top five frequent words are indeed **dedicate, can, nation, live,** and **dead**.  
+A word cloud has an interesting lie factor. Even though a size of a word implies its frequency, human beings are not good at comparing exactly among 2 or 3 dimensional objects. So we only know a certain word is used more often than another one, but not precisely how much it is used more often. So lie factor in a word cloud is reasonable, but we, human beings, cannot tell exactly.  I think my word cloud has a reasonable lie factor.  
+A word cloud shows all unique words. No words show up more than once. Therefore, a data-ink ratio is high. I think that so is my word cloud.  
+A data density shows amount of data entries versus graphic area. I think my word cloud has more (white spaced) background than other typical word cloud. I happened to do it, because I wanted to have a title on top of the word cloud. Therefore, I think the data density in my word cloud is not very high.  
 ![IMAGE](Wordcloud_with_Porter_stemming.jpg)  
 
 - **Plot 2: Comparison Cloud.**  
-I played around the `colors()` and chose `tomato2`. Actually, there are `tomato` through `tomato4`. The higher the number is, the darker the color is. In other words, `tomato` is the lightest and `tomato4` is the darkest. I created my own data set to create this plot. This bar chart shows the count of genres in the `movies` data set. `Mixed` is the most common genre in this data set, whereas `Animation` is the least common.     
+I was wondering the difference among the five copies. Thanks to Sophie, I found that a comparison cloud is a great tool to compare a word frequency among different sources. I simply used a `comparison.cloud()` function by feeding my data matrix and color specification. For some reason, I only see words from three different copies: *Brancroft, Hay,* and *Nicolay*.  
+Like a word cloud, a size of a word implies its frequency in a comparison cloud. Therefore, we can easily tell that *hallow* is used much more often than *rest* in the Nicolay's copy of *The Gettysburg Address*.  Yet, [word size is mapped to the difference between the rates that it occurs in each document.](http://blog.fellstat.com/?cat=11)
+My lie factor, data-ink ratio, and data density are blah blah.  
 ![IMAGE](comparison_cloud_with_Porter_stemming.jpg)  
 
 - **Plot 3: Small Multiples.**  
