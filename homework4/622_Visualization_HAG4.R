@@ -252,7 +252,7 @@ dev.off()
 
 #### Frequency Plot ####
 # http://blog.fellstat.com/?cat=11
-textplot(getty_df_porter1[,1], getty_df_porter1[,5], rownames(getty_df_porter1))
+# textplot(getty_df_porter1[,1], getty_df_porter1[,5], rownames(getty_df_porter1))
 
 more_bliss_index <- which(getty_df_porter1[,2] > getty_df_porter1[,5])
 more_nicolay_index <- which(getty_df_porter1[,2] < getty_df_porter1[,5])
@@ -265,7 +265,7 @@ biss_nicolay_text <- rownames(getty_df_porter1)[biss_nicolay_index]
 jpeg("freqcomp.jpg", width=480/3*4*1.5, height=480*1.5, pointsize=17)
 textplot(getty_df_porter1[biss_nicolay_index,2], getty_df_porter1[biss_nicolay_index,5], biss_nicolay_text,
          xlim=c(-1,7), ylim=c(-1,7),
-         main="Word frequency comparison", xlab="Biss Copy", ylab="Nicolay Copy")
+         main="Word frequency comparison", xlab="Bliss Copy", ylab="Nicolay Copy")
 text(0.5, 6, "Words with different frequncies shown only.", col="red")
 abline(a=0,b=1, col="red")
 dev.off()
