@@ -92,11 +92,11 @@ As I wrote at the introduction, *Bliss*' copy is considered the most standard, b
 
 I chose `textplot()` would be a good function to render my idea. Before plotting, I chose words with different frequencies only in those two copies. In other words, I deleted all other words which have the same frequencies in those two copies. I set the x-axis and the y-axis as *Bliss Copy* and *Nicolay Copy* respectively. I used `abline()` to draw a red `y=x` line. Therefore, the words below or on the right side of the red line show up more in *Bliss Copy* than *Nicolay Copy*. The words above or on the left side of the red line show up more in *Nicolay Copy* than *Bliss Copy*.  
 
-Thanks to this frequency plot, it is easy to see that the following words appear more often in *Bliss Copy*:
- [1] "advanc"       "altogeth"     "battle-field" "consecr"      "dedicate"    
- [6] "far"          "fit"          "fought"       "gave"         "god"         
-[11] "live"         "nobli"        "proper"       "rather"       "thu"         
-[16] "unfinish"     "work" 
+Thanks to this frequency plot, it is easy to see that the following words appear more often in *Bliss Copy*:  
+"advanc"       "altogeth"     "battle-field" "consecr"      "dedicate"    
+"far"          "fit"          "fought"       "gave"         "god"         
+"live"         "nobli"        "proper"       "rather"       "thu"         
+"unfinish"     "work"  
 Also it is easy to see that the following words appear more often in *Nicolay Copy*:
 "battl"     "hallow"    "mai"       "proprieti" "upon"  
 
