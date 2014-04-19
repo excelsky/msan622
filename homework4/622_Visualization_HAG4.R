@@ -9,13 +9,8 @@ library(wordcloud)
 # http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm
 # bliss, nicolay, hay, everett, bancroft
 
-#working_directory <- getwd()
-#data_directory <- paste(working_directory,"\\Gettysburg", sep="")
-#dir.create(data_directory)
-#setwd(data_directory)
-
 getty_source <- DirSource(
-  directory = file.path("Gettysburg"),
+  directory = "Gettysburg",
   encoding = "UTF-8",
   pattern = "*.txt",
   recursive = F,  # No subdirectory
