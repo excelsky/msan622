@@ -78,13 +78,27 @@ In my small multiples, I highlighted the bars in *Nicolay*'s copy, because my go
 
 I think a lie factor in my small multiples is reasonable. Either the height or the area of bars represents a frequency of *dedicate* and *live*. Both the height and the area are proportional to the y-axis. Therefore, I think a lie factor in my small multiples is reasonable.  
 
-A data-ink ratio in my small multiples may or may not high. I think there is a way to aggregately show all but *Nicolay*'s copy in one way, but I do not know. 
+A data-ink ratio in my small multiples may or may not high. I think there is a way to aggregately show all but *Nicolay*'s copy in one way, but I do not know. So if I could aggregately show all other copies, then data-ink ratio in my small multiples would be higher. Other than that, I think, so far, a data-ink ratio in my small multiples is fairly high.  
 
-, and data density are blah blah.  
+I do not think there is a big waste of space in my small multiples. If I could get rid of a space below a y=0 line, 
+a data density would increase. Other than that, I think a data density in my plot is fairly high.  
+
 ![IMAGE](smallmult.jpg)  
 
 
 - **Plot 4: Frequency Plot.**  
-I created my own tick marks so that I could see the lower and upper limit of the timeline. Actually, these data are not very good, because the four different European stock market indices are in one `price` without considering the currency. I created a long data format to create this plot by using `reshape2::melt()`. I created a box around a legend. Overall, Swiss SMI (Swiss Market Index) rises the most in the given period, whereas French CAC (Cotation Assistée en Continu) does the least.  
+
+As I wrote at the introduction, *Bliss*' copy is considered the most standard, because [it is the last known copy written by Lincoln and the only one signed and dated by him](http://www.abrahamlincolnonline.org/lincoln/speeches/gettysburg.htm). As I shown in the previous plot, *Nicolay*'s copy is the most different from others. Therefore, I concluded that it would be a good comparison between those two copies.  
+
+I chose `textplot()` would be a good function to render my idea. Before plotting, I chose words with different frequencies only in those two copies. In other words, I deleted all other words which have the same frequencies in those two copies. I set the x-axis and the y-axis as *Bliss Copy* and *Nicolay Copy* respectively. I used `abline()` to draw a red `y=x` line. Therefore, the words below or on the right side of the red line show up more in *Bliss Copy* than *Nicolay Copy*. The words above or on the left side of the red line show up more in *Nicolay Copy* than *Bliss Copy*.  
+
+Thanks to this frequency plot, it is easy to see that the following words appear more often in *Bliss Copy*:
+ [1] "advanc"       "altogeth"     "battle-field" "consecr"      "dedicate"    
+ [6] "far"          "fit"          "fought"       "gave"         "god"         
+[11] "live"         "nobli"        "proper"       "rather"       "thu"         
+[16] "unfinish"     "work" 
+Also it is easy to see that the following words appear more often in *Nicolay Copy*:
+"battl"     "hallow"    "mai"       "proprieti" "upon"  
+
 My lie factor, data-ink ratio, and data density are blah blah.  
 ![IMAGE](freqcomp.jpg)
