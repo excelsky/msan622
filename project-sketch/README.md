@@ -8,7 +8,7 @@ Project: Sketch
 
 Planned Tools
 ------------------------------
-My dataset is designed for a prediction task to determine whether a person makes over 50K a year. Instead of a prediction, I think I can see the characteristics of people who earns 50K or more versus less. Therefore, my visualization is to see a clustering in two groups based on income.
+My dataset is designed for a prediction task to determine whether a person makes over 50K a year. Instead of a prediction, I think I can visualize the characteristics of people who earns 50K or more versus less. 
 
 My packages would be:
 - `GGally `
@@ -20,6 +20,11 @@ My packages would be:
 
 Planned Techniques
 ------------------------------
+My plots are
+- Bubble Chart
+- Scatter Plot
+- Paralell coordinates plot
+- Heatmap
 
 Include a list of four different techniques you plan to implement, why you choose those techniques for your dataset, and what you hope to learn. You should have approximately 3 to 5 sentences per technique.
 
@@ -35,6 +40,14 @@ Keep in mind you will be asked to implement at least one of your planned interac
 Planned Interface
 ------------------------------
 
-Draw an annotated sketch illustrating the interface you plan to create for your prototypes and interactions. You can draw this on paper and upload a scan, use the free Google Drive Drawing tool, or use any other tool that allows you to upload the result as a PDF.
+#### Bubble Chart ####
+I am not going to have exactly the same as Gapminder, but I will have a similar bubble chart. The bubbles represent countries and their size indicates the number of people from those countries in my dataset. I will have an interactive x- and y-axis. They will be two of the followings: average age, average final weight (I will explain what it is later at our final project), average years of education, and average hours-per-week.
+![page1](sketch_bubble.jpg)
 
-This does not have to be anything fancy. Just enough to show you have thought about how you would like to bring everything together. 
+
+#### Scatter Plot ####
+![page2](sketch_scatter.jpg)
+
+
+#### blah ####
+![page3](page3-1.jpg)
