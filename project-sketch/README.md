@@ -1,10 +1,10 @@
 Project: Sketch
 ==============================
 
-| **Name**  | [YOUR NAME]  |
+| **Name**  | Kicho Yu  |
 |----------:|:-------------|
-| **Email** | [USERNAME]@dons.usfca.edu |
+| **Email** | kyu12@dons.usfca.edu |
 
 ## Discussion ##
 
-[DISCUSSION: Include a discussion here if required by the assignment.]
+Blah
