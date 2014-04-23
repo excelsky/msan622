@@ -52,7 +52,7 @@ I think it would be good to have scatter plot on numerical data. Users choose tw
 
 
 #### Comparison Cloud ####
-I think it is useful to see a comparison cloud of job names between the two groups: those whose earn $50K or more versus less.  
+I think it is useful to see a comparison cloud of job names between the two groups: those whose earn $50K or more versus less. My attached file is not exactly what I will have, but it will be similar.    
 ![page3](sketch_comparison.jpg)
 
 
