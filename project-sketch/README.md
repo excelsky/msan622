@@ -27,7 +27,7 @@ My plots are
 - Bubble Chart
 - Scatter Plot
 - Comparison Cloud
-- Interactivity
+- Logistic Regression Interactivity
 
 Include a list of four different techniques you plan to implement, why you choose those techniques for your dataset, and what you hope to learn. You should have approximately 3 to 5 sentences per technique.
 
@@ -36,9 +36,7 @@ Keep in mind you will be asked to implement 1 to 2 prototypes for peer review.
 Planned Interaction
 ------------------------------
 
-Describe the types of interaction you want to include (filtering, brushing, zooming, panning, sorting, and so on). You can discuss this per technique or overall if you plan to integrate all of the techniques into a single `shiny` app.
-
-Keep in mind you will be asked to implement at least one of your planned interactions along with your prototype.
+Zooming and filtering would be used for bubble chart and scatter plot.
 
 Planned Interface
 ------------------------------
@@ -49,14 +47,15 @@ I am not going to have exactly the same as Gapminder, but I will have a similar 
 
 
 #### Scatter Plot ####
+I think it would be good to have scatter plot on numerical data. Users choose two variables on the left side and I show their scatter plot. Possibly, I show the segmentation within the elements.  
 ![page2](sketch_scatter.jpg)
 
 
 #### Comparison Cloud ####
-I think it is useful to see a comparison cloud of job names between the two groups: those whose earn $50K or more versus less.
+I think it is useful to see a comparison cloud of job names between the two groups: those whose earn $50K or more versus less.  
 ![page3](sketch_comparison.jpg)
 
 
 #### Logistic Regression Interactivity ####
-I do not know a proper name of this page. I think it is not a plot per se, but I think this interactivity would be useful. I have a binary dependent variable: $50K / yr more or less. So I think it would be fun to users to click independent variables on the left side and see the prediction percentage on the right side. I may include a caution message there, saying that this page only shows a prediction without considering a model assumption such as no multicollearity and no normal distribution assumption on error terms.
+I do not know a proper name of this page. I think it is not a plot per se, but I think this interactivity would be useful. I have a binary dependent variable: $50K / yr more or less. So I think it would be fun to users to click independent variables on the left side and see the prediction percentage on the right side. I may include a caution message there, saying that this page only shows a prediction without considering a model assumption such as no multicollearity and no normal distribution assumption on error terms.  
 ![page4](sketch_interactivity.jpg)
