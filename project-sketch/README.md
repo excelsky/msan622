@@ -8,10 +8,15 @@ Project: Sketch
 
 Planned Tools
 ------------------------------
+My dataset is designed for a prediction task to determine whether a person makes over 50K a year. Instead of a prediction, I think I can see the characteristics of people who earns 50K or more versus less. Therefore, my visualization is to see a clustering in two groups based on income.
 
-Include which `R` packages or other tools you plan to use for your final project, how you plan to use them, and why you choose them. Your final project should use at a minimum a combination of `R`, `ggplot2`, and `shiny` to visualize your dataset. 
-
-However, you may also want to use other packages or tools. In particular, we will **not** cover how to implement map or graph-based visualizations in `ggplot2`, as this may not be the best tool for those types of visualizations. You are welcome to learn and use the appropriate tool(s) for those types of visualizations if you want.
+My packages would be:
+- `GGally `
+- `ggplot2`
+- `RColorBrewer`
+- `scales`
+- `shiny`
+- `tm`
 
 Planned Techniques
 ------------------------------
