@@ -11,6 +11,7 @@ Planned Tools
 My dataset is designed for a prediction task to determine whether a person makes over 50K a year. Instead of a prediction, I think I can visualize the characteristics of people who earns 50K or more versus less. 
 
 My packages would be:
+- `caret`
 - `GGally `
 - `ggplot2`
 - `RColorBrewer`
@@ -41,7 +42,7 @@ Planned Interface
 ------------------------------
 
 #### Bubble Chart ####
-I am not going to have exactly the same as Gapminder, but I will have a similar bubble chart. The bubbles represent countries and their size indicates the number of people from those countries in my dataset. I will have an interactive x- and y-axis. They will be two of the followings: average age, average final weight (I will explain what it is later at our final project), average years of education, and average hours-per-week.
+I am not going to have exactly the same as Gapminder, but I will have a similar bubble chart. The bubbles represent countries and their size indicates the number of people from those countries in my dataset. I will have an interactive x- and y-axis. They will be two of the followings: average age, average final weight (I will explain what it is later at our final project), average years of education, and average hours-per-week.  
 ![page1](sketch_bubble.jpg)
 
 
@@ -49,5 +50,5 @@ I am not going to have exactly the same as Gapminder, but I will have a similar 
 ![page2](sketch_scatter.jpg)
 
 
-#### blah ####
-![page3](page3-1.jpg)
+#### Heatmap ####
+![page3](sketch_heatmap.jpg)
