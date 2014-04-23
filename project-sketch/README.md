@@ -29,17 +29,15 @@ My plots are
 - Comparison Cloud
 - Logistic Regression Interactivity
 
-Include a list of four different techniques you plan to implement, why you choose those techniques for your dataset, and what you hope to learn. You should have approximately 3 to 5 sentences per technique.
-
-Keep in mind you will be asked to implement 1 to 2 prototypes for peer review.
 
 Planned Interaction
 ------------------------------
-
 Zooming and filtering would be used for bubble chart and scatter plot.
+
 
 Planned Interface
 ------------------------------
+(These images are representational purposes only.)
 
 #### Bubble Chart ####
 I am not going to have exactly the same as Gapminder, but I will have a similar bubble chart. The bubbles represent countries and their size indicates the number of people from those countries in my dataset. I will have an interactive x- and y-axis. They will be two of the followings: average age, average final weight (I will explain what it is later at our final project), average years of education, and average hours-per-week.  
