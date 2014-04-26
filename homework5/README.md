@@ -26,6 +26,8 @@ This will start the `shiny` app. See below for details on how to interact with t
 
 ## Discussion ##  
 
+Here is a discussion.  
+
 ### Options ###  
 I chose **Option 2: Interactive** and created `shiny` plots. I have three `R` files: `server.R`, `ui.R`, and `global.R`. Technically, I learned how to use `shiny` with only `server.R` and `ui.R`, but I wanted to challenge myself. I found that there is another way to utilize `shiny`; to use `global.R`. `global.R` is where a data manipulation and all the core data analytics happen. It reduces the complexity of code in `server.R`.
 
