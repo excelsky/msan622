@@ -41,6 +41,7 @@ I have chosen the following visualization techniques:
 - Stacked Area Plot
 
 
+
 ### Evaluation ###
 
 It was a happy challenging experience to aim for best possible lie factor, data-ink ratio, and data density. These three factors are key points in the data visualization evaluation. So I did quite a few adjustment to achieve.  
