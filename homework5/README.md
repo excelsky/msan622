@@ -27,11 +27,11 @@ This will start the `shiny` app. See below for details on how to interact with t
 ## Discussion ##
   
 ### Options ###
-I chose **Option 2: Interactive** and created `shiny` plots. I have three `R` files: `server.R`, `ui.R`, and `global.R`. Technically, I learned how to use `shiny` with only `server.R` and `ui.R`, but I wanted to challenge myself. I found that there is another way to utilize `shiny`; to use `global.R`. `global.R` is where a data manipulation and all the core data analytics happen. It reduces the complexity of code in `server.R`.
+I chose **Option 2: Interactive** and created `shiny` plots. I have three `R` files: `server.R`, `ui.R`, and `global.R`. Technically, I learned how to use `shiny` with only `server.R` and `ui.R`, but I wanted to challenge myself. I found that there is another way to utilize `shiny`: use `global.R` along with `server.R` and `ui.R`. `global.R` is where data manipulations and all the core data analytics happen. It reduces the complexity of code in `server.R`.
 
 ### Dataset ###
 
-You can learn more about the `Seatbelts` dataset by running `help(Seatbelts)` in `R`. It is a multiple-column time series object. You may want to convert this to a data frame to plot later in `ggplot2`. You can decide exactly what in this dataset you visualize, as long as you include the time component.
+It was not easy to figure out the structure of data `Seatbelts`. It is not a regular `data.frame` but a multiple-column time series object `ts`. I converted it into a `data.frame` to plot in `ggplot2`. I added a time column: year, month, and time. I used `reshape2::melt()` to convert this data frame into a long data frame.
 
 ### Techniques ###
 
