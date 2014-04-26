@@ -40,7 +40,10 @@ I have chosen the following visualization techniques:
 - Line Plot
 - Stacked Area Plot
 
+Here is the detail.
 
+#### Line Plot ####
+Aham.
 
 ### Evaluation ###
 
