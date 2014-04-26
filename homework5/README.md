@@ -35,18 +35,14 @@ It was not easy to figure out the structure of data `Seatbelts`. It is not a reg
 
 ### Techniques ###
 
-You may choose from the following visualization techniques:
+I have chosen the following visualization techniques:
 
 - Line Plot
 - Stacked Area Plot
-- Multiline Plot
-- Star Plot
-- Heatmap
-- Circle View
 
-You may choose other techniques with instructor approval.
 
 ### Evaluation ###
 
-Attempt to create pixel-perfect visualizations with the best possible lie factor, data-ink ratio, and data density (within reason). 
+It was a happy challenging experience to aim for best possible lie factor, data-ink ratio, and data density. These three factors are key points in the data visualization evaluation. So I did quite a few adjustment to achieve.  
 
+In order to have a high data density, I adjusted the size of the plot and the side bar. The plot is large and the side bar is narrow. In order to have a high data ink ratio, I adjusted the labels smaller and had more concise in language.  In order to have a reasonable lie factor, I had a "flexible" y-axis on both plots. In other words, when a user changes variables, the y-axis range changes in accordance with those variables, so plot does not *lie* or mislead him/her.
