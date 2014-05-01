@@ -41,9 +41,9 @@ I have chosen the following visualization techniques for this prototype:
 #### Techniques 1: Bubble Plot (Interactive) ####
 I created two `sliderInput`s. These slide
 
-![IMAGE](HAG5.JPG) 
+![IMAGE](bubble.jpg) 
 
 #### Techniques 2: Scatter Plot (Static) ####
 The sliders explained in **Stacked Area Plot** are working here as well. As written above, users use these sliders to adjust their specific time period to focus.  
 
-![IMAGE](HAG5.JPG) 
+![IMAGE](scatter.jpg) 
