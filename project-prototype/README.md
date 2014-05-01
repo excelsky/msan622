@@ -25,23 +25,24 @@ This will start the `shiny` app. See below for details on how to interact with t
 
 ## Discussion ##
 ### Data ###
-The dataset 
+The dataset is called `adult.data` from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult). It is also called '1994 Census database.'  
+As of data munging, I deleted rows that has NA's. In this case, the NA was coded as `?`. The original dataset has 32561 rows and there are still 30162 rows left after this munging. Thus, this deletion is easier and much advisable than other techniques such as converting NA's into a categorical variable, as the data is preserved by 92%.
 
 
 ### Techniques ###
 
-I have chosen the following visualization techniques:
+I have chosen the following visualization techniques for this prototype:
 
-- Stacked Area Plot
-- Line Plot  
+- Bubble Plot (Interactive)
+- Scatter Plot (Static)
 
 
-#### Techniques 1: Stacked Area Plot ####
+#### Techniques 1: Bubble Plot (Interactive) ####
 I created two `sliderInput`s. These slide
 
 ![IMAGE](HAG5.JPG) 
 
-#### Techniques 2: Line Plot ####
+#### Techniques 2: Scatter Plot (Static) ####
 The sliders explained in **Stacked Area Plot** are working here as well. As written above, users use these sliders to adjust their specific time period to focus.  
 
 ![IMAGE](HAG5.JPG) 
