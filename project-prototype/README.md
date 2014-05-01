@@ -26,3 +26,22 @@ This will start the `shiny` app. See below for details on how to interact with t
 ## Discussion ##
 ### Data ###
 The dataset 
+
+
+### Techniques ###
+
+I have chosen the following visualization techniques:
+
+- Stacked Area Plot
+- Line Plot  
+
+
+#### Techniques 1: Stacked Area Plot ####
+I created two `sliderInput`s. These slide
+
+![IMAGE](HAG5.JPG) 
+
+#### Techniques 2: Line Plot ####
+The sliders explained in **Stacked Area Plot** are working here as well. As written above, users use these sliders to adjust their specific time period to focus.  
+
+![IMAGE](HAG5.JPG) 
