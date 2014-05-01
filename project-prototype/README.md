@@ -34,16 +34,18 @@ As of data munging, I deleted rows that have NA's. In this case, the NA was code
 
 I have chosen the following visualization techniques for this prototype:
 
-- Bubble Plot (Interactive)
-- Scatter Plot (Static)
+- Bubble Plot (Interactive - Not yet)
+- Density Plot (Static)
 
 
-#### Techniques 1: Bubble Plot (Interactive) ####
-I created two `sliderInput`s. These slide
+#### Techniques 1: Bubble Plot (Interactive - Not yet) ####
+It is supposed to be interactive, but somehow no plot is showing. So for this session, I will show my `ui.R` and actual plot separately.  
+
+This bubble plot is for EDA: exploratory data analysis.
 
 ![IMAGE](bubble.jpg) 
 
-#### Techniques 2: Scatter Plot (Static) ####
+#### Techniques 2: Density Plot (Static) ####
 The sliders explained in **Stacked Area Plot** are working here as well. As written above, users use these sliders to adjust their specific time period to focus.  
 
-![IMAGE](scatter.jpg) 
+![IMAGE](density.jpg) 
