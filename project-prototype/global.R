@@ -1,4 +1,5 @@
-setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\final")
+# setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\final")
+library(e1071)
 library(ggplot2)
 library(plyr)
 library(reshape2)
@@ -22,12 +23,27 @@ str(char_df)
 data2 <- ddply(data1, .(native_country), summarize,
                mean_age = round(mean(age), 2),
                mean_fnlwgt = round(mean(fnlwgt), 2),
+               mean_capital_gain = round(mean(capital_gain), 2),
+               mean_capital_loss = round(mean(capital_loss), 2),
                mean_education_num = round(mean(education_num), 2),
                mean_hours_per_week = round(mean(hours_per_week), 2))
+data2$continents <- c("Asia", "North_America", "Asia", "South_America",
+                      "North_America", "North_America",
+                      "South_America", "North_America", "Europe", "Europe",
+                      "Europe", "Europe", "North_America", "North_America",
+                      "Europe", "North_America", "Asia", "Europe",
+                      "Asia", "Asia", "Asia", "Europe",
+                      "North_America", "Asia", "Asia", "North_America",
+                      "North_America", "Australia", "South_America", "Asia",
+                      "Europe", "Europe", "North_America", "Europe",
+                      "Asia", "Asia", "Asia", "South_America",
+                      "North_America", "Asia", "Europe")
+
 
 #### Create bubble plot ####
-bubble <- function(x, y, sizeBy, colorBy, abbrev) {
-  df <- data1
+bubblebubble <- function(x, y, sizeBy, colorBy, abbrev) {
+#   bubblebubble("mean_age", "mean_hours_per_week", "mean_fnlwgt", "continents", T)
+  df <- data2
   sizeIndex <- which(colnames(df) == sizeBy)
   
   # Sort in order to have smaller colors displayed on top of the bigger colors
@@ -38,9 +54,9 @@ bubble <- function(x, y, sizeBy, colorBy, abbrev) {
     geom_point(aes_string(size = sizeBy, color = colorBy), alpha = 0.8)
   
   
-  # Option of having a state abbreviation
+  # Option of having a country name
   if(abbrev){
-    p <- p + geom_text(aes(label = Abbrev), col="#000000", hjust=0.5, vjust=0)  
+    p <- p + geom_text(aes(label = native_country), col="#000000", hjust=0.5, vjust=0)  
   }
   
   # Default size scale is by radius, force to scale by area instead
@@ -59,5 +75,25 @@ bubble <- function(x, y, sizeBy, colorBy, abbrev) {
   # Force the dots to plot larger in legend
   p <- p + guides(colour = guide_legend(override.aes = list(size = 8)))
   
+  return(p)
+}
+
+
+
+densitydensity <- function(x) {
+# densitydensity("age")
+  df <- data1
+#   over50k <- subset(data1, income==" >50K")
+#   less50k <- subset(data1, income==" <=50K")
+  
+  # Create actual density plot
+  p <- ggplot(data1, aes(x = age ,
+        group = income, color = income, fill = income))  
+  p <- p + geom_density(alpha=0.8)
+  
+  # Legend
+  p <- p + scale_fill_discrete(breaks=c("trt1","ctrl"))
+  
+  p <- p + scale_size_area(max_size = 20, guide = "none")
   return(p)
 }

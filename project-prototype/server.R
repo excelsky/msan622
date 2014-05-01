@@ -1,9 +1,9 @@
 shinyServer(function(input, output) {
-    output$mainPlot <- renderPlot({
-        print(bubble(input$x, input$y, input$sizeBy, input$colorBy, input$abbrev))
+    output$bubblePlot <- renderPlot({
+        print(bubblebubble(input$x, input$y, input$sizeBy, "continents", input$abbrev))
     })
     
-#     output$overviewPlot <- renderPlot({
-#         print(plotOverview(input$start, input$num, input$LPvar))
+#     output$densityPlot <- renderPlot({
+#         print(densitydensity(input$x))
 #     })
 })

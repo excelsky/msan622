@@ -2,45 +2,45 @@ library(shiny)
 #### shinyUI ####
 shinyUI(
   # Create a page with a top level navigation bar
-  navbarPage("Census Income Data",
+  navbarPage("World Census Data",
 #### Bubble Plot ####
       tabPanel("Bubble Plot",
         sidebarLayout(
           sidebarPanel(
             wellPanel(
               selectInput("x", "X axis",
-                          c("age",
-                           "education_num",
-                            "captial_gain",
-                            "capital_loss",
-                            "hours_per_week"),
-                          selected = "age"
+                          c("mean_age",
+                            "mean_fnlwgt",
+                           "mean_education_num",
+                            "mean_captial_gain",
+                            "mean_capital_loss",
+                            "mean_hours_per_week"),
+                          selected = "mean_age"
               ),  # selectInput
               br(),              
               selectInput("y", "Y axis",
-                          c("age",
-                            "education_num",
-                            "captial_gain",
-                            "capital_loss",
-                            "hours_per_week"),
-                          selected = "age"
+                          c("mean_age",
+                            "mean_fnlwgt",
+                            "mean_education_num",
+                            "mean_captial_gain",
+                            "mean_capital_loss",
+                            "mean_hours_per_week"),
+                          selected = "mean_hours_per_week"
               )  # selectInput
             ),  # wellPanel
             
             wellPanel(
               selectInput("sizeBy", "Bubble Size",
-                          c("workclass",
-                            "education",
-                            "marital_status",
-                            "occupation",
-                            "relationship",
-                            "race",
-                            "sex",
-                            "native_country"),
-                          selected = "martial_status"
+                          c("mean_age",
+                            "mean_fnlwgt",
+                            "mean_education_num",
+                            "mean_captial_gain",
+                            "mean_capital_loss",
+                            "mean_hours_per_week"),
+                          selected = "mean_fnlwgt"
               ),  # selectInput
               
-              checkboxInput("abbrev","State Abbreviation", value=TRUE
+              checkboxInput("abbrev","Country Name", value=TRUE
               )  # checkboxInput
               
             )  # wellPanel
@@ -52,7 +52,9 @@ shinyUI(
             tabsetPanel(
               # Create a tab panel
               tabPanel("Bubble Plot",
-                       plotOutput("BP", width = "100%", height = "100%")
+                       plotOutput(outputId = "bubblePlot", 
+                                  width = "100%", 
+                                  height = "100%")
               )  # tabPanel  
             )  # tabsetPanel
           )  # mainPanel
