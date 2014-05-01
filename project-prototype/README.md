@@ -50,6 +50,6 @@ As a next step, I am going to make sure this `shiny` plot is working properly. T
 
 
 #### Techniques 2: Density Plot (Static) ####
-The sliders explained in **Stacked Area Plot** are working here as well. As written above, users use these sliders to adjust their specific time period to focus.  
+This density plot shows the distinction in annual income: more than 50K USD versus less than or equal to 50K USD. In this specific screenshot, I ams shoing the income difference between ages. It is clear that the older the higher income. I am sure I can set up other numerical variables on the x-axis (instead of age) and make it interactive.
 
 ![IMAGE](density.jpg) 
