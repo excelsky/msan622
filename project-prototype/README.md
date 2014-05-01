@@ -37,13 +37,17 @@ I have chosen the following visualization techniques for this prototype:
 - Bubble Plot (Interactive - Not yet)
 - Density Plot (Static)
 
+![IMAGE](interactive.jpg) 
 
 #### Techniques 1: Bubble Plot (Interactive - Not yet) ####
 It is supposed to be interactive, but somehow no plot is showing. So for this session, I will show my `ui.R` and actual plot separately.  
 
-This bubble plot is for EDA: exploratory data analysis.
+This bubble plot is for EDA: exploratory data analysis. I would like to see the demographic infomation out of the 30162 rows based on each country. Users can choose variables for the x-axis and the y-axis. They can change the size of bubbles. They can even opt in and out the name of the countries.  
+
+As a next step, I am going to make sure this `shiny` plot is working properly. Then I will change the name of the variables in the left panel. I will increase the size of main plot and decrease the left panel. I will work on three evaluation criteria.
 
 ![IMAGE](bubble.jpg) 
+
 
 #### Techniques 2: Density Plot (Static) ####
 The sliders explained in **Stacked Area Plot** are working here as well. As written above, users use these sliders to adjust their specific time period to focus.  
