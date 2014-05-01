@@ -26,7 +26,7 @@ This will start the `shiny` app. See below for details on how to interact with t
 ## Discussion ##
 ### Data ###
 The dataset is called `adult.data` from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult). It is also called '1994 Census database.'  
-As of data munging, I deleted rows that has NA's. In this case, the NA was coded as `?`. The original dataset has 32561 rows and there are still 30162 rows left after this munging. Thus, this deletion is easier and much advisable than other techniques such as converting NA's into a categorical variable, as the data is preserved by 92%.
+As of data munging, I deleted rows that have NA's. In this case, the NA was coded as ` ?` which is different from `?`. It took a decent time for me to figure out the difference. The original dataset has 32561 rows and there are still 30162 rows left after this munging. Thus, this deletion technique is easier and much advisable than other techniques such as converting NA's into a categorical variable, as the data is preserved by 92%.
 
 
 ### Techniques ###
