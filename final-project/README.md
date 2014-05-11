@@ -1,9 +1,9 @@
 Final Project
 ==============================
 
-| **Name**  | [YOUR NAME]  |
+| **Name**  | Kicho Yu  |
 |----------:|:-------------|
-| **Email** | [USERNAME]@dons.usfca.edu |
+| **Email** | kyu12@dons.usfca.edu |
 
 ## Discussion ##
 
