@@ -1,5 +1,5 @@
 setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\final")
-library(e1071)
+# library(e1071)
 library(ggplot2)
 library(plyr)
 library(RColorBrewer)
@@ -27,6 +27,7 @@ levels(data1$native_country) <- c("Cambodia", "Canada", "China", "Columbia",
                           "Puerto Rico", "Scotland", "South Korea", "Taiwan",
                           "Thailand", "Trinadad&Tobago", "United States", "Vietnam",
                           "Yugoslavia")
+levels(data1$native_country) <- sort(levels(data1$native_country), dec=T)
 # data1$native_country <- factor(data1$native_country, levels=names(sort(table(data1$native_country), dec=T)))
 levels(data1$race) <- c("Native_Amer", "Asian", "Black", "Other", "White")
 data1$race <- factor(data1$race, levels=levels(data1$race)[c(2,3,1,5,4)])
@@ -50,7 +51,34 @@ data3$race <- factor(data3$race, levels=names(sort(table(data3$race), dec=T)))
 data3$sex <- factor(data3$sex, levels=names(sort(table(data3$sex), dec=T)))
 data3$native_country <- factor(data3$native_country, levels=sort(data3$native_country, dec=T))
 
+data4 <- data1[c("workclass", "education", "occupation", "native_country")]
+data4w <- data.frame(matrix(ncol = length(levels(data4$workclass)), nrow = length(levels(data4$native_country))))
+data4e <- data.frame(matrix(ncol = length(levels(data4$education)), nrow = length(levels(data4$native_country))))
+data4o <- data.frame(matrix(ncol = length(levels(data4$occupation)), nrow = length(levels(data4$native_country))))
+colnames(data4w) <- levels(data4$workclass)
+colnames(data4e) <- levels(data4$education)
+colnames(data4o) <- levels(data4$occupation)
+rownames(data4w) <- levels(data4$native_country)
+rownames(data4e) <- levels(data4$native_country)
+rownames(data4o) <- levels(data4$native_country)
 
+for (i in levels(data4$native_country)) {
+  for (j in levels(data4$workclass)) {
+    data4w[i,j] <- length(intersect(which(data4$native_country == i), which(data4$workclass == j)))
+  }
+}
+
+for (i in levels(data4$native_country)) {
+  for (j in levels(data4$education)) {
+    data4e[i,j] <- length(intersect(which(data4$native_country == i), which(data4$education == j)))
+  }
+}
+
+for (i in levels(data4$native_country)) {
+  for (j in levels(data4$occupation)) {
+    data4o[i,j] <- length(intersect(which(data4$native_country == i), which(data4$occupation == j)))
+  }
+}
 
 num_df <- data1[,c(1,4,10,11,12)]
 char_df <- data1[,c(2,3,5,6,7,8,9,13,14)]
@@ -114,15 +142,11 @@ varnames2 <- c("native_country", "Mean Age",
 
 
 #### Create bubble plot ####
-bubblebubble <- function(x, y, sizeBy, abbrev, aCoun, eCoun, naCoun, saCoun, colScheme) {
+bubblebubble <- function(x1, y1, sizeBy, abbrev, aCoun, eCoun, naCoun, saCoun, colScheme) {
 #   bubblebubble("Mean Education Years", "Mean Hours per Week", "Mean Age", T, "all", "all", "all", "all", "Set1")
   df <- data2
-#   dfa <- data2a
-#   dfe <- data2e
-#   dfna <- data2na
-#   dfsa <- data2sa
-  x <- colnames2[which(varnames2 == x)]
-  y <- colnames2[which(varnames2 == y)]
+  x <- colnames2[which(varnames2 == x1)]
+  y <- colnames2[which(varnames2 == y1)]
   sizeBy <- colnames2[which(varnames2 == sizeBy)]
   xIndex <- which(colnames2 == x)
   yIndex <- which(colnames2 == y)
@@ -228,11 +252,19 @@ bubblebubble <- function(x, y, sizeBy, abbrev, aCoun, eCoun, naCoun, saCoun, col
 }
 
 
-heatheat <- function(x) {
-  # heatheat("Highest Degree in Education")
-  df <- data1
-  x <- colnames1[which(varnames1 == "Highest Degree in Education")]
+heatheat <- function(x2, midrange) {
+  # heatheat("Highest Degree in Education", c(0.45, 0.55))
+  # http://stackoverflow.com/questions/12998372/heatmap-like-plot-but-for-categorical-variables
+  df <- data4
+  x <- colnames1[which(varnames1 == x2)] # "Highest Degree in Education", "Occupation", "Work Class"
   xIndex <- which(colnames1 == x)
+  
+#   df <- data4[c("native_country", x)]
+#   df <- melt(df, "native_country")
+#   p <- ggplot(df, aes(x=variable, y=native_country))
+#   p <- p + geom_tile(aes(fill = value), colour = "white")
+#   p <- p + theme_minimal()
+  
   
   # Create actual heatmap
   p <- ggplot(df, aes_string(x=x, y="native_country"))
@@ -240,14 +272,24 @@ heatheat <- function(x) {
 #   p <- p + theme_minimal()
   
   
-#   palette <- c("#008837", "#f7f7f7", "#f7f7f7", "#7b3294")
-#   p <- p + scale_fill_gradient2(low = palette[1], mid = palette[2], high = palette[4], midpoint = 0.5)
-  
   # Modify axes
   p <- p + xlab(varnames1[which(colnames1 == x)])
   p <- p + ylab("Native Country")
   p <- p + theme(axis.text.x = element_text(angle = 45, hjust = 1))
   p <- p + theme(axis.title=element_text(face="bold.italic", size="12", color="brown"))
+  
+  # Diverging color scale from colorbrewer
+  # #008837 is green, #7b3294 is purple
+  palette <- c("#008837", "#f7f7f7", "#f7f7f7", "#7b3294")
+  
+#   if(midrange[1] == midrange[2]) {
+#     # use a 3 color gradient instead
+#     p <- p + scale_fill_gradient2(low = palette[1], mid = palette[2], high = palette[4], midpoint = midrange[1])
+#   }
+#   else {
+#     # use a 4 color gradient (with a swath of white in the middle)
+#     p <- p + scale_fill_gradientn(colours = palette, values = c(0, midrange[1], midrange[2], 1))
+#   }
   
   # Modify panel
 #   p <- p + theme(panel.border = element_rect(
@@ -260,10 +302,10 @@ heatheat <- function(x) {
 }
 
 
-densitydensity <- function(x) {
+densitydensity <- function(x3) {
 # densitydensity("Age")
   df <- data1
-  x <- colnames1[which(varnames1 == "Years of Education")] # "Age", "Years of Education"
+  x <- colnames1[which(varnames1 == x3)] # "Age", "Years of Education"
   xIndex <- which(colnames1 == x)
   
   # Create actual density plot
@@ -288,18 +330,21 @@ densitydensity <- function(x) {
 }
 
 
-barbar <- function(x, ratio=F) {
+barbar <- function(y4, ratio=F) {
   # barbar("Highest Degree in Education", F)
   # "Work Class", "Highest Degree in Education", "Marital Status", "Occupation",
   # "Relationship", "Race", "Sex"
+  
   df <- data3
-  x <- colnames1[which(varnames1 == "Highest Degree in Education")]
+  # I am going to flip axes later for a new experience.
+  # So that is why x and y are named differently.
+  x <- colnames1[which(varnames1 == y4)]
   xIndex <- which(colnames1 == x)
   
   # Create actual bar plot
   p <- ggplot(data3, aes_string(x = x, fill="income"))
-  if (ratio) {p <- p + geom_bar(position="fill")}
-  else {p <- p + geom_bar()}
+  if (ratio) {p <- p + geom_bar(position="fill") + ylab("Percentage")}
+  else {p <- p + geom_bar() + ylab("Count")}
   
   # Modify axes
   p <- p + xlab(varnames1[which(colnames1 == x)])

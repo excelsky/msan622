@@ -14,21 +14,21 @@ shinyServer(function(input, output) {
   })
   
   output$bubblePlot <- renderPlot({
-    print(bubblebubble(input$x, input$y, input$sizeBy, input$abbrev,
+    print(bubblebubble(input$x1, input$y1, input$sizeBy, input$abbrev,
                        input$aCoun, input$eCoun, input$naCoun, input$saCoun,
                        filter_color()))
   })
   
   output$heatMap <- renderPlot({
-    print(heatheat(input$x))
+    print(heatheat(input$x2, input$midrange))
   })
   
   output$densityPlot <- renderPlot({
-      print(densitydensity(input$x))
+      print(densitydensity(input$x3))
   })
   
   output$barPlot <- renderPlot({
-    print(barbar(input$x))
+    print(barbar(input$y4, input$ratio))
   })
   
 })
