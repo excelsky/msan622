@@ -316,6 +316,7 @@ barbar <- function(y4, ratio=F) {
   # Modify axes
   p <- p + xlab(varnames1[which(colnames1 == x)])
   p <- p + theme(axis.title=element_text(face="bold.italic", size=16, color="brown"))
+  p <- p + theme(axis.text = element_text(face="bold", size=12))
   
   # Flip axes
   p <- p + coord_flip()
