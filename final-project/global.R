@@ -166,9 +166,6 @@ bubblebubble <- function(x1, y1, sizeBy, abbrev, aCoun, eCoun, naCoun, saCoun) {
 heatheat <- function(x2, hl, midrange) {
   # heatheat("Highest Degree in Education", T, c(0.45, 0.55))
   # http://stackoverflow.com/questions/12998372/heatmap-like-plot-but-for-categorical-variables
-#   df <- data4
-#   x <- colnames1[which(varnames1 == x2)] # "Highest Degree in Education", "Occupation", "Work Class"
-#   xIndex <- which(colnames1 == x)
   if (x2 == "Highest Degree in Education")
     (df <- melt4e)
   else if (x2 == "Occupation")
@@ -183,11 +180,12 @@ heatheat <- function(x2, hl, midrange) {
   # Modify axes
   p <- p + xlab(x2)
   p <- p + ylab("Native Country")
-  p <- p + theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  p <- p + theme(axis.text.x = element_text(face="bold", angle = 45, hjust = 1))
   p <- p + theme(axis.title=element_text(face="bold.italic", size=16, color="brown"))
   
   # Modify the legend settings
   p <- p + theme(legend.text = element_text(size = 12))
+  p <- p + theme(legend.position = c(-0.05, -0.175))
   
   # Diverging color scale from colorbrewer
   # #008837 is green, #7b3294 is purple
@@ -203,20 +201,25 @@ heatheat <- function(x2, hl, midrange) {
   }
   
   # Highlight
+  # https://groups.google.com/forum/#!topic/ggplot2/X6Dpjw67z4c
   if (hl)
     {
     if (x2 == "Highest Degree in Education")
-      (p <- p + annotate("rect", xmin = "Some college", xmax = "Some college",
-                         ymin = "Haiti", ymax = "Haiti",
-                         fill="red"))
+      (p <- p + geom_rect(fill="#fff5f0", xmin = 0.5, xmax = 16.5, ymin = 0.5, ymax = 41.5) +
+         geom_rect(fill="#fc9272", xmin = 11.5, xmax = 12.5, ymin = 0.5, ymax = 41.5) + 
+         geom_rect(fill="#fc9272", xmin = 0.5, xmax = 16.5, ymin = 26.5, ymax = 27.5) +
+         geom_rect(fill="#67000d", xmin = 11.5, xmax = 12.5, ymin = 26.5, ymax = 27.5) +
+         theme(legend.position = "none"))
     else if (x2 == "Occupation")
-      (p <- p + annotate("rect", xmin = "Mechanic", xmax = "Mechanic",
-                         ymin = "Haiti", ymax = "Haiti",
-                         fill="red"))
+      (p <- p + geom_rect(fill="#fff5f0", xmin = 0.5, xmax = 14.5, ymin = 0.5, ymax = 41.5) +
+         geom_rect(fill="#fc9272", xmin = 6.5, xmax = 7.5, ymin = 0.5, ymax = 41.5) + 
+         geom_rect(fill="#fc9272", xmin = 0.5, xmax = 14.5, ymin = 26.5, ymax = 27.5) +
+         geom_rect(fill="#67000d", xmin = 6.5, xmax = 7.5, ymin = 26.5, ymax = 27.5) +
+         theme(legend.position = "none"))
     else
-      (p <- p + annotate("rect", xmin = "Private", xmax = "Private",
-                         ymin = "Yugoslavia", ymax = "Cambodia",
-                         fill="red"))
+      (p <- p + geom_rect(fill="#fff5f0", xmin = 0.5, xmax = 7.5, ymin = 0.5, ymax = 41.5) +
+         geom_rect(fill="#67000d", xmin = 2.5, xmax = 3.5, ymin = 0.5, ymax = 41.5) +
+         theme(legend.position = "none"))
     }
   else
     {p <- p}
@@ -251,6 +254,12 @@ densitydensity <- function(x3) {
   # Modify the legend settings
   p <- p + theme(legend.text = element_text(size = 12))
   
+  # Qualitative color scale from colorbrewer
+  # #1b9e77 is lime green, #7570b3 is slightly desaturated blue.
+  palette <- c("#1b9e77", "#7570b3")
+  p <- p + scale_colour_manual(values = palette, name="Income per person")
+  p <- p + scale_fill_manual(values = palette, name="Income per person")
+  
   return(p)
 }
 
@@ -277,7 +286,13 @@ ovov <- function(x3) {
   p <- p + theme(panel.grid.major = element_line(colour="blue", linetype="dashed"))
   
   # Modify the legend settings
-  p <- p + theme(legend.position = "none") 
+  p <- p + theme(legend.position = "none")
+  
+  # Qualitative color scale from colorbrewer
+  # #1b9e77 is lime green, #7570b3 is slightly desaturated blue.
+  palette <- c("#1b9e77", "#7570b3")
+  p <- p + scale_colour_manual(values = palette, name="Income per person")
+  p <- p + scale_fill_manual(values = palette, name="Income per person")
   
   return(p)
 }
@@ -316,10 +331,9 @@ barbar <- function(y4, ratio=F) {
   # Qualitative color scale from colorbrewer
   # #1b9e77 is lime green, #7570b3 is slightly desaturated blue.
   palette <- c("#1b9e77", "#7570b3")
-  p <- p + scale_fill_manual(values = palette,
-                             name="Annual income \n per \n survey participant")
+  p <- p + scale_fill_manual(values = palette, name="Income per person")
 
   # Get rid of space below zero
-  p <- p + scale_x_discrete(expand = c(0,0))
+  p <- p + scale_y_continuous(expand = c(0,0))
   return(p)
 }
