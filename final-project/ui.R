@@ -75,7 +75,7 @@ shinyUI(
           radioButtons("x3", "X axis",
                       c("Age",
                         "Years of Education"),
-                      selected = "Years of Education"
+                      selected = "Age"
           ),  # radioButtons
           br(),
           helpText(paste("The overview plot is shown below and
