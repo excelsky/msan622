@@ -1,5 +1,4 @@
-setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\final")
-# library(e1071)
+# setwd("D:\\USFCA\\6_Spring_Moduel_II\\622_Visualization\\HAG\\final")
 library(ggplot2)
 library(plyr)
 library(RColorBrewer)
@@ -9,128 +8,38 @@ library(shiny)
 
 
 # data1 <- read.table("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data", sep=",", header=F, na.strings=" ?")
-data1 <- read.table("adult.data", sep=",", header=F, na.strings=" ?")
-data1 <- na.omit(data1)
-# table(data1[,length(data1)])
-colnames(data1) <- c("age", "workclass", "fnlwgt", "education", "education_num",
-                     "marital_status", "occupation", "relationship", "race", "sex",
-                     "capital_gain", "capital_loss", "hours_per_week", "native_country", "income")
-data1 <- data1[,-3]
-levels(data1$native_country) <- c("Cambodia", "Canada", "China", "Columbia",
-                          "Cuba", "Dominican Republic", "Ecuador", "El Salvador",
-                          "England", "France", "Germany", "Greece",
-                          "Guatemala", "Haiti", "Netherlands", "Honduras",
-                          "Hong Kong", "Hungary", "India", "Iran",
-                          "Ireland", "Italy", "Jamaica", "Japan",            
-                          "Laos", "Mexico", "Nicaragua", "Guam and USVI",
-                          "Peru", "Philippines", "Poland", "Portugal",
-                          "Puerto Rico", "Scotland", "South Korea", "Taiwan",
-                          "Thailand", "Trinadad&Tobago", "United States", "Vietnam",
-                          "Yugoslavia")
-levels(data1$native_country) <- sort(levels(data1$native_country), dec=T)
-# data1$native_country <- factor(data1$native_country, levels=names(sort(table(data1$native_country), dec=T)))
-levels(data1$race) <- c("Native_Amer", "Asian", "Black", "Other", "White")
-data1$race <- factor(data1$race, levels=levels(data1$race)[c(2,3,1,5,4)])
-data1$education <- factor(data1$education, levels=levels(data1$education)[c(14,4,5,6,7,1,2,3,12,9,8,16,10,13,15,11)])
-levels(data1$relationship) <- c("Husband", "Not_in_family", "Other", "Own_child",
-                              "Unmarried", "Wife")
-data1$relationship <- factor(data1$relationship, levels=levels(data1$relationship)[c(1,2,4,6,5,3)])
-levels(data1$workclass) <- c("Federal_gov", "Local_gov", "Never_worked", "Private",
-                             "Self_emp_inc", "Self_emp_not_inc", "State_gov", "Without_pay")
-levels(data1$marital_status) <- c("Divorced", "Married_to_Armed_Forces", "Married_to_civilian",
-                                  "Married_spouse_absent", "Never_married", "Separated", "Widowed")
+data1 <- read.csv("data1.csv", header=T)
+data2 <- read.csv("data2.csv", header=T)
+data3 <- read.csv("data3.csv", header=T)
+melt4e <- read.csv("melt4e.csv", header=T)
+melt4o <- read.csv("melt4o.csv", header=T)
+melt4w <- read.csv("melt4w.csv", header=T)
 
 
-data3 <- data1
-data3$education <- factor(data3$education, levels=names(sort(table(data3$education), dec=T)))
 data3$workclass <- factor(data3$workclass, levels=names(sort(table(data3$workclass), dec=T)))
+data3$education <- factor(data3$education, levels=names(sort(table(data3$education), dec=T)))
 data3$marital_status <- factor(data3$marital_status, levels=names(sort(table(data3$marital_status), dec=T)))
 data3$occupation <- factor(data3$occupation, levels=names(sort(table(data3$occupation), dec=T)))
 data3$relationship <- factor(data3$relationship, levels=names(sort(table(data3$relationship), dec=T)))
 data3$race <- factor(data3$race, levels=names(sort(table(data3$race), dec=T)))
 data3$sex <- factor(data3$sex, levels=names(sort(table(data3$sex), dec=T)))
-data3$native_country <- factor(data3$native_country, levels=sort(data3$native_country, dec=T))
 
-data4 <- data1[c("workclass", "education", "occupation", "native_country")]
-data4w <- data.frame(matrix(ncol = length(levels(data4$workclass)), nrow = length(levels(data4$native_country))))
-data4e <- data.frame(matrix(ncol = length(levels(data4$education)), nrow = length(levels(data4$native_country))))
-data4o <- data.frame(matrix(ncol = length(levels(data4$occupation)), nrow = length(levels(data4$native_country))))
-colnames(data4w) <- levels(data4$workclass)
-colnames(data4e) <- levels(data4$education)
-colnames(data4o) <- levels(data4$occupation)
-rownames(data4w) <- levels(data4$native_country)
-rownames(data4e) <- levels(data4$native_country)
-rownames(data4o) <- levels(data4$native_country)
-
-for (i in levels(data4$native_country)) {
-  for (j in levels(data4$workclass)) {
-    data4w[i,j] <- length(intersect(which(data4$native_country == i), which(data4$workclass == j)))
-  }
-}
-
-for (i in levels(data4$native_country)) {
-  for (j in levels(data4$education)) {
-    data4e[i,j] <- length(intersect(which(data4$native_country == i), which(data4$education == j)))
-  }
-}
-
-for (i in levels(data4$native_country)) {
-  for (j in levels(data4$occupation)) {
-    data4o[i,j] <- length(intersect(which(data4$native_country == i), which(data4$occupation == j)))
-  }
-}
+melt4e$variable <- factor(melt4e$variable, levels=levels(melt4e$variable)[c(14,4,5,6,7,1,2,3,12,9,8,16,10,13,15,11)])
+levels(melt4e$native_country) <- sort(levels(melt4e$native_country), dec=T)
+levels(melt4o$native_country) <- sort(levels(melt4o$native_country), dec=T)
+levels(melt4w$native_country) <- sort(levels(melt4w$native_country), dec=T)
 
 num_df <- data1[,c(1,4,10,11,12)]
 char_df <- data1[,c(2,3,5,6,7,8,9,13,14)]
 
 
-#### colnames vs variable names in data2 ####
+#### colnames vs variable names in data1 ####
 colnames1 <- colnames(data1)
 varnames1 <- c("Age", "Work Class", "Highest Degree in Education",      
                 "Years of Education",  "Marital Status", "Occupation", "Relationship",
                 "Race", "Sex", "Capital Gain", "Capital Loss",
                 "Work Hours per Week", "Native Country", "Income")
 
-
-data2 <- ddply(data1, .(native_country), summarize,
-               mean_age = round(mean(age), 2),
-#                mean_fnlwgt = round(mean(fnlwgt), 2),
-               mean_education_num = round(mean(education_num), 2),
-               mean_capital_gain = round(mean(capital_gain), 2),
-               mean_capital_loss = round(mean(capital_loss), 2),
-               mean_hours_per_week = round(mean(hours_per_week), 2))
-data2 <- data2[-28,]
-data2$continents <- c("Asia", "North America", "Asia", "South America",
-                      "North America", "North America",
-                      "South America", "North America", "Europe", "Europe",
-                      "Europe", "Europe", "North America", "North America",
-                      "Europe", "North America", "Asia", "Europe",
-                      "Asia", "Asia", "Europe", "Europe",
-                      "North America", "Asia", "Asia", "North America",
-                      "North America", "South America", "Asia",
-                      "Europe", "Europe", "North America", "Europe",
-                      "Asia", "Asia", "Asia", "South America",
-                      "North America", "Asia", "Europe")
-data2$continents <- as.factor(data2$continents)
-data2$native_country <- as.character(data2$native_country)
-# data2$native_country <- c("Cambodia", "Canada", "China", "Columbia",
-#                           "Cuba", "Dominican Republic", "Ecuador", "El Salvador",
-#                           "England", "France", "Germany", "Greece",
-#                           "Guatemala", "Haiti", "Netherlands", "Honduras",
-#                           "Hong Kong", "Hungary", "India", "Iran",
-#                           "Ireland", "Italy", "Jamaica", "Japan",            
-#                           "Laos", "Mexico", "Nicaragua",
-#                           "Peru", "Philippines", "Poland", "Portugal",
-#                           "Puerto Rico", "Scotland", "South Korea", "Taiwan",
-#                           "Thailand", "Trinadad&Tobago", "United States", "Vietnam",
-#                           "Yugoslavia")
-data2$native_country <- as.factor(data2$native_country)
-
-#### subsetting by continents ####
-# data2a <- data2[data2$continents == "Asia",]
-# data2e <- data2[data2$continents == "Europe",]
-# data2na <- data2[data2$continents == "North America",]
-# data2sa <- data2[data2$continents == "South America",]
 
 #### colnames vs variable names in data2 ####
 colnames2 <- colnames(data2)
@@ -142,8 +51,8 @@ varnames2 <- c("native_country", "Mean Age",
 
 
 #### Create bubble plot ####
-bubblebubble <- function(x1, y1, sizeBy, abbrev, aCoun, eCoun, naCoun, saCoun, colScheme) {
-#   bubblebubble("Mean Education Years", "Mean Hours per Week", "Mean Age", T, "all", "all", "all", "all", "Set1")
+bubblebubble <- function(x1, y1, sizeBy, abbrev, aCoun, eCoun, naCoun, saCoun) {
+#   bubblebubble("Mean Education Years", "Mean Hours per Week", "Mean Age", T, "all", "all", "all", "all")
   df <- data2
   x <- colnames2[which(varnames2 == x1)]
   y <- colnames2[which(varnames2 == y1)]
@@ -218,21 +127,20 @@ bubblebubble <- function(x1, y1, sizeBy, abbrev, aCoun, eCoun, naCoun, saCoun, c
     # Modify axes
     p <- p + xlab(varnames2[which(colnames2 == x)]) +
       ylab(varnames2[which(colnames2 == y)])
-    p <- p + theme(axis.title=element_text(face="bold.italic", size="12", color="brown"))
+    p <- p + theme(axis.title=element_text(face="bold.italic", size=16, color="brown"))
     p <- p + scale_x_continuous(
       limits = range(xmin, xmax),
       expand = c(0, 0))
     p <- p + scale_y_continuous(
       limits = c(ymin, ymax),
       expand = c(0, 0))
+    p <- p + theme(axis.text = element_text(face="bold", size=12))
     
     # Modify panel
-    p <- p + theme(panel.border = element_rect(
-      fill = NA, colour = "black"))
+    p <- p + theme(panel.border = element_rect(fill = NA, colour = "black"))
     p <- p + theme(panel.background = element_blank())
     p <- p + theme(panel.grid.major = element_line(colour="blue", linetype="dashed"))
-  
-    
+      
     # Modify the legend settings
     p <- p + theme(legend.title = element_blank())
     p <- p + theme(legend.direction = "horizontal")
@@ -240,68 +148,84 @@ bubblebubble <- function(x1, y1, sizeBy, abbrev, aCoun, eCoun, naCoun, saCoun, c
   #   p <- p + theme(legend.justification = c(1, 0))
     p <- p + theme(legend.background = element_blank())
     p <- p + theme(legend.key = element_blank())
-    p <- p + theme(legend.text = element_text(size = 12))
+    p <- p + theme(legend.text = element_text(face="bold", size=14))
     #   p <- p + theme(legend.margin = unit(0, "pt"))
     
-  
     # Force the dots to plot larger in legend
     p <- p + guides(colour = guide_legend(override.aes = list(size = 8)))
+    
+    # Consistent color and fill
+    p <- p + scale_colour_discrete(limits = c("Asia", "Europe", "North America", "South America"))
+#     p <- p + scale_fill_discrete(limits = c("Asia", "Europe", "North America", "South America"))
     
     return(p)
   }
 }
 
-
-heatheat <- function(x2, midrange) {
-  # heatheat("Highest Degree in Education", c(0.45, 0.55))
+#### Create heat map ####
+heatheat <- function(x2, hl, midrange) {
+  # heatheat("Highest Degree in Education", T, c(0.45, 0.55))
   # http://stackoverflow.com/questions/12998372/heatmap-like-plot-but-for-categorical-variables
-  df <- data4
-  x <- colnames1[which(varnames1 == x2)] # "Highest Degree in Education", "Occupation", "Work Class"
-  xIndex <- which(colnames1 == x)
+#   df <- data4
+#   x <- colnames1[which(varnames1 == x2)] # "Highest Degree in Education", "Occupation", "Work Class"
+#   xIndex <- which(colnames1 == x)
+  if (x2 == "Highest Degree in Education")
+    (df <- melt4e)
+  else if (x2 == "Occupation")
+    (df <- melt4o)
+  else
+    (df <- melt4w)
   
-#   df <- data4[c("native_country", x)]
-#   df <- melt(df, "native_country")
-#   p <- ggplot(df, aes(x=variable, y=native_country))
-#   p <- p + geom_tile(aes(fill = value), colour = "white")
+  p <- ggplot(df, aes(x=variable, y=native_country))
+  p <- p + geom_tile(aes(fill = value), colour = "white")
 #   p <- p + theme_minimal()
-  
-  
-  # Create actual heatmap
-  p <- ggplot(df, aes_string(x=x, y="native_country"))
-  p <- p + geom_tile(colour = "white")
-#   p <- p + theme_minimal()
-  
   
   # Modify axes
-  p <- p + xlab(varnames1[which(colnames1 == x)])
+  p <- p + xlab(x2)
   p <- p + ylab("Native Country")
   p <- p + theme(axis.text.x = element_text(angle = 45, hjust = 1))
-  p <- p + theme(axis.title=element_text(face="bold.italic", size="12", color="brown"))
+  p <- p + theme(axis.title=element_text(face="bold.italic", size=16, color="brown"))
+  
+  # Modify the legend settings
+  p <- p + theme(legend.text = element_text(size = 12))
   
   # Diverging color scale from colorbrewer
   # #008837 is green, #7b3294 is purple
   palette <- c("#008837", "#f7f7f7", "#f7f7f7", "#7b3294")
+
+  if(midrange[1] == midrange[2]) {
+    # use a 3 color gradient instead
+    p <- p + scale_fill_gradient2(low = palette[1], mid = palette[2], high = palette[4], midpoint = midrange[1])
+  }
+  else {
+    # use a 4 color gradient (with a swath of white in the middle)
+    p <- p + scale_fill_gradientn(colours = palette, values = c(0, midrange[1], midrange[2], 1))
+  }
   
-#   if(midrange[1] == midrange[2]) {
-#     # use a 3 color gradient instead
-#     p <- p + scale_fill_gradient2(low = palette[1], mid = palette[2], high = palette[4], midpoint = midrange[1])
-#   }
-#   else {
-#     # use a 4 color gradient (with a swath of white in the middle)
-#     p <- p + scale_fill_gradientn(colours = palette, values = c(0, midrange[1], midrange[2], 1))
-#   }
+  # Highlight
+  if (hl)
+    {
+    if (x2 == "Highest Degree in Education")
+      (p <- p + annotate("rect", xmin = "Some college", xmax = "Some college",
+                         ymin = "Haiti", ymax = "Haiti",
+                         fill="red"))
+    else if (x2 == "Occupation")
+      (p <- p + annotate("rect", xmin = "Mechanic", xmax = "Mechanic",
+                         ymin = "Haiti", ymax = "Haiti",
+                         fill="red"))
+    else
+      (p <- p + annotate("rect", xmin = "Private", xmax = "Private",
+                         ymin = "Yugoslavia", ymax = "Cambodia",
+                         fill="red"))
+    }
+  else
+    {p <- p}
   
-  # Modify panel
-#   p <- p + theme(panel.border = element_rect(
-#     fill = NA, colour = "black"))
-#   p <- p + theme(panel.background = element_blank())
-#   p <- p + theme(panel.grid.major = element_line(colour="blue", linetype="dashed"))
-#   
-#   p <- p + scale_size_area(max_size = 20, guide = "none")
   return(p)
 }
 
 
+#### Create density plot ####
 densitydensity <- function(x3) {
 # densitydensity("Age")
   df <- data1
@@ -317,23 +241,51 @@ densitydensity <- function(x3) {
   
   # Modify axes
   p <- p + xlab(varnames1[which(colnames1 == x)])
-  p <- p + theme(axis.title=element_text(face="bold.italic", size="12", color="brown"))
+  p <- p + theme(axis.title=element_text(face="bold.italic", size=16, color="brown"))
   
   # Modify panel
-  p <- p + theme(panel.border = element_rect(
-    fill = NA, colour = "black"))
+  p <- p + theme(panel.border = element_rect(fill = NA, colour = "black"))
   p <- p + theme(panel.background = element_blank())
   p <- p + theme(panel.grid.major = element_line(colour="blue", linetype="dashed"))
   
-  p <- p + scale_size_area(max_size = 20, guide = "none")
+  # Modify the legend settings
+  p <- p + theme(legend.text = element_text(size = 12))
+  
   return(p)
 }
 
 
+#### Create overview plot ####
+ovov <- function(x3) {
+  # ovov("Age")
+  df <- data1
+  x <- colnames1[which(varnames1 == x3)] # "Age", "Years of Education"
+  xIndex <- which(colnames1 == x)
+  
+  # Create actual density plot
+  p <- ggplot(data1, aes_string(x = x,
+                                group = "income", color = "income", fill = "income"))  
+  p <- p + geom_density(alpha=0.8)
+  
+  # Modify axes
+  p <- p + xlab(varnames1[which(colnames1 == x)])
+  p <- p + theme(axis.title=element_text(face="bold.italic", size=16, color="brown"))
+  
+  # Modify panel
+  p <- p + theme(panel.border = element_rect(fill = NA, colour = "black"))
+  p <- p + theme(panel.background = element_blank())
+  p <- p + theme(panel.grid.major = element_line(colour="blue", linetype="dashed"))
+  
+  # Modify the legend settings
+  p <- p + theme(legend.position = "none") 
+  
+  return(p)
+}
+
+#### Create bar plot ####
 barbar <- function(y4, ratio=F) {
   # barbar("Highest Degree in Education", F)
-  # "Work Class", "Highest Degree in Education", "Marital Status", "Occupation",
-  # "Relationship", "Race", "Sex"
+  # "Highest Degree in Education", "Marital Status", "Occupation", "Relationship", "Race", "Sex", "Work Class"
   
   df <- data3
   # I am going to flip axes later for a new experience.
@@ -348,17 +300,26 @@ barbar <- function(y4, ratio=F) {
   
   # Modify axes
   p <- p + xlab(varnames1[which(colnames1 == x)])
-  p <- p + theme(axis.title=element_text(face="bold.italic", size="12", color="brown"))
+  p <- p + theme(axis.title=element_text(face="bold.italic", size=16, color="brown"))
   
   # Flip axes
   p <- p + coord_flip()
   
   # Modify panel
-  p <- p + theme(panel.border = element_rect(
-    fill = NA, colour = "black"))
+  p <- p + theme(panel.border = element_rect(fill = NA, colour = "black"))
   p <- p + theme(panel.background = element_blank())
   p <- p + theme(panel.grid.major = element_line(colour="blue", linetype="dashed"))
   
-  p <- p + scale_size_area(max_size = 20, guide = "none")
+  # Modify the legend settings
+  p <- p + theme(legend.text = element_text(size = 12))
+  
+  # Qualitative color scale from colorbrewer
+  # #1b9e77 is lime green, #7570b3 is slightly desaturated blue.
+  palette <- c("#1b9e77", "#7570b3")
+  p <- p + scale_fill_manual(values = palette,
+                             name="Annual income \n per \n survey participant")
+
+  # Get rid of space below zero
+  p <- p + scale_x_discrete(expand = c(0,0))
   return(p)
 }
