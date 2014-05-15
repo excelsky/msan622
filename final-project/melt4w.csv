@@ -1,0 +1,288 @@
+"native_country","variable","value"
+"Cambodia","Federal gov",0.0555555555555556
+"Canada","Federal gov",0.0186915887850467
+"China","Federal gov",0.0147058823529412
+"Columbia","Federal gov",0.0357142857142857
+"Cuba","Federal gov",0.0217391304347826
+"Dominican Republic","Federal gov",0
+"Ecuador","Federal gov",0
+"El Salvador","Federal gov",0.02
+"England","Federal gov",0.0465116279069767
+"France","Federal gov",0.037037037037037
+"Germany","Federal gov",0.0390625
+"Greece","Federal gov",0
+"Guatemala","Federal gov",0.0158730158730159
+"Haiti","Federal gov",0
+"Netherlands","Federal gov",0
+"Honduras","Federal gov",0
+"Hong Kong","Federal gov",0
+"Hungary","Federal gov",0
+"India","Federal gov",0.02
+"Iran","Federal gov",0.0476190476190476
+"Ireland","Federal gov",0
+"Italy","Federal gov",0.0147058823529412
+"Jamaica","Federal gov",0
+"Japan","Federal gov",0.0508474576271186
+"Laos","Federal gov",0.0588235294117647
+"Mexico","Federal gov",0.00163934426229508
+"Nicaragua","Federal gov",0.0303030303030303
+"Guam and USVI","Federal gov",0
+"Peru","Federal gov",0
+"Philippines","Federal gov",0.0638297872340425
+"Poland","Federal gov",0.0178571428571429
+"Portugal","Federal gov",0.0294117647058824
+"Puerto Rico","Federal gov",0.073394495412844
+"Scotland","Federal gov",0
+"South Korea","Federal gov",0.0140845070422535
+"Taiwan","Federal gov",0
+"Thailand","Federal gov",0
+"Trinadad&Tobago","Federal gov",0
+"United States","Federal gov",0.0322134962187318
+"Vietnam","Federal gov",0.03125
+"Yugoslavia","Federal gov",0
+"Cambodia","Local gov",0
+"Canada","Local gov",0.0560747663551402
+"China","Local gov",0.0441176470588235
+"Columbia","Local gov",0
+"Cuba","Local gov",0.0434782608695652
+"Dominican Republic","Local gov",0.0447761194029851
+"Ecuador","Local gov",0.037037037037037
+"El Salvador","Local gov",0.05
+"England","Local gov",0.0581395348837209
+"France","Local gov",0.111111111111111
+"Germany","Local gov",0.0703125
+"Greece","Local gov",0.0344827586206897
+"Guatemala","Local gov",0.0476190476190476
+"Haiti","Local gov",0.0952380952380952
+"Netherlands","Local gov",0
+"Honduras","Local gov",0.0833333333333333
+"Hong Kong","Local gov",0.0526315789473684
+"Hungary","Local gov",0
+"India","Local gov",0.02
+"Iran","Local gov",0.0476190476190476
+"Ireland","Local gov",0
+"Italy","Local gov",0.0294117647058824
+"Jamaica","Local gov",0.05
+"Japan","Local gov",0.0169491525423729
+"Laos","Local gov",0.0588235294117647
+"Mexico","Local gov",0.0295081967213115
+"Nicaragua","Local gov",0.0606060606060606
+"Guam and USVI","Local gov",0.0714285714285714
+"Peru","Local gov",0.0333333333333333
+"Philippines","Local gov",0.0531914893617021
+"Poland","Local gov",0.0535714285714286
+"Portugal","Local gov",0.0294117647058824
+"Puerto Rico","Local gov",0.0642201834862385
+"Scotland","Local gov",0
+"South Korea","Local gov",0
+"Taiwan","Local gov",0.0476190476190476
+"Thailand","Local gov",0
+"Trinadad&Tobago","Local gov",0.0555555555555556
+"United States","Local gov",0.0711169284467714
+"Vietnam","Local gov",0.046875
+"Yugoslavia","Local gov",0.0625
+"Cambodia","Private",0.888888888888889
+"Canada","Private",0.738317757009346
+"China","Private",0.720588235294118
+"Columbia","Private",0.821428571428571
+"Cuba","Private",0.75
+"Dominican Republic","Private",0.895522388059702
+"Ecuador","Private",0.925925925925926
+"El Salvador","Private",0.88
+"England","Private",0.732558139534884
+"France","Private",0.703703703703704
+"Germany","Private",0.7578125
+"Greece","Private",0.620689655172414
+"Guatemala","Private",0.936507936507937
+"Haiti","Private",0.833333333333333
+"Netherlands","Private",1
+"Honduras","Private",0.583333333333333
+"Hong Kong","Private",0.842105263157895
+"Hungary","Private",0.692307692307692
+"India","Private",0.7
+"Iran","Private",0.619047619047619
+"Ireland","Private",0.958333333333333
+"Italy","Private",0.691176470588235
+"Jamaica","Private",0.8625
+"Japan","Private",0.76271186440678
+"Laos","Private",0.882352941176471
+"Mexico","Private",0.90655737704918
+"Nicaragua","Private",0.818181818181818
+"Guam and USVI","Private",0.785714285714286
+"Peru","Private",0.9
+"Philippines","Private",0.824468085106383
+"Poland","Private",0.839285714285714
+"Portugal","Private",0.794117647058823
+"Puerto Rico","Private",0.779816513761468
+"Scotland","Private",0.818181818181818
+"South Korea","Private",0.605633802816901
+"Taiwan","Private",0.619047619047619
+"Thailand","Private",0.588235294117647
+"Trinadad&Tobago","Private",0.777777777777778
+"United States","Private",0.732075334496801
+"Vietnam","Private",0.828125
+"Yugoslavia","Private",0.8125
+"Cambodia","Self emp inc",0
+"Canada","Self emp inc",0.0560747663551402
+"China","Self emp inc",0.0147058823529412
+"Columbia","Self emp inc",0
+"Cuba","Self emp inc",0.0978260869565217
+"Dominican Republic","Self emp inc",0.0298507462686567
+"Ecuador","Self emp inc",0
+"El Salvador","Self emp inc",0.01
+"England","Self emp inc",0.0232558139534884
+"France","Self emp inc",0.037037037037037
+"Germany","Self emp inc",0.046875
+"Greece","Self emp inc",0.103448275862069
+"Guatemala","Self emp inc",0
+"Haiti","Self emp inc",0.0238095238095238
+"Netherlands","Self emp inc",0
+"Honduras","Self emp inc",0.166666666666667
+"Hong Kong","Self emp inc",0
+"Hungary","Self emp inc",0.0769230769230769
+"India","Self emp inc",0.07
+"Iran","Self emp inc",0.0476190476190476
+"Ireland","Self emp inc",0
+"Italy","Self emp inc",0.0441176470588235
+"Jamaica","Self emp inc",0.0125
+"Japan","Self emp inc",0.0338983050847458
+"Laos","Self emp inc",0
+"Mexico","Self emp inc",0.0131147540983607
+"Nicaragua","Self emp inc",0
+"Guam and USVI","Self emp inc",0
+"Peru","Self emp inc",0
+"Philippines","Self emp inc",0.0106382978723404
+"Poland","Self emp inc",0.0178571428571429
+"Portugal","Self emp inc",0.0588235294117647
+"Puerto Rico","Self emp inc",0
+"Scotland","Self emp inc",0
+"South Korea","Self emp inc",0.0985915492957746
+"Taiwan","Self emp inc",0.166666666666667
+"Thailand","Self emp inc",0.176470588235294
+"Trinadad&Tobago","Self emp inc",0.0555555555555556
+"United States","Self emp inc",0.0360311227457824
+"Vietnam","Self emp inc",0.015625
+"Yugoslavia","Self emp inc",0.0625
+"Cambodia","Self emp not inc",0.0555555555555556
+"Canada","Self emp not inc",0.102803738317757
+"China","Self emp not inc",0.0735294117647059
+"Columbia","Self emp not inc",0.125
+"Cuba","Self emp not inc",0.0869565217391304
+"Dominican Republic","Self emp not inc",0.0298507462686567
+"Ecuador","Self emp not inc",0.037037037037037
+"El Salvador","Self emp not inc",0.04
+"England","Self emp not inc",0.104651162790698
+"France","Self emp not inc",0.0740740740740741
+"Germany","Self emp not inc",0.046875
+"Greece","Self emp not inc",0.241379310344828
+"Guatemala","Self emp not inc",0
+"Haiti","Self emp not inc",0
+"Netherlands","Self emp not inc",0
+"Honduras","Self emp not inc",0.0833333333333333
+"Hong Kong","Self emp not inc",0
+"Hungary","Self emp not inc",0.230769230769231
+"India","Self emp not inc",0.07
+"Iran","Self emp not inc",0.214285714285714
+"Ireland","Self emp not inc",0.0416666666666667
+"Italy","Self emp not inc",0.191176470588235
+"Jamaica","Self emp not inc",0.05
+"Japan","Self emp not inc",0.101694915254237
+"Laos","Self emp not inc",0
+"Mexico","Self emp not inc",0.0442622950819672
+"Nicaragua","Self emp not inc",0.0606060606060606
+"Guam and USVI","Self emp not inc",0.0714285714285714
+"Peru","Self emp not inc",0.0666666666666667
+"Philippines","Self emp not inc",0.0265957446808511
+"Poland","Self emp not inc",0.0714285714285714
+"Portugal","Self emp not inc",0.0588235294117647
+"Puerto Rico","Self emp not inc",0.0458715596330275
+"Scotland","Self emp not inc",0.0909090909090909
+"South Korea","Self emp not inc",0.28169014084507
+"Taiwan","Self emp not inc",0.0238095238095238
+"Thailand","Self emp not inc",0.176470588235294
+"Trinadad&Tobago","Self emp not inc",0.0555555555555556
+"United States","Self emp not inc",0.0840968586387435
+"Vietnam","Self emp not inc",0.0625
+"Yugoslavia","Self emp not inc",0.0625
+"Cambodia","State gov",0
+"Canada","State gov",0.0280373831775701
+"China","State gov",0.132352941176471
+"Columbia","State gov",0.0178571428571429
+"Cuba","State gov",0
+"Dominican Republic","State gov",0
+"Ecuador","State gov",0
+"El Salvador","State gov",0
+"England","State gov",0.0348837209302326
+"France","State gov",0.037037037037037
+"Germany","State gov",0.0390625
+"Greece","State gov",0
+"Guatemala","State gov",0
+"Haiti","State gov",0.0476190476190476
+"Netherlands","State gov",0
+"Honduras","State gov",0.0833333333333333
+"Hong Kong","State gov",0.105263157894737
+"Hungary","State gov",0
+"India","State gov",0.12
+"Iran","State gov",0.0238095238095238
+"Ireland","State gov",0
+"Italy","State gov",0.0294117647058824
+"Jamaica","State gov",0.025
+"Japan","State gov",0.0338983050847458
+"Laos","State gov",0
+"Mexico","State gov",0.00491803278688525
+"Nicaragua","State gov",0.0303030303030303
+"Guam and USVI","State gov",0.0714285714285714
+"Peru","State gov",0
+"Philippines","State gov",0.0159574468085106
+"Poland","State gov",0
+"Portugal","State gov",0.0294117647058824
+"Puerto Rico","State gov",0.036697247706422
+"Scotland","State gov",0.0909090909090909
+"South Korea","State gov",0
+"Taiwan","State gov",0.142857142857143
+"Thailand","State gov",0.0588235294117647
+"Trinadad&Tobago","State gov",0.0555555555555556
+"United States","State gov",0.0439936009307737
+"Vietnam","State gov",0.015625
+"Yugoslavia","State gov",0
+"Cambodia","Without pay",0
+"Canada","Without pay",0
+"China","Without pay",0
+"Columbia","Without pay",0
+"Cuba","Without pay",0
+"Dominican Republic","Without pay",0
+"Ecuador","Without pay",0
+"El Salvador","Without pay",0
+"England","Without pay",0
+"France","Without pay",0
+"Germany","Without pay",0
+"Greece","Without pay",0
+"Guatemala","Without pay",0
+"Haiti","Without pay",0
+"Netherlands","Without pay",0
+"Honduras","Without pay",0
+"Hong Kong","Without pay",0
+"Hungary","Without pay",0
+"India","Without pay",0
+"Iran","Without pay",0
+"Ireland","Without pay",0
+"Italy","Without pay",0
+"Jamaica","Without pay",0
+"Japan","Without pay",0
+"Laos","Without pay",0
+"Mexico","Without pay",0
+"Nicaragua","Without pay",0
+"Guam and USVI","Without pay",0
+"Peru","Without pay",0
+"Philippines","Without pay",0.00531914893617021
+"Poland","Without pay",0
+"Portugal","Without pay",0
+"Puerto Rico","Without pay",0
+"Scotland","Without pay",0
+"South Korea","Without pay",0
+"Taiwan","Without pay",0
+"Thailand","Without pay",0
+"Trinadad&Tobago","Without pay",0
+"United States","Without pay",0.000472658522396742
+"Vietnam","Without pay",0
+"Yugoslavia","Without pay",0

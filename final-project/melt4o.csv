@@ -1,0 +1,575 @@
+"native_country","variable","value"
+"Cambodia","Admin",0
+"Canada","Admin",0.11214953271028
+"China","Admin",0.0294117647058824
+"Columbia","Admin",0.142857142857143
+"Cuba","Admin",0.130434782608696
+"Dominican Republic","Admin",0.0597014925373134
+"Ecuador","Admin",0.037037037037037
+"El Salvador","Admin",0.04
+"England","Admin",0.0813953488372093
+"France","Admin",0.037037037037037
+"Germany","Admin",0.1640625
+"Greece","Admin",0.0689655172413793
+"Guatemala","Admin",0.0476190476190476
+"Haiti","Admin",0.119047619047619
+"Netherlands","Admin",0
+"Honduras","Admin",0.166666666666667
+"Hong Kong","Admin",0.105263157894737
+"Hungary","Admin",0.0769230769230769
+"India","Admin",0.11
+"Iran","Admin",0.0714285714285714
+"Ireland","Admin",0
+"Italy","Admin",0.117647058823529
+"Jamaica","Admin",0.2125
+"Japan","Admin",0.152542372881356
+"Laos","Admin",0.235294117647059
+"Mexico","Admin",0.059016393442623
+"Nicaragua","Admin",0.181818181818182
+"Guam and USVI","Admin",0
+"Peru","Admin",0
+"Philippines","Admin",0.191489361702128
+"Poland","Admin",0.0357142857142857
+"Portugal","Admin",0.117647058823529
+"Puerto Rico","Admin",0.155963302752294
+"Scotland","Admin",0.0909090909090909
+"South Korea","Admin",0.0563380281690141
+"Taiwan","Admin",0.0714285714285714
+"Thailand","Admin",0.117647058823529
+"Trinadad&Tobago","Admin",0.222222222222222
+"United States","Admin",0.125399941826643
+"Vietnam","Admin",0.265625
+"Yugoslavia","Admin",0.0625
+"Cambodia","Armed Forces",0
+"Canada","Armed Forces",0
+"China","Armed Forces",0
+"Columbia","Armed Forces",0
+"Cuba","Armed Forces",0
+"Dominican Republic","Armed Forces",0
+"Ecuador","Armed Forces",0
+"El Salvador","Armed Forces",0
+"England","Armed Forces",0
+"France","Armed Forces",0
+"Germany","Armed Forces",0
+"Greece","Armed Forces",0
+"Guatemala","Armed Forces",0
+"Haiti","Armed Forces",0
+"Netherlands","Armed Forces",0
+"Honduras","Armed Forces",0
+"Hong Kong","Armed Forces",0
+"Hungary","Armed Forces",0
+"India","Armed Forces",0
+"Iran","Armed Forces",0
+"Ireland","Armed Forces",0
+"Italy","Armed Forces",0
+"Jamaica","Armed Forces",0
+"Japan","Armed Forces",0
+"Laos","Armed Forces",0
+"Mexico","Armed Forces",0
+"Nicaragua","Armed Forces",0
+"Guam and USVI","Armed Forces",0
+"Peru","Armed Forces",0
+"Philippines","Armed Forces",0
+"Poland","Armed Forces",0
+"Portugal","Armed Forces",0
+"Puerto Rico","Armed Forces",0
+"Scotland","Armed Forces",0
+"South Korea","Armed Forces",0
+"Taiwan","Armed Forces",0
+"Thailand","Armed Forces",0
+"Trinadad&Tobago","Armed Forces",0
+"United States","Armed Forces",0.000327225130890052
+"Vietnam","Armed Forces",0
+"Yugoslavia","Armed Forces",0
+"Cambodia","Craft and Repair",0.333333333333333
+"Canada","Craft and Repair",0.14018691588785
+"China","Craft and Repair",0.0441176470588235
+"Columbia","Craft and Repair",0.160714285714286
+"Cuba","Craft and Repair",0.0760869565217391
+"Dominican Republic","Craft and Repair",0.0895522388059701
+"Ecuador","Craft and Repair",0.148148148148148
+"El Salvador","Craft and Repair",0.15
+"England","Craft and Repair",0.0930232558139535
+"France","Craft and Repair",0
+"Germany","Craft and Repair",0.109375
+"Greece","Craft and Repair",0.172413793103448
+"Guatemala","Craft and Repair",0.174603174603175
+"Haiti","Craft and Repair",0.0952380952380952
+"Netherlands","Craft and Repair",0
+"Honduras","Craft and Repair",0.0833333333333333
+"Hong Kong","Craft and Repair",0.210526315789474
+"Hungary","Craft and Repair",0.230769230769231
+"India","Craft and Repair",0.05
+"Iran","Craft and Repair",0.0714285714285714
+"Ireland","Craft and Repair",0.291666666666667
+"Italy","Craft and Repair",0.176470588235294
+"Jamaica","Craft and Repair",0.075
+"Japan","Craft and Repair",0.11864406779661
+"Laos","Craft and Repair",0.176470588235294
+"Mexico","Craft and Repair",0.163934426229508
+"Nicaragua","Craft and Repair",0.121212121212121
+"Guam and USVI","Craft and Repair",0.142857142857143
+"Peru","Craft and Repair",0.0666666666666667
+"Philippines","Craft and Repair",0.074468085106383
+"Poland","Craft and Repair",0.214285714285714
+"Portugal","Craft and Repair",0.352941176470588
+"Puerto Rico","Craft and Repair",0.128440366972477
+"Scotland","Craft and Repair",0
+"South Korea","Craft and Repair",0.112676056338028
+"Taiwan","Craft and Repair",0.0476190476190476
+"Thailand","Craft and Repair",0.0588235294117647
+"Trinadad&Tobago","Craft and Repair",0.111111111111111
+"United States","Craft and Repair",0.133980511925538
+"Vietnam","Craft and Repair",0.1875
+"Yugoslavia","Craft and Repair",0.125
+"Cambodia","Executive",0.0555555555555556
+"Canada","Executive",0.121495327102804
+"China","Executive",0.147058823529412
+"Columbia","Executive",0.0714285714285714
+"Cuba","Executive",0.173913043478261
+"Dominican Republic","Executive",0.0298507462686567
+"Ecuador","Executive",0.037037037037037
+"El Salvador","Executive",0.02
+"England","Executive",0.232558139534884
+"France","Executive",0.259259259259259
+"Germany","Executive",0.1484375
+"Greece","Executive",0.344827586206897
+"Guatemala","Executive",0
+"Haiti","Executive",0
+"Netherlands","Executive",0
+"Honduras","Executive",0.0833333333333333
+"Hong Kong","Executive",0.105263157894737
+"Hungary","Executive",0.153846153846154
+"India","Executive",0.1
+"Iran","Executive",0.238095238095238
+"Ireland","Executive",0.0833333333333333
+"Italy","Executive",0.102941176470588
+"Jamaica","Executive",0.125
+"Japan","Executive",0.305084745762712
+"Laos","Executive",0.0588235294117647
+"Mexico","Executive",0.0229508196721311
+"Nicaragua","Executive",0
+"Guam and USVI","Executive",0.285714285714286
+"Peru","Executive",0.0333333333333333
+"Philippines","Executive",0.0691489361702128
+"Poland","Executive",0.0892857142857143
+"Portugal","Executive",0.0588235294117647
+"Puerto Rico","Executive",0.0917431192660551
+"Scotland","Executive",0.272727272727273
+"South Korea","Executive",0.183098591549296
+"Taiwan","Executive",0.261904761904762
+"Thailand","Executive",0.235294117647059
+"Trinadad&Tobago","Executive",0.0555555555555556
+"United States","Executive",0.135798429319372
+"Vietnam","Executive",0.046875
+"Yugoslavia","Executive",0.3125
+"Cambodia","Farming and fishing",0.0555555555555556
+"Canada","Farming and fishing",0.0186915887850467
+"China","Farming and fishing",0
+"Columbia","Farming and fishing",0
+"Cuba","Farming and fishing",0.0217391304347826
+"Dominican Republic","Farming and fishing",0
+"Ecuador","Farming and fishing",0
+"El Salvador","Farming and fishing",0.02
+"England","Farming and fishing",0.0116279069767442
+"France","Farming and fishing",0.037037037037037
+"Germany","Farming and fishing",0.0078125
+"Greece","Farming and fishing",0
+"Guatemala","Farming and fishing",0.0634920634920635
+"Haiti","Farming and fishing",0
+"Netherlands","Farming and fishing",0
+"Honduras","Farming and fishing",0
+"Hong Kong","Farming and fishing",0.0526315789473684
+"Hungary","Farming and fishing",0
+"India","Farming and fishing",0
+"Iran","Farming and fishing",0
+"Ireland","Farming and fishing",0.0416666666666667
+"Italy","Farming and fishing",0.0294117647058824
+"Jamaica","Farming and fishing",0
+"Japan","Farming and fishing",0.0169491525423729
+"Laos","Farming and fishing",0
+"Mexico","Farming and fishing",0.126229508196721
+"Nicaragua","Farming and fishing",0
+"Guam and USVI","Farming and fishing",0
+"Peru","Farming and fishing",0
+"Philippines","Farming and fishing",0.0212765957446809
+"Poland","Farming and fishing",0.0178571428571429
+"Portugal","Farming and fishing",0.0294117647058824
+"Puerto Rico","Farming and fishing",0.0458715596330275
+"Scotland","Farming and fishing",0
+"South Korea","Farming and fishing",0
+"Taiwan","Farming and fishing",0
+"Thailand","Farming and fishing",0
+"Trinadad&Tobago","Farming and fishing",0
+"United States","Farming and fishing",0.0319589877835951
+"Vietnam","Farming and fishing",0.03125
+"Yugoslavia","Farming and fishing",0.0625
+"Cambodia","Handlers and cleaners",0
+"Canada","Handlers and cleaners",0.0186915887850467
+"China","Handlers and cleaners",0
+"Columbia","Handlers and cleaners",0.0535714285714286
+"Cuba","Handlers and cleaners",0.0326086956521739
+"Dominican Republic","Handlers and cleaners",0.0746268656716418
+"Ecuador","Handlers and cleaners",0.037037037037037
+"El Salvador","Handlers and cleaners",0.07
+"England","Handlers and cleaners",0.0232558139534884
+"France","Handlers and cleaners",0
+"Germany","Handlers and cleaners",0.03125
+"Greece","Handlers and cleaners",0.0344827586206897
+"Guatemala","Handlers and cleaners",0.142857142857143
+"Haiti","Handlers and cleaners",0.0714285714285714
+"Netherlands","Handlers and cleaners",0
+"Honduras","Handlers and cleaners",0.166666666666667
+"Hong Kong","Handlers and cleaners",0
+"Hungary","Handlers and cleaners",0
+"India","Handlers and cleaners",0.03
+"Iran","Handlers and cleaners",0
+"Ireland","Handlers and cleaners",0.0833333333333333
+"Italy","Handlers and cleaners",0.0588235294117647
+"Jamaica","Handlers and cleaners",0.05
+"Japan","Handlers and cleaners",0.0169491525423729
+"Laos","Handlers and cleaners",0
+"Mexico","Handlers and cleaners",0.114754098360656
+"Nicaragua","Handlers and cleaners",0.121212121212121
+"Guam and USVI","Handlers and cleaners",0.0714285714285714
+"Peru","Handlers and cleaners",0.133333333333333
+"Philippines","Handlers and cleaners",0.0372340425531915
+"Poland","Handlers and cleaners",0.107142857142857
+"Portugal","Handlers and cleaners",0.147058823529412
+"Puerto Rico","Handlers and cleaners",0.036697247706422
+"Scotland","Handlers and cleaners",0
+"South Korea","Handlers and cleaners",0.028169014084507
+"Taiwan","Handlers and cleaners",0
+"Thailand","Handlers and cleaners",0
+"Trinadad&Tobago","Handlers and cleaners",0
+"United States","Handlers and cleaners",0.0432300756253636
+"Vietnam","Handlers and cleaners",0.03125
+"Yugoslavia","Handlers and cleaners",0
+"Cambodia","Mechanic",0.222222222222222
+"Canada","Mechanic",0.0467289719626168
+"China","Mechanic",0.117647058823529
+"Columbia","Mechanic",0.178571428571429
+"Cuba","Mechanic",0.0652173913043478
+"Dominican Republic","Mechanic",0.328358208955224
+"Ecuador","Mechanic",0.296296296296296
+"El Salvador","Mechanic",0.06
+"England","Mechanic",0.0348837209302326
+"France","Mechanic",0
+"Germany","Mechanic",0.0390625
+"Greece","Mechanic",0.0344827586206897
+"Guatemala","Mechanic",0.142857142857143
+"Haiti","Mechanic",0.0952380952380952
+"Netherlands","Mechanic",1
+"Honduras","Mechanic",0.0833333333333333
+"Hong Kong","Mechanic",0.105263157894737
+"Hungary","Mechanic",0
+"India","Mechanic",0.02
+"Iran","Mechanic",0.0238095238095238
+"Ireland","Mechanic",0.125
+"Italy","Mechanic",0.147058823529412
+"Jamaica","Mechanic",0.0125
+"Japan","Mechanic",0
+"Laos","Mechanic",0.411764705882353
+"Mexico","Mechanic",0.150819672131148
+"Nicaragua","Mechanic",0.151515151515152
+"Guam and USVI","Mechanic",0
+"Peru","Mechanic",0.133333333333333
+"Philippines","Mechanic",0.0691489361702128
+"Poland","Mechanic",0.107142857142857
+"Portugal","Mechanic",0.176470588235294
+"Puerto Rico","Mechanic",0.146788990825688
+"Scotland","Mechanic",0.181818181818182
+"South Korea","Mechanic",0.028169014084507
+"Taiwan","Mechanic",0
+"Thailand","Mechanic",0.0588235294117647
+"Trinadad&Tobago","Mechanic",0.166666666666667
+"United States","Mechanic",0.0613365328679465
+"Vietnam","Mechanic",0.125
+"Yugoslavia","Mechanic",0.125
+"Cambodia","Other service",0.0555555555555556
+"Canada","Other service",0.11214953271028
+"China","Other service",0.235294117647059
+"Columbia","Other service",0.142857142857143
+"Cuba","Other service",0.141304347826087
+"Dominican Republic","Other service",0.17910447761194
+"Ecuador","Other service",0.111111111111111
+"El Salvador","Other service",0.4
+"England","Other service",0.0813953488372093
+"France","Other service",0.0740740740740741
+"Germany","Other service",0.0546875
+"Greece","Other service",0.137931034482759
+"Guatemala","Other service",0.111111111111111
+"Haiti","Other service",0.380952380952381
+"Netherlands","Other service",0
+"Honduras","Other service",0.0833333333333333
+"Hong Kong","Other service",0
+"Hungary","Other service",0.0769230769230769
+"India","Other service",0.04
+"Iran","Other service",0.0952380952380952
+"Ireland","Other service",0.166666666666667
+"Italy","Other service",0.147058823529412
+"Jamaica","Other service",0.25
+"Japan","Other service",0.152542372881356
+"Laos","Other service",0.0588235294117647
+"Mexico","Other service",0.201639344262295
+"Nicaragua","Other service",0.181818181818182
+"Guam and USVI","Other service",0.214285714285714
+"Peru","Other service",0.233333333333333
+"Philippines","Other service",0.191489361702128
+"Poland","Other service",0.107142857142857
+"Portugal","Other service",0.0588235294117647
+"Puerto Rico","Other service",0.146788990825688
+"Scotland","Other service",0.181818181818182
+"South Korea","Other service",0.154929577464789
+"Taiwan","Other service",0.0238095238095238
+"Thailand","Other service",0.235294117647059
+"Trinadad&Tobago","Other service",0.166666666666667
+"United States","Other service",0.100967132053519
+"Vietnam","Other service",0.140625
+"Yugoslavia","Other service",0.25
+"Cambodia","Private house service",0
+"Canada","Private house service",0
+"China","Private house service",0
+"Columbia","Private house service",0.0178571428571429
+"Cuba","Private house service",0.0217391304347826
+"Dominican Republic","Private house service",0.0149253731343284
+"Ecuador","Private house service",0.037037037037037
+"El Salvador","Private house service",0.06
+"England","Private house service",0.0348837209302326
+"France","Private house service",0.0740740740740741
+"Germany","Private house service",0.0078125
+"Greece","Private house service",0
+"Guatemala","Private house service",0.174603174603175
+"Haiti","Private house service",0.0238095238095238
+"Netherlands","Private house service",0
+"Honduras","Private house service",0
+"Hong Kong","Private house service",0
+"Hungary","Private house service",0.0769230769230769
+"India","Private house service",0
+"Iran","Private house service",0
+"Ireland","Private house service",0
+"Italy","Private house service",0
+"Jamaica","Private house service",0.0125
+"Japan","Private house service",0
+"Laos","Private house service",0
+"Mexico","Private house service",0.0278688524590164
+"Nicaragua","Private house service",0.0303030303030303
+"Guam and USVI","Private house service",0
+"Peru","Private house service",0
+"Philippines","Private house service",0.0106382978723404
+"Poland","Private house service",0.0178571428571429
+"Portugal","Private house service",0
+"Puerto Rico","Private house service",0
+"Scotland","Private house service",0
+"South Korea","Private house service",0
+"Taiwan","Private house service",0
+"Thailand","Private house service",0.0588235294117647
+"Trinadad&Tobago","Private house service",0
+"United States","Private house service",0.00327225130890052
+"Vietnam","Private house service",0
+"Yugoslavia","Private house service",0
+"Cambodia","Prof specialty",0.166666666666667
+"Canada","Prof specialty",0.224299065420561
+"China","Prof specialty",0.323529411764706
+"Columbia","Prof specialty",0.0892857142857143
+"Cuba","Prof specialty",0.119565217391304
+"Dominican Republic","Prof specialty",0.0447761194029851
+"Ecuador","Prof specialty",0.0740740740740741
+"El Salvador","Prof specialty",0.07
+"England","Prof specialty",0.244186046511628
+"France","Prof specialty",0.296296296296296
+"Germany","Prof specialty",0.25
+"Greece","Prof specialty",0.0689655172413793
+"Guatemala","Prof specialty",0.0158730158730159
+"Haiti","Prof specialty",0.0952380952380952
+"Netherlands","Prof specialty",0
+"Honduras","Prof specialty",0.0833333333333333
+"Hong Kong","Prof specialty",0.263157894736842
+"Hungary","Prof specialty",0.230769230769231
+"India","Prof specialty",0.4
+"Iran","Prof specialty",0.285714285714286
+"Ireland","Prof specialty",0.208333333333333
+"Italy","Prof specialty",0.161764705882353
+"Jamaica","Prof specialty",0.075
+"Japan","Prof specialty",0.135593220338983
+"Laos","Prof specialty",0
+"Mexico","Prof specialty",0.0295081967213115
+"Nicaragua","Prof specialty",0.0303030303030303
+"Guam and USVI","Prof specialty",0.142857142857143
+"Peru","Prof specialty",0.0666666666666667
+"Philippines","Prof specialty",0.148936170212766
+"Poland","Prof specialty",0.125
+"Portugal","Prof specialty",0
+"Puerto Rico","Prof specialty",0.0917431192660551
+"Scotland","Prof specialty",0.181818181818182
+"South Korea","Prof specialty",0.154929577464789
+"Taiwan","Prof specialty",0.5
+"Thailand","Prof specialty",0.176470588235294
+"Trinadad&Tobago","Prof specialty",0.0555555555555556
+"United States","Prof specialty",0.134271378708551
+"Vietnam","Prof specialty",0.046875
+"Yugoslavia","Prof specialty",0
+"Cambodia","Protective service",0
+"Canada","Protective service",0.0186915887850467
+"China","Protective service",0
+"Columbia","Protective service",0
+"Cuba","Protective service",0.0217391304347826
+"Dominican Republic","Protective service",0.0149253731343284
+"Ecuador","Protective service",0
+"El Salvador","Protective service",0
+"England","Protective service",0.0348837209302326
+"France","Protective service",0.037037037037037
+"Germany","Protective service",0.03125
+"Greece","Protective service",0
+"Guatemala","Protective service",0.0158730158730159
+"Haiti","Protective service",0.0238095238095238
+"Netherlands","Protective service",0
+"Honduras","Protective service",0.0833333333333333
+"Hong Kong","Protective service",0.0526315789473684
+"Hungary","Protective service",0
+"India","Protective service",0.04
+"Iran","Protective service",0
+"Ireland","Protective service",0
+"Italy","Protective service",0
+"Jamaica","Protective service",0.0125
+"Japan","Protective service",0.0169491525423729
+"Laos","Protective service",0
+"Mexico","Protective service",0.00655737704918033
+"Nicaragua","Protective service",0
+"Guam and USVI","Protective service",0
+"Peru","Protective service",0.0666666666666667
+"Philippines","Protective service",0.0159574468085106
+"Poland","Protective service",0
+"Portugal","Protective service",0.0294117647058824
+"Puerto Rico","Protective service",0.0275229357798165
+"Scotland","Protective service",0.0909090909090909
+"South Korea","Protective service",0
+"Taiwan","Protective service",0
+"Thailand","Protective service",0.0588235294117647
+"Trinadad&Tobago","Protective service",0
+"United States","Protective service",0.0220331588132635
+"Vietnam","Protective service",0
+"Yugoslavia","Protective service",0
+"Cambodia","Sales",0.111111111111111
+"Canada","Sales",0.0841121495327103
+"China","Sales",0.0735294117647059
+"Columbia","Sales",0.0535714285714286
+"Cuba","Sales",0.108695652173913
+"Dominican Republic","Sales",0.119402985074627
+"Ecuador","Sales",0.111111111111111
+"El Salvador","Sales",0.07
+"England","Sales",0.0813953488372093
+"France","Sales",0.0740740740740741
+"Germany","Sales",0.1015625
+"Greece","Sales",0.137931034482759
+"Guatemala","Sales",0.0476190476190476
+"Haiti","Sales",0.0238095238095238
+"Netherlands","Sales",0
+"Honduras","Sales",0.166666666666667
+"Hong Kong","Sales",0.0526315789473684
+"Hungary","Sales",0
+"India","Sales",0.14
+"Iran","Sales",0.166666666666667
+"Ireland","Sales",0
+"Italy","Sales",0.0441176470588235
+"Jamaica","Sales",0.0875
+"Japan","Sales",0.0847457627118644
+"Laos","Sales",0.0588235294117647
+"Mexico","Sales",0.059016393442623
+"Nicaragua","Sales",0.0606060606060606
+"Guam and USVI","Sales",0.0714285714285714
+"Peru","Sales",0.166666666666667
+"Philippines","Sales",0.0904255319148936
+"Poland","Sales",0.0892857142857143
+"Portugal","Sales",0.0294117647058824
+"Puerto Rico","Sales",0.0825688073394495
+"Scotland","Sales",0
+"South Korea","Sales",0.267605633802817
+"Taiwan","Sales",0.0714285714285714
+"Thailand","Sales",0
+"Trinadad&Tobago","Sales",0.0555555555555556
+"United States","Sales",0.122309482257126
+"Vietnam","Sales",0.0625
+"Yugoslavia","Sales",0
+"Cambodia","Tech support",0
+"Canada","Tech support",0.0280373831775701
+"China","Tech support",0.0294117647058824
+"Columbia","Tech support",0.0535714285714286
+"Cuba","Tech support",0
+"Dominican Republic","Tech support",0
+"Ecuador","Tech support",0.037037037037037
+"El Salvador","Tech support",0
+"England","Tech support",0.0465116279069767
+"France","Tech support",0.111111111111111
+"Germany","Tech support",0.03125
+"Greece","Tech support",0
+"Guatemala","Tech support",0.0317460317460317
+"Haiti","Tech support",0
+"Netherlands","Tech support",0
+"Honduras","Tech support",0
+"Hong Kong","Tech support",0.0526315789473684
+"Hungary","Tech support",0.0769230769230769
+"India","Tech support",0.05
+"Iran","Tech support",0.0238095238095238
+"Ireland","Tech support",0
+"Italy","Tech support",0
+"Jamaica","Tech support",0.05
+"Japan","Tech support",0
+"Laos","Tech support",0
+"Mexico","Tech support",0.00491803278688525
+"Nicaragua","Tech support",0.0606060606060606
+"Guam and USVI","Tech support",0
+"Peru","Tech support",0.0333333333333333
+"Philippines","Tech support",0.074468085106383
+"Poland","Tech support",0.0357142857142857
+"Portugal","Tech support",0
+"Puerto Rico","Tech support",0
+"Scotland","Tech support",0
+"South Korea","Tech support",0
+"Taiwan","Tech support",0.0238095238095238
+"Thailand","Tech support",0
+"Trinadad&Tobago","Tech support",0.111111111111111
+"United States","Tech support",0.0309045956951716
+"Vietnam","Tech support",0.046875
+"Yugoslavia","Tech support",0
+"Cambodia","Transportation",0
+"Canada","Transportation",0.0747663551401869
+"China","Transportation",0
+"Columbia","Transportation",0.0357142857142857
+"Cuba","Transportation",0.0869565217391304
+"Dominican Republic","Transportation",0.0447761194029851
+"Ecuador","Transportation",0.0740740740740741
+"El Salvador","Transportation",0.04
+"England","Transportation",0
+"France","Transportation",0
+"Germany","Transportation",0.0234375
+"Greece","Transportation",0
+"Guatemala","Transportation",0.0317460317460317
+"Haiti","Transportation",0.0714285714285714
+"Netherlands","Transportation",0
+"Honduras","Transportation",0
+"Hong Kong","Transportation",0
+"Hungary","Transportation",0.0769230769230769
+"India","Transportation",0.02
+"Iran","Transportation",0.0238095238095238
+"Ireland","Transportation",0
+"Italy","Transportation",0.0147058823529412
+"Jamaica","Transportation",0.0375
+"Japan","Transportation",0
+"Laos","Transportation",0
+"Mexico","Transportation",0.0327868852459016
+"Nicaragua","Transportation",0.0606060606060606
+"Guam and USVI","Transportation",0.0714285714285714
+"Peru","Transportation",0.0666666666666667
+"Philippines","Transportation",0.00531914893617021
+"Poland","Transportation",0.0535714285714286
+"Portugal","Transportation",0
+"Puerto Rico","Transportation",0.0458715596330275
+"Scotland","Transportation",0
+"South Korea","Transportation",0.0140845070422535
+"Taiwan","Transportation",0
+"Thailand","Transportation",0
+"Trinadad&Tobago","Transportation",0.0555555555555556
+"United States","Transportation",0.0542102966841187
+"Vietnam","Transportation",0.015625
+"Yugoslavia","Transportation",0.0625

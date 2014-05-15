@@ -2,8 +2,8 @@
 library(plyr)
 library(reshape2)
 
-# data1 <- read.table("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data", sep=",", header=F, na.strings=" ?")
-data1 <- read.table("adult.data", sep=",", header=F, na.strings=" ?")
+data1 <- read.table("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data", sep=",", header=F, na.strings=" ?")
+# data1 <- read.table("adult.data", sep=",", header=F, na.strings=" ?")
 data1 <- na.omit(data1)
 # table(data1[,length(data1)])
 colnames(data1) <- c("age", "workclass", "fnlwgt", "education", "education_num",
