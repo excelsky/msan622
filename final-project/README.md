@@ -115,6 +115,23 @@ This
 
 
 ### Prototype Feedback ###
+There were only two plots for my prototype: a bubble plot and a density plot. I got the following feedback from classmates.
+- Bubble Plot:
+1.That is good function to put the labels of countries.
+2. Move the legend.
+- Density Plot:
+1. better names for selection options, use color brewer colors, add subset by column feature to density plots
+2. I would look at more than just salary of each person. I would also look at gender, I think gender might have a small difference.
+3. it might be good to facet_wrap function by avoiding overlapped distribution.
+4. I like your dataset! Perhaps doing a small multiples plot for the densities would be useful.
+- Both:
+1. Change axis labels — be sure to make them look nice
+2. Additionally, some user-help text about what the columns represent would be good.
+
+
+
+
+
 
 
 
@@ -122,4 +139,4 @@ This
 ### Challenge ###
 As written at the get-go, it was not easy to treat NA's. In the original dataset, the NA was coded as ' ?' which is different from '?'. The leading space was not very obvious for me. Thus, it took a decent time for me to figure out the difference.
 
-Brushing/Highlighting in a heat map is great idea. I was about to implment it, but it was not easy. All the tutorials I found from the Internet have brushing in terms of numerical ranges, but my heat map does not have numerical values on both x- and y-axis. I used all the combinations to brush/highlight a certain country such as (`ymin=Haiti` and `ymax=Haiti`), (`ymin="Haiti"` and `ymax="Haiti"`), and even include a countries before and after Haiti. Then I talked to Sophie, and thanks to her, I could realize that those factors still have numerical values. So I found the corresponding numerical values by trial and error. So I could brush/highlight outstanding countries in a heat map.
+Brushing/Highlighting in a heat map is great idea. I was about to implment it, but it was not easy. All the tutorials I found from the Internet have brushing in terms of numerical ranges, but my heat map does not have numerical values on both x- and y-axis. I used all the combinations to brush/highlight a certain country such as (`ymin=Haiti` and `ymax=Haiti`), (`ymin="Haiti"` and `ymax="Haiti"`), and even included a countries before and after Haiti in order to have Haiti per se. Then I talked to Sophie, and thanks to her, I could realize that those factors still have numerical values. So I found the corresponding numerical values by trial and error. So I could brush/highlight outstanding countries in a heat map.
