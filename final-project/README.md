@@ -68,3 +68,38 @@ This density plot shows the distinction in annual income: more than 50K USD vers
 This
 
 ![IMAGE](4bar.jpg) 
+
+
+
+### Interactivity ###
+
+#### Techniques 1: Bubble Plot ####
+This
+
+![IMAGE](1consistency.jpg) 
+
+#### Techniques 2: Heat Map ####
+This
+
+![IMAGE](2brushing.jpg) 
+
+#### Techniques 3: Density Plot ####
+This
+
+![IMAGE](3density.jpg) 
+
+#### Techniques 4: Bar Plot ####
+This
+
+![IMAGE](4ratio.jpg) 
+
+
+
+
+
+### Prototype Feedback ###
+
+
+
+
+### Challenge ###
