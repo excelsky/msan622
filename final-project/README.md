@@ -118,18 +118,18 @@ This
 There were only two plots for my prototype: a bubble plot and a density plot. I got the following feedback from classmates.
 
 Bubble Plot:  
-1. That is good function to put the labels of countries.
-2. Move the legend.
+1. That is good function to put the labels of countries.  
+2. Move the legend.  
 
 Density Plot:  
-1. better names for selection options, use color brewer colors, add subset by column feature to density plots
-2. I would look at more than just salary of each person. I would also look at gender, I think gender might have a small difference.
-3. it might be good to facet_wrap function by avoiding overlapped distribution.
-4. I like your dataset! Perhaps doing a small multiples plot for the densities would be useful.
+1. better names for selection options, use color brewer colors, add subset by column feature to density plots.  
+2. I would look at more than just salary of each person. I would also look at gender, I think gender might have a small difference.  
+3. it might be good to facet_wrap function by avoiding overlapped distribution.  
+4. I like your dataset! Perhaps doing a small multiples plot for the densities would be useful.  
 
 Both:  
-1. Change axis labels — be sure to make them look nice
-2. Additionally, some user-help text about what the columns represent would be good.
+1. Change axis labels — be sure to make them look nice.  
+2. Additionally, some user-help text about what the columns represent would be good.  
 
 
 
