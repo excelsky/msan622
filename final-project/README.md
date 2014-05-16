@@ -24,7 +24,7 @@ This will start the `shiny` app. See below for details on how to interact with t
 
 ## Discussion ##
 ### Data ###
-The dataset is called `adult.data` from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult). It is also called '1994 Census database.'  
+The dataset is called `adult.data` from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult). It is also called '1994 Census database.' It shows demographic infomation of survey participants from all around the world and eventually wants to see who earns 50K USD per year or not. Examples of demographic infomation are age, years of education, highest degree in education, occupation, race, relationship, sex, and so forth. I chose this dataset, because it is easy to obtain and is big enough to slice and dice. It has 32546 rows and is about 3.75 MB. Also, it has rich demographic information, so I could use many techniques and interactivities that we learned in class. 
 
 All the data cleaning is at `initiate.R`. It directly receives the original data from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Adult) and creates six csv files. All of them are generated and used in different plots. Some of them are long data from `reshape2::melt`
 
@@ -48,6 +48,9 @@ This plot uses `data2` from `initiate.R`. `data2` is generated from a `ddply()` 
 The lie factor is reasonable. I am aware that human beings are good at comparing two different lengths but not two different sizes. A bubble plot cannot avoid that fact, because a comparison between a bubble to a bubble is to do two different sizes not lengths.
 The data density
 The data to ink ratio
+
+
+I sorted the dataset in order to have smaller colors displayed on top of the bigger colors as shown in the following line of code; `df <- df[order(df[,sizeIndex], decreasing = TRUE),]`.
 
 ![IMAGE](1bubble.jpg) 
 
