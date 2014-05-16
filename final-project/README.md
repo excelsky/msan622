@@ -45,12 +45,15 @@ I have chosen the following visualization techniques for this project:
 #### Techniques 1: Bubble Plot ####
 This plot uses `data2` from `initiate.R`. `data2` is generated from a `ddply()` function in a `plyr` package. `data2` shows the arithmetic mean of numerical data of each country: age, capital gain, capital loss, education years, and hours per week. It contains not only countries, but also the corresponding continents. I hard-coded those continents, because they are not many and there are only 4-continent representation. I deleted `Guam and USVI` for this dataset, because it belongs to more than one continent.
 
-The lie factor is reasonable. I am aware that human beings are good at comparing two different lengths but not two different sizes. A bubble plot cannot avoid that fact, because a comparison between a bubble to a bubble is to do two different sizes not lengths. Other than that, I think the lie factor is reasonable, because the bubble size is not misleading and it can be controled by users.  
-The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.  
+The lie factor is reasonable. I am aware that human beings are good at comparing two different lengths but not two different sizes. A bubble plot cannot avoid that fact, because a comparison between a bubble to a bubble is to do two different sizes not lengths. Other than that, I think the lie factor is reasonable, because the bubble size is not misleading and it can be controled by users.
+
+The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.
+
 The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
 
+This visualization excels at comparing demographic information among different countries and continents. A bubble plot is good at that, as Hans Rosling showed at TED with his tool 'Gapminder'. It is inevitable that some bubble overlap one another. I sorted the dataset in order to have smaller colors displayed on top of the bigger colors as shown in the following line of code; `df <- df[order(df[,sizeIndex], decreasing = TRUE),]`. For example, if users choose `Mean Capital Loss` and `Mean Hours per Week` as x- and y-axis respectively, they can see that the Netherlands is an outlier that has an extreme mean capital loss. Also, if users happen to opt out all the countries and the continents, then they are bounded to see a funny error message.
 
-I sorted the dataset in order to have smaller colors displayed on top of the bigger colors as shown in the following line of code; `df <- df[order(df[,sizeIndex], decreasing = TRUE),]`.
+From this visualization, I learnd that filtering is important. Users want to filter certain countries and certain continents. I found that it was not very easy to implement this filtering. The original dataset has only countries. So I created a `continents` column. I did some extra lines of coding which will be further discussed in **interactivity**. In a nutshell, I learned the power of filtering from this visualization.
 
 ![IMAGE](1bubble.jpg) 
 
@@ -59,8 +62,9 @@ I sorted the dataset in order to have smaller colors displayed on top of the big
 This
 
 The lie factor
-The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.  
-The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
+The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.
+
+The data to ink ratio is reasonable. A heat map requires different color for its blocks, which reduce the data to ink ratio. I was aware of this fact. Thus, I created a `sliderInput` so that users can control the middle break points for the color gradient. The selected range will become white and thus this action will increase the data to ink ratio. Therefore, I think the data to ink ratio is reasonable here, since users can choose the span of the white space.
 
 ![IMAGE](2heat.jpg) 
 
@@ -69,7 +73,8 @@ The data to ink ratio is farily high. I intentionally got rid of the background 
 This density plot shows the distinction in annual income: more than 50K USD versus less than or equal to 50K USD. In this specific screenshot, I ams shoing the income difference between ages. It is clear that the older the higher income. I am sure I can set up other numerical variables on the x-axis (instead of age) and make it interactive.
 
 The lie factor
-The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.  
+The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.
+
 The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
 
 ![IMAGE](3density.jpg) 
@@ -79,7 +84,8 @@ The data to ink ratio is farily high. I intentionally got rid of the background 
 This
 
 The lie factor
-The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.  
+The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.
+
 The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
 
 ![IMAGE](4bar.jpg) 
@@ -89,7 +95,7 @@ The data to ink ratio is farily high. I intentionally got rid of the background 
 ### Interactivity ###
 
 #### Interactivity 1: Bubble Plot ####
-Users can filter bubbles by countries and continents. The default is all countries for all continents. This type of selection is enabled from a `multiple=TRUE` argument in a `selectInput()` function. 
+Users can filter bubbles by countries and continents. The default is all countries for all continents. This type of selection is enabled from a `multiple=TRUE` argument in a `selectInput()` function. I intentionall aligned all these `selectInput()` options on the same line below the main plot, so that users can easily compare and contrast. Inside of this `selectInput()` function, there are 4 `if` statements for 4 continents. Within the `if` statement, it interacts the users selection of a certain country.
 
 The color is consistent. In other words, no matter what users select or not, the color scheme for continents are the same. The image below is a good example. Only South Korea and all countries in South America are chosen, and the color scheme is consistent with the legend: pink Asia, green Europe, blue North America, and purple South America. We only can see pink South Korea and purple South American countries.
 
