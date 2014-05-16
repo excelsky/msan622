@@ -30,7 +30,7 @@ All the data cleaning is at `initiate.R`. It directly receives the original data
 
 As of data munging, I deleted rows that have NA's. In this case, the NA was coded as ' ?' which is different from '?'. It took a decent time for me to figure out the difference. The original dataset has 32561 rows and there are still 30162 rows left after this munging. Thus, this deletion technique is easier and much advisable than other techniques such as converting NA's into a categorical variable, as the data is preserved by 92%.
 
-I deleted a column called `fnlwgt`, because it is not easy to interprete and explain to other people. I changed the nomenclature in `levels()` of factors in order to increase the readability.
+I deleted a column called `fnlwgt`, because it is not easy to interprete and explain to other people. I changed the nomenclature in `levels()` of factors in order to increase the readability. Specifically, I deleted unnecessary leading spaces and changed hyphens to spaces. From ` United-States` to `United States` is an example.
 
 
 ### Techniques ###
@@ -43,7 +43,11 @@ I have chosen the following visualization techniques for this project:
 - Bar Plot
 
 #### Techniques 1: Bubble Plot ####
-This plot uses `data2` from `initiate.R`. `data2` is generated from `plyr`
+This plot uses `data2` from `initiate.R`. `data2` is generated from a `ddply()` function in a `plyr` package. `data2` shows the arithmetic mean of numerical data of each country: age, capital gain, capital loss, education years, and hours per week. It contains not only countries, but also the corresponding continents. I hard-coded those continents, because they are not many and there are only 4-continent representation. I deleted `Guam and USVI` for this dataset, because it belongs to more than one continent.
+
+The lie factor is reasonable. I am aware that human beings are good at comparing two different lengths but not two different sizes. A bubble plot cannot avoid that fact, because a comparison between a bubble to a bubble is to do two different sizes not lengths.
+The data density
+The data to ink ratio
 
 ![IMAGE](1bubble.jpg) 
 
@@ -51,17 +55,29 @@ This plot uses `data2` from `initiate.R`. `data2` is generated from `plyr`
 #### Techniques 2: Heat Map  ####
 This
 
+The lie factor
+The data density
+The data to ink ratio
+
 ![IMAGE](2heat.jpg) 
 
 
 #### Techniques 3: Density Plot ####
 This density plot shows the distinction in annual income: more than 50K USD versus less than or equal to 50K USD. In this specific screenshot, I ams shoing the income difference between ages. It is clear that the older the higher income. I am sure I can set up other numerical variables on the x-axis (instead of age) and make it interactive.
 
+The lie factor
+The data density
+The data to ink ratio
+
 ![IMAGE](3density.jpg) 
 
 
 #### Techniques 4: Bar Plot ####
 This
+
+The lie factor
+The data density
+The data to ink ratio
 
 ![IMAGE](4bar.jpg) 
 
@@ -69,22 +85,24 @@ This
 
 ### Interactivity ###
 
-#### Techniques 1: Bubble Plot ####
-This
+#### Interactivity 1: Bubble Plot ####
+Users can filter bubbles by countries and continents. The default is all countries for all continents. This type of selection is enabled from a `multiple=TRUE` argument in a `selectInput()` function. 
+
+The color is consistent. In other words, no matter what users select or not, the color scheme for continents are the same. The image below is a good example. Only South Korea and all countries in South America are chosen, and the color scheme is consistent with the legend: pink Asia, green Europe, blue North America, and purple South America. We only can see pink South Korea and purple South American countries.
 
 ![IMAGE](1consistency.jpg) 
 
-#### Techniques 2: Heat Map ####
+#### Interactivity 2: Heat Map ####
 This
 
 ![IMAGE](2brushing.jpg) 
 
-#### Techniques 3: Density Plot ####
+#### Interactivity 3: Density Plot ####
 This
 
 ![IMAGE](3density.jpg) 
 
-#### Techniques 4: Bar Plot ####
+#### Interactivity 4: Bar Plot ####
 This
 
 ![IMAGE](4ratio.jpg) 
