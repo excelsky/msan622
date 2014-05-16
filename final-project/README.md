@@ -43,11 +43,7 @@ I have chosen the following visualization techniques for this project:
 - Bar Plot
 
 #### Techniques 1: Bubble Plot ####
-It is supposed to be interactive, but somehow no plot is showing. So for this session, I will show my `ui.R` and actual plot separately.  
-
-This bubble plot is for EDA: exploratory data analysis. I would like to see the demographic infomation out of the 30162 rows based on each country. Users can choose variables for the x-axis and the y-axis. They can change the size of bubbles. They can even opt in and out the name of the countries.  
-
-As a next step, I am going to make sure this `shiny` plot is working properly. Then I will change the name of the variables in the left panel. I will increase the size of main plot and decrease the left panel. I will work on three evaluation criteria.
+This plot uses `data2` from `initiate.R`. `data2` is generated from `plyr`
 
 ![IMAGE](1bubble.jpg) 
 
