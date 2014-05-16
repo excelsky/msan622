@@ -45,9 +45,9 @@ I have chosen the following visualization techniques for this project:
 #### Techniques 1: Bubble Plot ####
 This plot uses `data2` from `initiate.R`. `data2` is generated from a `ddply()` function in a `plyr` package. `data2` shows the arithmetic mean of numerical data of each country: age, capital gain, capital loss, education years, and hours per week. It contains not only countries, but also the corresponding continents. I hard-coded those continents, because they are not many and there are only 4-continent representation. I deleted `Guam and USVI` for this dataset, because it belongs to more than one continent.
 
-The lie factor is reasonable. I am aware that human beings are good at comparing two different lengths but not two different sizes. A bubble plot cannot avoid that fact, because a comparison between a bubble to a bubble is to do two different sizes not lengths. Other than that, I think the lie factor is reasonable, because the bubble size is not misleading and it can be controled by users.
-The data density
-The data to ink ratio
+The lie factor is reasonable. I am aware that human beings are good at comparing two different lengths but not two different sizes. A bubble plot cannot avoid that fact, because a comparison between a bubble to a bubble is to do two different sizes not lengths. Other than that, I think the lie factor is reasonable, because the bubble size is not misleading and it can be controled by users.  
+The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.  
+The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
 
 
 I sorted the dataset in order to have smaller colors displayed on top of the bigger colors as shown in the following line of code; `df <- df[order(df[,sizeIndex], decreasing = TRUE),]`.
@@ -59,8 +59,8 @@ I sorted the dataset in order to have smaller colors displayed on top of the big
 This
 
 The lie factor
-The data density
-The data to ink ratio
+The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.  
+The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
 
 ![IMAGE](2heat.jpg) 
 
@@ -69,8 +69,8 @@ The data to ink ratio
 This density plot shows the distinction in annual income: more than 50K USD versus less than or equal to 50K USD. In this specific screenshot, I ams shoing the income difference between ages. It is clear that the older the higher income. I am sure I can set up other numerical variables on the x-axis (instead of age) and make it interactive.
 
 The lie factor
-The data density
-The data to ink ratio
+The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.  
+The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
 
 ![IMAGE](3density.jpg) 
 
@@ -79,8 +79,8 @@ The data to ink ratio
 This
 
 The lie factor
-The data density
-The data to ink ratio
+The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.  
+The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
 
 ![IMAGE](4bar.jpg) 
 
