@@ -72,20 +72,30 @@ The data to ink ratio is reasonable. A heat map requires different color for its
 
 Addtionally, when it comes to brushing, the data to ink ratio drops. However, the goal of brushing is to highlight a certain element in a dataset. So I think it is reasonable to have a low data to ink ratio in brushing.
 
-This visualization excels at comparing demographi
+This visualization excels at comparing the relative difference among elements. If there were an outlier, it would be colored very differently from other blocks. Also if there were a general trend, they would be colored in a similar tone, so people can easily detect. I intentionally added brushing, so that users can see the key point. The furthr detail is discussed in **Interactivity 2**
 
-From this visualization, I learnd that different data type has its own purpose. I could 
+From this visualization, I learnd that different data format has its own purpose. I could have created a heat map from a regular (=wide) data format, but I realized that a long data format is better for my purpose of my heat map. Also, I learned that a heat map is good to compare the relative difference among elements. I have never used a heat map, until I took this course. I learned the power of it, thanks to the class.
 
 ![IMAGE](2heat.jpg) 
 
 
 #### Technique 3: Density Plot ####
-This density plot shows the distinction in annual income: more than 50K USD versus less than or equal to 50K USD. In this specific screenshot, I ams shoing the income difference between ages. It is clear that the older the higher income. I am sure I can set up other numerical variables on the x-axis (instead of age) and make it interactive.
+This density plot shows the distinction in annual income: more than 50K USD versus less than or equal to 50K USD. It alos shows the distinction in race.
 
-The lie factor
-The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.
+`data1` is the source of this plot. `data1` is the closest to the raw dataset. As you can see in `intitiate.R`, `data1` is the basic of most other branched dataset. This density plot uses only the column of age and the years of education in `data1` for users to interact and they can see corresponding income, race, and sex breakdown.
+
+Also FILL IN HERE.
+
+The lie factor is reasonable. I do not think there is anything lying by size. I do admit that the density on the y-axis at Years of Education is greater than 1. I do not know why, but this number can lie, regardless of the lie factor.
+
+The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel. Actually, my overview plot is at the side panel. I am not sure how this overview plot exactly affects the data density, but I think my data density is fine, because the overview plot is peripheral and the small multiple density plot is main.
 
 The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
+
+This visualization excels at comparing different segmentations within a ceratin variable. The small multiple density plot on the main panel shows the segmentation of age of years of education into income, race, and sex. The overview plot on the side panel shows the bird-eye-view of density in age or years of education.
+
+From this visualization, I learnd that a density plot can be powerful with small multiples. I tried to create only a density plot with x-axis options that users can control. However, after the prototype review from classmates, I implemented small multiples with a density plot. Now I have a better tool to show the segmentation of numerical data into categorical data. Thank you for the feedback.
+
 
 ![IMAGE](3density.jpg) 
 
@@ -97,6 +107,11 @@ The lie factor
 The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.
 
 The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
+
+This visualization excels at comparing the relative difference among elements. If there were an outlier, it would be colored very differently from other blocks. Also if there were a general trend, they would be colored in a similar tone, so people can easily detect. I intentionally added brushing, so that users can see the key point. The furthr detail is discussed in **Interactivity 2**
+
+From this visualization, I learnd that different data format has its own purpose. I could have created a heat map from a regular (=wide) data format, but I r
+
 
 ![IMAGE](4bar.jpg) 
 
