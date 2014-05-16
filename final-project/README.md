@@ -42,7 +42,7 @@ I have chosen the following visualization techniques for this project:
 - Density Plot
 - Bar Plot
 
-#### Techniques 1: Bubble Plot ####
+#### Technique 1: Bubble Plot ####
 This plot uses `data2` from `initiate.R`. `data2` is generated from a `ddply()` function in a `plyr` package. `data2` shows the arithmetic mean of numerical data of each country: age, capital gain, capital loss, education years, and hours per week. It contains not only countries, but also the corresponding continents. I hard-coded those continents, because they are not many and there are only 4-continent representation. I deleted `Guam and USVI` for this dataset, because it belongs to more than one continent.
 
 The lie factor is reasonable. I am aware that human beings are good at comparing two different lengths but not two different sizes. A bubble plot cannot avoid that fact, because a comparison between a bubble to a bubble is to do two different sizes not lengths. Other than that, I think the lie factor is reasonable, because the bubble size is not misleading and it can be controled by users.
@@ -58,14 +58,13 @@ From this visualization, I learnd that filtering is important. Users want to fil
 ![IMAGE](1bubble.jpg) 
 
 
-#### Techniques 2: Heat Map  ####
+#### Technique 2: Heat Map  ####
 This plot uses three long data from `initiate.R`: `melt4e`, `melt4o`, and `melt4w`. They all are generated from a `melt` function in a `reshape2` package. They are only different by the `variable` and the `value` columns: highest degree in education for `melt4e`, occupation for `melt4o`, and work class for `melt4w`.
 
-Before I create these three long datasets, I created a `data4` dataset shown in `initiate.R`. It has only columns of work class, highest degree in education, occupation, and countries. Then I created three empty datasets -- `data4e`, `data4o`, and `data4w` -- whose column length is the length of first three columns respectively and row length is the length of the countries. Then I used double for-loops with `if` statements to fill in the empty elements in these three datasets. This step enabled me to have three datasets of 'counts' in all of the elements. For example,
-shows the arithmetic mean of numerical data of each country: age, capital gain, capital loss, education years, and hours per week. It contains not only countries, but also the corresponding continents. I hard-coded those continents, because they are not many and there are only 4-continent representation. I deleted `Guam and USVI` for this dataset, because it belongs to more than one continent.
+Before I create these three long datasets, I created a `data4` dataset shown in `initiate.R`. It has only columns of work class, highest degree in education, occupation, and countries. Then I created three empty datasets -- `data4e`, `data4o`, and `data4w` -- whose column length is the length of first three columns respectively and row length is the length of the countries. Then I used double for-loops with `if` statements to fill in the empty elements in these three datasets. This step enabled me to have three datasets of 'counts' in all of the elements. For example, in `data4e`, the element with a column of `South Korea` and a row of `Doctorate` shows the number of doctorate people in South Korea. Then I converted these datasets to long datasets by using `melt`.
 
 
-The lie factor
+The lie factor is somewhat poor. A size of each block in a heat map does not mean its significance. It is treated all equal. Therefore, a heat map ignores a lie factor. My heat map is the same. I cannot avoid the distortion in the lie factor.
 
 The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.
 
@@ -73,10 +72,14 @@ The data to ink ratio is reasonable. A heat map requires different color for its
 
 Addtionally, when it comes to brushing, the data to ink ratio drops. However, the goal of brushing is to highlight a certain element in a dataset. So I think it is reasonable to have a low data to ink ratio in brushing.
 
+This visualization excels at comparing demographi
+
+From this visualization, I learnd that different data type has its own purpose. I could 
+
 ![IMAGE](2heat.jpg) 
 
 
-#### Techniques 3: Density Plot ####
+#### Technique 3: Density Plot ####
 This density plot shows the distinction in annual income: more than 50K USD versus less than or equal to 50K USD. In this specific screenshot, I ams shoing the income difference between ages. It is clear that the older the higher income. I am sure I can set up other numerical variables on the x-axis (instead of age) and make it interactive.
 
 The lie factor
@@ -87,7 +90,7 @@ The data to ink ratio is farily high. I intentionally got rid of the background 
 ![IMAGE](3density.jpg) 
 
 
-#### Techniques 4: Bar Plot ####
+#### Technique 4: Bar Plot ####
 This
 
 The lie factor
@@ -154,6 +157,8 @@ Both:
 
 ### Challenge ###
 As written at the get-go, it was not easy to treat NA's. In the original dataset, the NA was coded as ' ?' which is different from '?'. The leading space was not very obvious for me. Thus, it took a decent time for me to figure out the difference.
+
+Long datasets are a good company for a heat map. I was originally about to create a heat map with categorical variables on the x- and y-axis. Then I realized that I needed something to fill in the plot. I found that it would be good to have 'counts' for corresponding x- and y-axis. I created subsidiary datasets for a heat map, then I found that creating 'counts' are not that easy. I am sure there is a faster way to do that, but I used double for-loops with `if` statements as written above under **Technique 2**. Luckily, the subsidiary datasets are not big, so it did not take a long time. Plus, all of these steps are in `initiate.R`, so it does not affect `shiny` interactivity.
 
 Brushing/Highlighting in a heat map is great idea. I was about to implment it, but it was not easy. All the tutorials I found from the Internet have brushing in terms of numerical ranges, but my heat map does not have numerical values on both x- and y-axis. I used all the combinations to brush/highlight a certain country such as `ymin=Haiti, ymax=Haiti`, `ymin="Haiti", ymax="Haiti"`, and even included a countries before and after Haiti in order to have Haiti per se. Then I talked to Sophie, and thanks to her, I could realize that those factors still have numerical values. So I found the corresponding numerical values by trial and error. For example, Haiti is 26, because it is the 26th country in the dataset. In order to brush/highlight Haiti, `ymin = 26.5, ymax = 27.5` should be inserted. So I could brush/highlight outstanding countries in a heat map.
 
