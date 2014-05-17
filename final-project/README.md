@@ -130,12 +130,16 @@ The color is consistent. In other words, no matter what users select or not, the
 
 
 #### Interactivity 2: Heat Map ####
-Users can brush/highlight. This option automatically chooses where to brush. For example, when the x-axis is `Occupation`, then an element where 'Haiti' and 'Mechanic' intersect are highlighted, because that is where the ratio is high.
+Users can brush/highlight. This option automatically chooses where to brush. For example, when the x-axis is `Occupation`, then an element where 'Haiti' and 'Mechanic' intersect are highlighted, because that is where the ratio is high. I used a sequential theme at [ColorBrewer](http://colorbrewer2.org/), because it is good to highlight one. It aligns with the purpose of the brushing.
+
+Users can also change the gradient range. The main color scheme in this heat map is diverging at [ColorBrewer](http://colorbrewer2.org/), because it is good to emphasize the spread and two ends of the color. By manipulating `sliderInput`, users can control the middle break points for the color gradient. The selected range will become white.
+
+I intentionally positioned the legend on the bottom left outside corner of the heat map. That is where the 'origin' is and also where users attention converges. This legend disappear when users decide to brush, because the color scheme is different then. Since a sequential theme is pretty obvious in where to highlight under brushing, a legend is not necessary.
 
 ![IMAGE](2brushing.jpg) 
 
 #### Interactivity 3: Density Plot ####
-This
+There is no special interactivity in the density plot. There are two density plots as decribed above: the overview plot in the side panel and the small multiple in the main plot. Users can see both a tree and a forest at the same time by those two different scales. Since the overview plot requires only one variable, it is much faster in rendering. They can select a variable for the x-axis to see the effect of a variable.
 
 ![IMAGE](3density.jpg) 
 
