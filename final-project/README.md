@@ -139,14 +139,14 @@ I intentionally positioned the legend on the bottom left outside corner of the h
 ![IMAGE](2brushing.jpg) 
 
 #### Interactivity 3: Density Plot ####
-There is no special interactivity in the density plot. There are two density plots as decribed above: the overview plot in the side panel and the small multiple in the main plot. Users can see both a tree and a forest at the same time by those two different scales. Since the overview plot requires only one variable, it is much faster in rendering. They can select a variable for the x-axis to see the effect of a variable.
+There is no special interactivity in the density plot. There are two density plots as decribed above: the overview plot in the side panel and the small multiple in the main plot. Users can see both a tree and a forest at the same time by those two different scales. Since the overview plot requires only one variable, it is much faster in rendering. They can select a variable for the x-axis to see the effect of a variable. A diverging color scheme from [ColorBrewer](http://colorbrewer2.org/) enables users to see the comparison easily.
 
 ![IMAGE](3density.jpg) 
 
 #### Interactivity 4: Bar Plot ####
 Thanks to [Charles](https://github.com/chrono721), I created a `checkboxInput` for a ratio. Without this `checkboxInput`, users can see the number of participants in each bar. With this `checkboxInput`, users can see the ratio of participants in each bar.
 
-This interactivity gives two different points of view. Users may want to see what category that survey participants may fall into the most. Or they may want to see what category that survey participants may have extrem ratio between those to have higher income versus low income.
+This interactivity gives two different points of view. Users may want to see what category that survey participants may fall into the most. Or they may want to see what category that survey participants may have extrem ratio between those to have higher income versus low income. A diverging color scheme from [ColorBrewer](http://colorbrewer2.org/) enables users to see the comparison easily.
 
 ![IMAGE](4ratio.jpg) 
 
@@ -155,7 +155,7 @@ This interactivity gives two different points of view. Users may want to see wha
 
 
 ### Prototype Feedback ###
-There were only two plots for my prototype: a bubble plot and a density plot. I got the following feedback from classmates.
+There were only two plots for my [prototype](https://github.com/excelsky/msan622/tree/master/project-prototype): a bubble plot and a density plot. I got the following feedback from classmates.
 
 Bubble Plot:  
 1. That is good function to put the labels of countries.  
@@ -171,11 +171,13 @@ Both:
 1. Change axis labels — be sure to make them look nice.  
 2. Additionally, some user-help text about what the columns represent would be good.  
 
+For the bubble plot feedback, the first comment is just a comment. So I have kept an option to opt in and out for country names. I have accepted second comment. As you can see from my [prototype](https://github.com/excelsky/msan622/tree/master/project-prototype), I had a legend inside of a plot. Then people and I realized that it could block some of the bubbles in the plot. So I moved them and located them on above of the plot. It was a good feedback to increase the reability by increasing the data density.
 
+For the density plot feedback, I have accepted all of the the feedbacks. I used `facet_grid` to have small multiple density plots. I used a diverging color scheme from [ColorBrewer](http://colorbrewer2.org/) which enables users to see the comparison easily. I appreciate the feedback. I think my new density plot is better to see both a big picture and a small picture.
 
+For the feedback for both bubble plot and density plot, I have accepted all of them. I changed the font size and type of axis labels so that make them look nice. I changed the variable names so that users understand them easily without a background knowledge.
 
-
-
+The feedback is the most exciting part of this MSAN 622 Data Visualization course. I have learned much from different perspectives from different people. I love it!
 
 
 
