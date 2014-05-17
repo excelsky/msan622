@@ -80,11 +80,10 @@ From this visualization, I learnd that different data format has its own purpose
 
 
 #### Technique 3: Density Plot ####
-This density plot shows the distinction in annual income: more than 50K USD versus less than or equal to 50K USD. It alos shows the distinction in race.
+There are two plots here for density plots: an overview plot and a small multiple. All of them show the distinction in annual income: more than 50K USD versus less than or equal to 50K USD. The small multiple shows the distinction in race and sex as well.
 
-`data1` is the source of this plot. `data1` is the closest to the raw dataset. As you can see in `intitiate.R`, `data1` is the basic of most other branched dataset. This density plot uses only the column of age and the years of education in `data1` for users to interact and they can see corresponding income, race, and sex breakdown.
+`data1` is the source of these two plots. `data1` is the closest to the raw dataset. As you can see in `intitiate.R`, `data1` is the basic of most other branch dataset. Users see only the age and the years of education in `data1` to interact and they can see corresponding income, race, and sex breakdown.
 
-Also FILL IN HERE.
 
 The lie factor is reasonable. I do not think there is anything lying by size. I do admit that the density on the y-axis at Years of Education is greater than 1. I do not know why, but this number can lie, regardless of the lie factor.
 
@@ -96,21 +95,21 @@ This visualization excels at comparing different segmentations within a ceratin 
 
 From this visualization, I learnd that a density plot can be powerful with small multiples. I tried to create only a density plot with x-axis options that users can control. However, after the prototype review from classmates, I implemented small multiples with a density plot. Now I have a better tool to show the segmentation of numerical data into categorical data. Thank you for the feedback.
 
-
 ![IMAGE](3density.jpg) 
 
 
 #### Technique 4: Bar Plot ####
-This
+This bar plot uses `data3`. `data3` is where all the categorical variables are in a reserve order in order to show a lengthy variable close to the x-axis and a short variable far from it. So users can see a cascade of bars. They are not only aesthetical but also easy to interpret.
 
-The lie factor
+The lie factor is very reasonable. The length of a bar represent the number of participants. The longer the bar is, the more the participants. On the other hand, under the 'ratio' option, the length of a bar represent the ratio of participants in that bar. The longer the bar is, the higher ratio the participants. Therefore, the lie factor is not misleading anything.
+
 The data density is farily high. I intentionally set the `sidebarPanel` `width = 3` and the `mainPanel` `width = 9`. In other words, I alloted three times more space for the main panel to the side panel.
 
 The data to ink ratio is farily high. I intentionally got rid of the background of a plot. I made them white and added blue dotted tick marks. I incrased the font size of both the axis labels and tick marks in order to increase a readability.
 
-This visualization excels at comparing the relative difference among elements. If there were an outlier, it would be colored very differently from other blocks. Also if there were a general trend, they would be colored in a similar tone, so people can easily detect. I intentionally added brushing, so that users can see the key point. The furthr detail is discussed in **Interactivity 2**
+This visualization excels at comparing the number and the ratio of survey participants. First, the horizontal line affects the sorting of the number of survey participants. I intentionally had a decreasing order, so the long bar is at the bottom and the short bar is at the top. Under the 'ratio' option, it does not matter for this sorting. Yet, users can still see the relative portion of survey participants in each bar.
 
-From this visualization, I learnd that different data format has its own purpose. I could have created a heat map from a regular (=wide) data format, but I r
+From this visualization, I learnd that a single bar chart can tell two different stories based on the 'ratio' option. I was only thinking of a cardinality, but a ratio can be representative in a bar plot. I leared a power of a bar plot from this final project. I appreciate for the assignement.
 
 
 ![IMAGE](4bar.jpg) 
@@ -137,7 +136,9 @@ This
 ![IMAGE](3density.jpg) 
 
 #### Interactivity 4: Bar Plot ####
-This
+Thanks to [Charles](https://github.com/chrono721), I created a `checkboxInput` for a ratio. Without this `checkboxInput`, users can see the number of participants in each bar. With this `checkboxInput`, users can see the ratio of participants in each bar.
+
+This interactivity gives two different points of view. Users may want to see what category that survey participants may fall into the most. Or they may want to see what category that survey participants may have extrem ratio between those to have higher income versus low income.
 
 ![IMAGE](4ratio.jpg) 
 
