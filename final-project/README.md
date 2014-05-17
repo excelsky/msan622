@@ -63,6 +63,8 @@ This plot uses three long data from `initiate.R`: `melt4e`, `melt4o`, and `melt4
 
 Before I create these three long datasets, I created a `data4` dataset shown in `initiate.R`. It has only columns of work class, highest degree in education, occupation, and countries. Then I created three empty datasets -- `data4e`, `data4o`, and `data4w` -- whose column length is the length of first three columns respectively and row length is the length of the countries. Then I used double for-loops with `if` statements to fill in the empty elements in these three datasets. This step enabled me to have three datasets of 'counts' in all of the elements. For example, in `data4e`, the element with a column of `South Korea` and a row of `Doctorate` shows the number of doctorate people in South Korea. Then I converted these datasets to long datasets by using `melt`.
 
+These three datasets are all normalized. For example, China has a overwhelming population, so any variable with China is higher than with other countries. [Sophie](https://github.com/sjengle) suggested me to devide all the numbers by their country population. It was a way to normalize variables and thus outliers could be easily handled. Thank you for the suggestion.
+
 
 The lie factor is somewhat poor. A size of each block in a heat map does not mean its significance. It is treated all equal. Therefore, a heat map ignores a lie factor. My heat map is the same. I cannot avoid the distortion in the lie factor.
 
@@ -116,6 +118,7 @@ From this visualization, I learnd that a single bar chart can tell two different
 
 
 
+
 ### Interactivity ###
 
 #### Interactivity 1: Bubble Plot ####
@@ -125,8 +128,9 @@ The color is consistent. In other words, no matter what users select or not, the
 
 ![IMAGE](1consistency.jpg) 
 
+
 #### Interactivity 2: Heat Map ####
-This
+Users can brush/highlight. This option automatically chooses where to brush. For example, when the x-axis is `Occupation`, then an element where 'Haiti' and 'Mechanic' intersect are highlighted, because that is where the ratio is high.
 
 ![IMAGE](2brushing.jpg) 
 
@@ -176,6 +180,6 @@ As written at the get-go, it was not easy to treat NA's. In the original dataset
 
 Long datasets are a good company for a heat map. I was originally about to create a heat map with categorical variables on the x- and y-axis. Then I realized that I needed something to fill in the plot. I found that it would be good to have 'counts' for corresponding x- and y-axis. I created subsidiary datasets for a heat map, then I found that creating 'counts' are not that easy. I am sure there is a faster way to do that, but I used double for-loops with `if` statements as written above under **Technique 2**. Luckily, the subsidiary datasets are not big, so it did not take a long time. Plus, all of these steps are in `initiate.R`, so it does not affect `shiny` interactivity.
 
-Brushing/Highlighting in a heat map is great idea. I was about to implment it, but it was not easy. All the tutorials I found from the Internet have brushing in terms of numerical ranges, but my heat map does not have numerical values on both x- and y-axis. I used all the combinations to brush/highlight a certain country such as `ymin=Haiti, ymax=Haiti`, `ymin="Haiti", ymax="Haiti"`, and even included a countries before and after Haiti in order to have Haiti per se. Then I talked to Sophie, and thanks to her, I could realize that those factors still have numerical values. So I found the corresponding numerical values by trial and error. For example, Haiti is 26, because it is the 26th country in the dataset. In order to brush/highlight Haiti, `ymin = 26.5, ymax = 27.5` should be inserted. So I could brush/highlight outstanding countries in a heat map.
+Brushing/Highlighting in a heat map is great idea. I was about to implment it, but it was not easy. All the tutorials I found from the Internet have brushing in terms of numerical ranges, but my heat map does not have numerical values on both x- and y-axis. I used all the combinations to brush/highlight a certain country such as `ymin=Haiti, ymax=Haiti`, `ymin="Haiti", ymax="Haiti"`, and even included a countries before and after Haiti in order to have Haiti per se. Then I talked to [Sophie](https://github.com/sjengle), and thanks to her, I could realize that those factors still have numerical values. So I found the corresponding numerical values by trial and error. For example, Haiti is 26, because it is the 26th country in the dataset. In order to brush/highlight Haiti, `ymin = 26.5, ymax = 27.5` should be inserted. So I could brush/highlight outstanding countries in a heat map.
 
-If there were more time, I would investigate a sophisticated and smart way to select in a `selectInput()` function in my bubble plot. So far, for example, `All` in Asia is the same as `All` and `South Korea` in Asia. I wish I could opt out countries when `All` is selected. I talked to Sophie and she said that I should write this challenge in here. Thank you for the advice.
+If there were more time, I would investigate a sophisticated and smart way to select in a `selectInput()` function in my bubble plot. So far, for example, `All` in Asia is the same as `All` and `South Korea` in Asia. I wish I could opt out countries when `All` is selected. I talked to [Sophie](https://github.com/sjengle) and she said that I should write this challenge in here. Thank you for the advice.
