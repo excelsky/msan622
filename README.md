@@ -7,4 +7,4 @@ MSAN 622 Data Visualization
 
 ## About Me ##
 
-I am a polyglot. I love both programming and natural languages. Of course, data analytics is my best friend. Please, check me out more at [LinkedIn](www.linkedin.com/pub/kicho-yu/55/bb9/a64/). Thank you.
+I am a polyglot. I love both programming and natural languages. Of course, data analytics is my best friend. Please, check me out more at [LinkedIn](www.linkedin.com/pub/kicho-yu/55/bb9/a64). Thank you.
